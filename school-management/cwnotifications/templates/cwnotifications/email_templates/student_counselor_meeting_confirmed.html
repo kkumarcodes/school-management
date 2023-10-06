@@ -1,0 +1,30 @@
+{% extends 'cwnotifications/email_templates/base.html' %}
+{% load tz %}
+{% block content %}
+{% with notification.related_object as counselor_meeting %}
+{%timezone counselor_meeting.student.timezone %}
+{% localtime on %}
+<p>
+  A meeting with your Collegewise counselor - {{counselor_meeting.student.counselor.name}} - has
+  been scheduled for {{ counselor_meeting.start|date:"F jS" }} at
+   {{ counselor_meeting.start|date:"g:ia" }}
+</p>
+{% if counselor_meeting.location and not counselor_meeting.location.is_remote %}
+<p>
+  This meeting will take place at {{ counselor_meeting.location.name }}:<br/>
+  {{ counselor_meeting.location.address}} {{ counselor_meeting.location.address_line_two }}<br/>
+  {{ counselor_meeting.location.city }} {{ counselor_meeting.location.zip_code }}
+</p>
+{% elif counselor_meeting.student.counselor.zoom_url %}
+<p>This meeting will take place on Zoom: {{ counselor_meeting.student.counselor.zoom_url }}
+{% endif %}
+<p>
+  You can find a complete list of your scheduled meetings in
+  <a href="{{ SITE_URL }}">{{ SITE_NAME }}</a>.
+</p>
+
+{% endlocaltime %}
+{% endtimezone %}
+{% endwith %}
+{% endblock %}
+{% block CTA%} {% endblock %}

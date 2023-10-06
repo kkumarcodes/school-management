@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.0.2/antd.min.css" rel="stylesheet">
+    <link href="{{ FRONTEND_URL }}login.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Variables pulled in from render context -->
+    <script>
+        window.registerUUID = '{{register_uuid}}';
+        window.registerEmail = '{{register_email}}';
+        window.env = '{{ENV}}';
+        window.version = '{{VERSION}}';
+        window.url = '{{SITE_URL}}';
+        cwuser_email = '';
+    </script>
+    <div id="root"></div>
+
+    <script src="{{ FRONTEND_URL }}login.js"></script>
+</body>
+
+</html>

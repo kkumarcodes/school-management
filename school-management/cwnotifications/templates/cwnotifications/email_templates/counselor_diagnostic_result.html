@@ -1,0 +1,32 @@
+{% extends 'cwnotifications/email_templates/base.html' %}
+
+{% block content %}
+{% with notification.related_object as diagnostic_result %}
+<p>{{ diagnostic_result.student.name }}'s diagnostic "{{ diagnostic_result.diagnostic }}" recommendation has been completed.</p>
+{% if diagnostic_result.file_uploads.exists %}
+<p>The original submission includes the following files:</p>
+<ul>
+    {% for file_upload in diagnostic_result.file_uploads.all %}
+    <li><a href="{{SITE_URL}}{{ file_upload.url }}">{{ file_upload.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if diagnostic_result.recommendation %}
+<p>
+  The report with score and/or recommendations is available here: <a href="{{SITE_URL}}{{diagnostic_result.recommendation.url}}">Score Reports &amp; Recommendations</a>
+</p>
+{% endif %}
+
+{% if diagnostic_result.state == 'v' %}
+<p>This report <b>IS</b> visible to {{diagnostic_result.student.name}}</p>
+{% else %}
+<p>This report <b>IS NOT</b> visible to {{diagnostic_result.student.name}}</p>
+{% endif %}
+
+{% if diagnostic_result.submission_note %}
+<p>The submission included the following note:</p>
+<p>{{ diagnostic_result.submission_note }}</p>
+{% endif %}
+{% endwith %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'cwnotifications/email_templates/base.html' %}
+
+{% block content %}
+{% if notification.recipient.user.student.counselor %}
+<p>Your counselor - {{ notification.recipient.user.student.counselor.name }} - has invited you to take a diagnostic with Collegewise.</p>
+{% else %}
+<p>Collegewise has invited you to take a diagnostic exam.</p>
+{% endif %}
+
+<p>
+  You can sign up for a diagnostic at
+   <a href="{{ SITE_URL }}/diagnostics?s={{ notification.recipient.user.student.slug }}">{{ SITE_URL }}/diagnostics?s={{ notification.recipient.user.student.slug }}</a>
+</p>
+
+{% endblock %}

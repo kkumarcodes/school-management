@@ -1,0 +1,56 @@
+{% extends 'cwnotifications/email_templates/base.html' %}
+{% load tz %}
+{% block content %}
+{% with notification.related_object as session %}
+{% timezone session.student.timezone %}
+{% localtime on %}
+
+{% if notification.recipient.user.has_usable_password %}
+<!-- Activated User -->
+  {% if session.individual_session_tutor %}
+  <p>
+    Notes have been provided for your tutoring session with {{ session.student.name }}
+    on {{session.start|date:"F jS"}} at {{session.start|date:"g:i A"}}.
+  </p>
+  {% else %}
+  <p>
+    Notes have been provided for your group tutoring session {{ session.group_tutoring_session.title }}
+    on {{session.start|date:"F jS"}} at {{session.start|date:"g:i A"}}.
+  </p>
+{% endif %}
+  <hr/>
+  {{ session.tutoring_session_notes.notes|safe }}
+  <hr/>
+  {% if session.tutoring_session_notes.resources.exists or session.tutoring_session_notes.file_uploads.exists %}
+  <p>Attachments:</p>
+  <ul>
+    {% for resource in session.tutoring_session_notes.resources.all %}
+    <li><a href="{{ SITE_URL }}{{ resource.url }}">{{ resource.title }}</a></li>
+    {% endfor %}
+    {% for fu in session.tutoring_session_notes.file_uploads.all %}
+    <li><a href="{{SITE_URL}}{{fu.url}}">{{fu.name}}</a></li>
+    {% endfor %}
+  </ul>
+  <hr/>
+  {% endif %}
+
+
+  <p>
+      A PDF of your notes has been attached to this email. You can also find these notes in
+      <a href="{{ SITE_URL }}">{{SITE_NAME}}</a>.
+  </p>
+
+
+
+{% else %}
+<!-- Pending User -->
+<p>We noticed that you have not yet confirmed your UMS account. You can do so by clicking the link in your invitation email (check your spam folder just in case) and watching this demo <a href="https://www.dropbox.com/s/87sxn90miej5vry/student_and_parent_overview.mp4?dl=0">here.</a>
+<p>Your tutor left session notes for your family to review. In order to review these notes, you’ll need to activate your UMS account.</p>
+<p>As always, if you have questions, please do not hesitate to reach out.</p>
+
+{% endif %}
+{% endlocaltime %}
+{% endtimezone %}
+
+{% endwith %}
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'cwnotifications/email_templates/base.html' %}
+{% load tz %}
+
+{% block content %}
+{% with notification.related_object as admin %}
+{% timezone admin.timezone %}
+{% localtime on %}
+
+<p>The students listed below had their very first individual tutoring session within the past 24 hours.</p>
+<h4>Individual Tutoring Sessions</h4>
+{% if recent_first_individual_sessions %}
+<table
+    style="border: 1px solid #1C6EA4; background-color:#EEEEEE; width: 100%; text-align: left; border-collapse: collapse;">
+    <thead style="background: #1C6EA4; border-bottom: 2px solid #444444;">
+        <tr>
+            <th style="font-size: 15px; font-weight: bold; color: #FFFFFF; border-left: none">Student</th>
+            <th style="font-size: 15px; font-weight: bold; color: #FFFFFF; border-left: 2px solid #D0E4F5">Tutor</th>
+            <th style="font-size: 15px; font-weight: bold; color: #FFFFFF; border-left: 2px solid #D0E4F5">Date</th>
+            <th style="font-size: 15px; font-weight: bold; color: #FFFFFF; border-left: 2px solid #D0E4F5;">Time</th>
+            <th style="font-size: 15px; font-weight: bold; color: #FFFFFF; border-left: 2px solid #D0E4F5;">Individual
+                Curriculum</th>
+            <th style="font-size: 15px; font-weight: bold; color: #FFFFFF; border-left: 2px solid #D0E4F5;">Individual
+                Test
+                Prep</th>
+            <th style="font-size: 15px; font-weight: bold; color: #FFFFFF; border-left: 2px solid #D0E4F5;">Group Test
+                Prep</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for session in recent_first_individual_sessions %}
+        <tr>
+            <td style="border: 1px solid #AAAAAA; padding: 3px 2px; font-size: 14px;">{{ session.student }}</td>
+            <td style="border: 1px solid #AAAAAA; padding: 3px 2px; font-size: 14px;">{{ session.tutor }}</td>
+            <td style="border: 1px solid #AAAAAA; padding: 3px 2px; font-size: 14px;">{{ session.start|date:"D, M j" }}
+            </td>
+            <td style="border: 1px solid #AAAAAA; padding: 3px 2px; font-size: 14px; ">{{ session.start|date:"g:ia" }}
+            </td>
+            <td style="border: 1px solid #AAAAAA; padding: 3px 2px; font-size: 14px;">
+                {{ session.individual_curriculum }} hours</td>
+            <td style="border: 1px solid #AAAAAA; padding: 3px 2px; font-size: 14px;">{{ session.individual_test_prep }}
+                hours</td>
+            <td style="border: 1px solid #AAAAAA; padding: 3px 2px; font-size: 14px;">{{ session.group_test_prep }}
+                hours</td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+    </tr>
+</table>
+{% else %}
+<p>No sessions to report today.</p>
+{% endif %}
+
+{% endlocaltime %}
+{% endtimezone %}
+{% endwith %}
+{% endblock %}

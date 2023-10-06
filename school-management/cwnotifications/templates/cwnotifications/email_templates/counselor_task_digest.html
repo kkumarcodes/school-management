@@ -1,0 +1,39 @@
+{% extends 'cwnotifications/email_templates/base.html' %}
+
+{% load tz %}
+{% block content %}
+{% with notification.related_object as counselor %}
+{% timezone counselor.timezone %}
+{% localtime on %}
+
+<p>
+  We took a look at your upcoming meetings and rolled up all of the incomplete
+  tasks for those meetings as well as other overdue tasks for students you are
+  meeting with. Here are the results:
+</p>
+<hr/>
+
+{% for student_meeting in data %}
+<h3>{{ student_meeting.student.invitation_name }}</h3>
+<h4>
+  Next meeting: {{ student_meeting.counselor_meeting.start|date:"F jS" }} at {{ student_meeting.counselor_meeting.start|date:"g:ia" }}
+  &nbsp;(<span style="color: #777">{{ student_meeting.counselor_meeting.title }}</span>)
+</h4>
+<strong>Tasks:</strong>
+<ul>
+  {% for task in student_meeting.tasks %}
+  <li>
+    {{ task.title }}
+    {% if task.due %}
+      <span style="color: #777">&nbsp;Due: {{task.due|date:"F jS"}}</span>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+<hr/>
+{% endfor %}
+
+{% endlocaltime %}
+{% endtimezone %}
+{% endwith %}
+{% endblock %}

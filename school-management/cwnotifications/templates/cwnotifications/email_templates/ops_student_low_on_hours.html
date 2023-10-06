@@ -1,0 +1,12 @@
+{% extends 'cwnotifications/email_templates/base.html' %}
+
+{% block content %}
+{% with notification.related_object as student %}
+<p>{{ student.name }} is running low on hours. Hours Remaining:</p>
+<ul>
+  <li><strong>Individual Curriculum:</strong> {{ hours.individual_curriculum }}</li>
+  <li><strong>Individual Test Prep:</strong> {{ hours.individual_test_prep }}</li>
+  <li><strong>Group Test Prep:</strong> {{ hours.group_test_prep }}</li>
+</ul>
+{% endwith %}
+{% endblock %}

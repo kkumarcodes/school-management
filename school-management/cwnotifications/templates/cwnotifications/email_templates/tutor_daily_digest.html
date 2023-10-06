@@ -1,0 +1,58 @@
+{% extends 'cwnotifications/email_templates/base.html' %}
+{% load tz %}
+
+{% block content %}
+{% with notification.related_object as tutor %}
+{% timezone tutor.timezone %}
+{% localtime on %}
+
+<p>This is your daily tutoring digest for {% now "l, F j" %}.</p>
+
+<h4>Unread Messages:</h4>
+<p>You have {{unread_messages}} unread message{{ unread_messages|pluralize }}.</p>
+
+<h4>Tutoring Sessions Needing Notes:</h4>
+{% if sessions_needing_notes %}
+<ul>
+    {% for session in sessions_needing_notes %}
+    <li>{{session.name}} on {{session.start|date:"D, M j"}} at {{session.start|date:"g:ia"}}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>None...</p>
+{% endif %}
+
+<h4>Upcoming Individual Tutoring Sessions (next 24hrs):</h4>
+{% if sessions_upcoming_individual %}
+<ul>
+    {% for session in sessions_upcoming_individual %}
+    <li>{{session.title}} on {{session.start|date:"D, M j"}} at {{session.start|date:"g:ia"}}
+        {% if session.zoom_url %}
+        (<a href="{{session.zoom_url}}">Zoom Link</a>)
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>None...</p>
+{% endif %}
+
+<h4>Upcoming Group Tutoring Sessions (next 24hrs):</h4>
+{% if sessions_upcoming_group %}
+<ul>
+    {% for session in sessions_upcoming_group %}
+    <li>{{session.name}} on {{session.start|date:"D, M j"}} at {{session.start|date:"g:ia"}}
+        {% if session.zoom_url %}
+        (<a href="{{session.zoom_url}}">Zoom Link</a>)
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>None...</p>
+{% endif %}
+
+{% endlocaltime %}
+{% endtimezone %}
+{% endwith %}
+{% endblock %}

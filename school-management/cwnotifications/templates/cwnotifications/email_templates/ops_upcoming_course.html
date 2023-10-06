@@ -1,0 +1,18 @@
+{% extends 'cwnotifications/email_templates/base.html' %}
+{% load tz %}
+
+{% block content %}
+{% with notification.related_object as course %}
+
+<p>
+  The course {{ course.name }} led by {{ first_gts.primary_tutor.invitation_name }}
+  will begin on {{ first_gts.start|timezone:"America/New_York" }} (Eastern Time).
+</p>
+<p>This course has {{ course.students.count }} enrolled students:</p>
+<ul>
+  {% for student in course.students.all %}
+  <li>{{ student.invitation_name }} ({{ student.invitation_email }})</lli>
+  {% endfor %}
+</ul>
+{% endwith %}
+{% endblock %}

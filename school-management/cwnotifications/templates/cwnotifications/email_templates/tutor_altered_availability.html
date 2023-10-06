@@ -1,0 +1,13 @@
+{% extends 'cwnotifications/email_templates/base.html' %}
+
+{% block content %}
+{% with notification.related_object as tutor %}
+<p>
+  Heads up - tutor {{ tutor.name }} has altered their availability for the week of {{notification.additional_args.start_date|date:"F jS"}}.
+  You can find their new availability in the <a href="{{ SITE_URL }}?action=tutor&action_payload={{tutor.pk}}">Collegewise Ops System</a>.
+</p>
+{% endwith %}
+{% endblock %}
+
+{% block CTA %}
+{% endblock %}

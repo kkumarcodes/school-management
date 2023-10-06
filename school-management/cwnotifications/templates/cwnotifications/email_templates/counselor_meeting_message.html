@@ -1,0 +1,62 @@
+{% extends 'cwnotifications/email_templates/base.html' %}
+{% load tz %}
+
+
+{% block content %}
+{% with notification.related_object as counselor_meeting %}
+{% timezone counselor_meeting.student.timezone %} {% localtime on %}
+
+
+<div style="padding: 60px;">
+  {{ counselor_meeting.notes_message_note|safe }}
+</div>
+<hr />
+
+{% if counselor_meeting.file_uploads.exists %}
+<h3>Attachments:</h3>
+<ul>
+{% for fu in counselor_meeting.file_uploads.all %}
+<li><a href="{{SITE_URL}}{{fu.url}}">{{fu.name}}</a></li>
+{% endfor %}
+</ul>
+<hr/>
+{% endif %}
+
+{% if sorted_upcoming_tasks.exists %}
+<h3>Upcoming Tasks</h3>
+<ul>
+  {% for task in sorted_upcoming_tasks %}
+  <li>{{ task.title }} {% if task.due %} -- due {{ task.due|date:"F jS" }}{% endif %}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if sorted_completed_tasks.exists %}
+<h3>Completed Tasks</h3>
+<ul>
+  {% for task in sorted_completed_tasks %}
+  <li>{{ task.title }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if counselor_meeting.link_schedule_meeting_pk %}
+<hr/>
+<p style="text-align: center">
+  Use <a href="{{ SITE_URL }}?scheduleCounselorMeeting={{counselor_meeting.link_schedule_meeting_pk}}">this link</a> to schedule your next meeting with {{ counselor_meeting.student.counselor.name }}.
+</p>
+{% elif next_counselor_meeting %}
+<hr/>
+<p style="text-align: center">
+  Your next meeting - {{ next_counselor_meeting.title }} - is on {{ next_counselor_meeting.start|date:"F jS" }} at {{ next_counselor_meeting.start|date:"g:i a" }}
+</p>
+{% endif %}
+
+
+{% endlocaltime %} {% endtimezone %}
+{% endwith %}
+{% endblock %}
+
+
+{% block CTA %}
+{% endblock %}

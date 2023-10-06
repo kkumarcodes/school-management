@@ -1,0 +1,18 @@
+{% extends 'cwnotifications/email_templates/base.html' %}
+{% load tz %}
+
+{% block content %}
+{% with notification.related_object as session %}
+{% timezone notification.recipient.user.tutor.timezone %}
+{% localtime on %}
+
+<p>This is a reminder that you have a tutoring session on {{ session.start|date:"F jS" }} at {{ session.start|date:"g:ia" }} with {{session.student.name}}.</p>
+
+{% if session.zoom_url %}
+<p>You can join this session remotely via this link: <a href="{{ session.zoom_url }}">{{ session.zoom_url }}</a></p>
+{% endif %}
+
+{% endlocaltime %}
+{% endtimezone %}
+{% endwith %}
+{% endblock %}

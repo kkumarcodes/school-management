@@ -1,0 +1,25 @@
+{% extends 'cwnotifications/email_templates/base.html' %}
+
+{% block content %}
+{% if tasks.count > 1 %}
+<p>{{ tasks.count }} tasks were recently assigned to you in {{ SITE_NAME }}:</p>
+{% elif tasks.count == 1 %}
+<p>A task was recently assigned to you in {{ SITE_NAME }}:</p>
+{% endif %}
+
+<ul>
+{% for task in tasks %}
+<li>
+  {{ task.title }}
+  {% if task.due %}&nbsp;(due {{ task.due|date }}){% endif%}
+</li>
+{% endfor %}
+</ul>
+<p>
+    You can find all of your tasks in
+    <a href="{{ SITE_URL }}?action=submit_task&action_payload={{task.slug}}">{{SITE_NAME}}</a>
+</p>
+{% endblock %}
+
+{% block CTA %}
+{% endblock %}
