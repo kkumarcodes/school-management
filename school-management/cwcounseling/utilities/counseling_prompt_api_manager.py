@@ -3,7 +3,7 @@
     This includes
     1) Pulling assignments and due dates from Prompt API
 
-    Note that there is also Prompt API stuff in cwusers (this is where UMS endpoints that Prompt uses
+    Note that there is also Prompt API stuff in snusers (this is where UMS endpoints that Prompt uses
     to obtain user and org details exist)
 """
 import json
@@ -12,8 +12,8 @@ import sentry_sdk
 import dateparser
 from django.conf import settings
 from django.utils import timezone
-from cwusers.models import Student
-from cwusers.utilities.prompt_api_manager import PromptAPIManager
+from snusers.models import Student
+from snusers.utilities.prompt_api_manager import PromptAPIManager
 from cwuniversities.models import StudentUniversityDecision
 from cwtasks.models import Task, TaskTemplate
 

@@ -8,7 +8,7 @@ from rest_framework.response import Response
 from cwnotifications.models import Bulletin, NotificationRecipient
 from cwnotifications.serializers import BulletinSerializer
 from cwnotifications.utilities.bulletin_manager import BulletinManager
-from cwusers.mixins import AccessStudentPermission
+from snusers.mixins import AccessStudentPermission
 
 
 class BulletinViewset(AccessStudentPermission, ModelViewSet):

@@ -12,8 +12,8 @@ from cwcounseling.fixtures.roadmaps import import_roadmap
 from cwcounseling.models import AgendaItem, AgendaItemTemplate, CounselorMeetingTemplate, Roadmap
 from cwcounseling.utilities.roadmap_manager import RoadmapManager
 from cwtasks.models import Task, TaskTemplate
-from cwusers.constants import counseling_student_types
-from cwusers.models import Administrator, Counselor, Parent, Student, Tutor
+from snusers.constants import counseling_student_types
+from snusers.models import Administrator, Counselor, Parent, Student, Tutor
 
 
 class TestRoadmapCrud(TestCase):

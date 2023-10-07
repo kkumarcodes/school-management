@@ -4,8 +4,8 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
 from cwtutoring.serializers.diagnostics import TestResultSerializer
 from cwtutoring.models import TestResult
-from cwusers.models import Administrator, Counselor, Student
-from cwusers.mixins import AccessStudentPermission
+from snusers.models import Administrator, Counselor, Student
+from snusers.mixins import AccessStudentPermission
 
 
 class TestResultViewset(ModelViewSet, AccessStudentPermission):

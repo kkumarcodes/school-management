@@ -8,7 +8,7 @@ import requests
 from sentry_sdk import configure_scope, capture_exception
 from django.conf import settings
 from django.utils import timezone
-from cwusers.models import Student, Parent
+from snusers.models import Student, Parent
 
 HUBSPOT_COUNSELOR_MAP = {
     "0": "Please select a counselor",

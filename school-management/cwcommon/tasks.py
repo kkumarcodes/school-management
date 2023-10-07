@@ -4,8 +4,8 @@ from celery import shared_task
 from cwcommon.utilities.magento import MagentoAPIManager, MagentoAPIManagerException
 from cwtutoring.models import StudentTutoringSession
 from cwtutoring.utilities.tutoring_package_manager import StudentTutoringPackagePurchaseManager
-from cwusers.models import Counselor, Tutor
-from cwusers.utilities.graph_helper import sync_outlook
+from snusers.models import Counselor, Tutor
+from snusers.utilities.graph_helper import sync_outlook
 from django.conf import settings
 from django.utils import timezone
 

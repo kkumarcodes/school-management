@@ -22,7 +22,7 @@ from cwnotifications.models import Notification
 from cwtasks.models import Task
 from cwtutoring.models import GroupTutoringSession, StudentTutoringSession, TutoringPackage
 from cwtutoring.utilities.tutoring_session_notes_generator import generate_pdf
-from cwusers.models import Parent, Student, Tutor, get_cw_user
+from snusers.models import Parent, Student, Tutor, get_cw_user
 
 CAP_INVITE = "cap_invite"
 

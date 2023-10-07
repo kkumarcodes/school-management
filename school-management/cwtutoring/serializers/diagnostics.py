@@ -16,9 +16,9 @@ from cwtutoring.models import (
     TestResult,
 )
 from cwtutoring.utilities.tutoring_session_manager import TutoringSessionManager
-from cwusers.models import Counselor, Parent, Student
-from cwusers.utilities.managers import StudentManager
-from cwusers.serializers.users import ParentSerializer, StudentSerializer
+from snusers.models import Counselor, Parent, Student
+from snusers.utilities.managers import StudentManager
+from snusers.serializers.users import ParentSerializer, StudentSerializer
 
 
 class DiagnosticRegistrationSerializer(serializers.ModelSerializer):

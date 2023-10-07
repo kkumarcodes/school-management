@@ -12,7 +12,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from cwtasks.utilities.task_manager import TaskManager
 from cwtasks.models import Task, TaskTemplate
-from cwusers.models import Student, Counselor, Tutor, Parent, Administrator
+from snusers.models import Student, Counselor, Tutor, Parent, Administrator
 from cwresources.models import Resource
 
 

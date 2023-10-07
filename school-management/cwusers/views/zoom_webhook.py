@@ -6,8 +6,8 @@ from django.http import HttpResponseBadRequest, HttpResponse
 from rest_framework.views import APIView
 from rest_framework.permissions import AllowAny
 
-from cwusers.models import Tutor, Counselor
-from cwusers.utilities.zoom_manager import ZoomManager
+from snusers.models import Tutor, Counselor
+from snusers.utilities.zoom_manager import ZoomManager
 
 # All of these zoom events have the same payload.
 EVENTS = ["user.activated", "user.created", "user.invitation_accepted", "user.updated"]

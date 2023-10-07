@@ -16,7 +16,7 @@ from cwtutoring.models import (
 from cwcommon.utilities.magento import MagentoAPIManager
 from cwnotifications.generator import create_notification
 from cwresources.models import ResourceGroup
-from cwusers.models import Student
+from snusers.models import Student
 
 
 class TutoringPackageManagerException(Exception):

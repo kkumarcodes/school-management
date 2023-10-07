@@ -25,8 +25,8 @@ from cwtutoring.serializers.tutoring_packages import (
     TutoringPackageSerializer,
     TutoringPackagePurchaseSerializer,
 )
-from cwusers.mixins import AccessStudentPermission
-from cwusers.models import Student
+from snusers.mixins import AccessStudentPermission
+from snusers.models import Student
 from cwcommon.mixins import CSVMixin
 
 

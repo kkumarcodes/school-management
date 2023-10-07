@@ -10,7 +10,7 @@ from django.shortcuts import reverse
 from rest_framework import status
 
 from cwcounseling.models import CounselorTimeEntry
-from cwusers.models import Administrator, Counselor, Student
+from snusers.models import Administrator, Counselor, Student
 
 
 class TestCounselorTimeEntry(TestCase):

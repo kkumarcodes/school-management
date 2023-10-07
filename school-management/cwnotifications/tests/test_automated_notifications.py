@@ -24,8 +24,8 @@ from cwcounseling.models import CounselorMeeting
 from cwcounseling.utilities.counselor_meeting_manager import CounselorMeetingManager
 from cwtutoring.models import StudentTutoringSession, GroupTutoringSession, Location
 from cwtutoring.utilities.tutoring_package_manager import StudentTutoringPackagePurchaseManager
-from cwusers.models import Student, Tutor, Parent, Administrator, Counselor
-from cwusers.serializers.users import StudentSerializer
+from snusers.models import Student, Tutor, Parent, Administrator, Counselor
+from snusers.serializers.users import StudentSerializer
 
 
 class TestTaskNotifications(TestCase):

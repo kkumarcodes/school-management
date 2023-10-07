@@ -29,8 +29,8 @@ from cwtutoring.serializers.diagnostics import (
 )
 from cwtutoring.serializers.tutoring_sessions import LocationSerializer
 from cwtutoring.utilities.diagnostic_result_manager import DiagnosticResultManager
-from cwusers.mixins import AccessStudentPermission
-from cwusers.models import Administrator, Counselor, Parent, Student, Tutor
+from snusers.mixins import AccessStudentPermission
+from snusers.models import Administrator, Counselor, Parent, Student, Tutor
 
 
 class LocationViewset(ModelViewSet):

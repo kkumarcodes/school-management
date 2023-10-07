@@ -18,7 +18,7 @@ from cwtutoring.models import (
     TutoringService,
 )
 from cwtutoring.utilities.tutoring_package_manager import StudentTutoringPackagePurchaseManager
-from cwusers.models import Student, Tutor
+from snusers.models import Student, Tutor
 
 
 class TutorAvailabilitySerializer(serializers.ModelSerializer):

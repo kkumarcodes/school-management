@@ -3,7 +3,7 @@
 from cwcounseling.constants.counselor_time_entry_category import ADMIN_CATEGORIES, ADMIN_TIME_PAY_RATE
 from datetime import datetime
 from django.utils import timezone
-from cwusers.models import Counselor
+from snusers.models import Counselor
 from cwcounseling.models import CounselorTimeCard, CounselorTimeEntry
 
 

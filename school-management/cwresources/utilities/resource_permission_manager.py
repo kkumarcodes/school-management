@@ -4,7 +4,7 @@
 """
 from django.db.models import Q
 
-from cwusers.models import Student, Counselor, Tutor, Administrator, Parent, get_cw_user
+from snusers.models import Student, Counselor, Tutor, Administrator, Parent, get_cw_user
 from cwresources.models import Resource, ResourceGroup
 from cwtutoring.models import TutoringSessionNotes, Diagnostic
 from cwtasks.models import Task

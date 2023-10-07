@@ -13,7 +13,7 @@ from cwcounseling.models import Roadmap
 from cwresources.serializers import ResourceSerializer
 from cwtutoring.models import DiagnosticResult, Diagnostic
 from cwtutoring.serializers.diagnostics import DiagnosticSerializer
-from cwusers.models import get_cw_user
+from snusers.models import get_cw_user
 from cwuniversities.models import StudentUniversityDecision
 from .models import Task, TaskTemplate, FormFieldEntry, FormField, FormSubmission, Form
 from cwtasks.utilities.task_manager import TaskManager

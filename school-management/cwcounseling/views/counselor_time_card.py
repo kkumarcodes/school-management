@@ -26,8 +26,8 @@ from cwcounseling.utilities.counselor_time_card_manager import (
     CounselorTimeCardManager,
     CounselorTimeCardManagerException,
 )
-from cwusers.mixins import AccessStudentPermission
-from cwusers.models import Counselor, Student
+from snusers.mixins import AccessStudentPermission
+from snusers.models import Counselor, Student
 from itertools import groupby
 from django.http import HttpResponse
 import csv

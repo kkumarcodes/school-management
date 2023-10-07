@@ -12,9 +12,9 @@ from django.conf import settings
 
 from cwuniversities.utilities.queryset_filters import get_student_university_decisions
 
-from cwusers.models import Student
-from cwusers.mixins import UserPermissionsHelpers
-from cwusers.permissions import (
+from snusers.models import Student
+from snusers.mixins import UserPermissionsHelpers
+from snusers.permissions import (
     IsAdministratorPermission,
     MayReadOnly,
     IsOnCounselingPlatform,

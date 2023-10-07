@@ -11,7 +11,7 @@ import sentry_sdk
 
 from cwcommon.constants import envs
 from cwcounseling.models import CounselorMeeting
-from cwusers.models import Counselor, Student
+from snusers.models import Counselor, Student
 from cwuniversities.models import StudentUniversityDecision
 from cwcounseling.utilities.counseling_prompt_api_manager import (
     CounselingPromptAPIManagerException,

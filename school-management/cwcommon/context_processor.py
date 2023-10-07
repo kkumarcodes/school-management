@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.utils import timezone
-from cwusers.models import get_cw_user
+from snusers.models import get_cw_user
 
 # pylint: disable=unused-argument
 def context_processor(request):

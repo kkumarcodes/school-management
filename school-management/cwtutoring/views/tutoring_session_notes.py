@@ -11,8 +11,8 @@ from rest_framework.exceptions import ValidationError
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-from cwusers.models import Student, Parent, Tutor
-from cwusers.mixins import AccessStudentPermission
+from snusers.models import Student, Parent, Tutor
+from snusers.mixins import AccessStudentPermission
 from cwtutoring.serializers.tutoring_session_notes import TutoringSessionNotesSerializer
 from cwtutoring.models import TutoringSessionNotes, StudentTutoringSession
 from cwtutoring.utilities.tutoring_session_notes_manager import TutoringSessionNotesManager

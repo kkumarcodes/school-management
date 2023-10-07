@@ -18,11 +18,11 @@ from rest_framework import status
 from rest_framework.permissions import AllowAny
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from cwusers.models import Student, Counselor, Parent, Tutor, Administrator, get_cw_user
-from cwusers.serializers.users import StudentSerializer, ParentSerializer
-from cwusers.mixins import AccessStudentPermission
-from cwusers.constants import user_types
-from cwusers.utilities.managers import StudentManager
+from snusers.models import Student, Counselor, Parent, Tutor, Administrator, get_cw_user
+from snusers.serializers.users import StudentSerializer, ParentSerializer
+from snusers.mixins import AccessStudentPermission
+from snusers.constants import user_types
+from snusers.utilities.managers import StudentManager
 from cwnotifications.generator import create_notification
 from cwtutoring.models import Course
 
@@ -85,7 +85,7 @@ class LoginView(APIView):
                     if query_string:
                         redirect_url += f"?{query_string}"
                     return HttpResponseRedirect(redirect_url)
-        return render(request, "cwusers/login.html")
+        return render(request, "snusers/login.html")
 
 
 class RegisterView(APIView):
@@ -105,7 +105,7 @@ class RegisterView(APIView):
         elif user and user.has_usable_password():
             return HttpResponseRedirect(reverse("cw_login"))
 
-        return render(request, "cwusers/login.html", context={"register_uuid": uuid, "register_email": user.username},)
+        return render(request, "snusers/login.html", context={"register_uuid": uuid, "register_email": user.username},)
 
     def post(self, request):
         """Post registration attempt

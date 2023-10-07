@@ -4,7 +4,7 @@ from django.db import models
 from django.db.models import JSONField
 from django.core.serializers.json import DjangoJSONEncoder
 from cwcommon.model_base import CWModel, CWAbbreviation
-from cwusers.models import AddressFields
+from snusers.models import AddressFields
 from .constants import application_tracker_status, applications, acceptance_status, application_requirements
 
 
@@ -187,7 +187,7 @@ class StudentUniversityDecision(CWModel):
     target_reach_safety = models.CharField(max_length=255, blank=True, choices=TARGET_REACH_SAFETY, default="")
     # Student making this decision
     student = models.ForeignKey(
-        "cwusers.Student", related_name="student_university_decisions", on_delete=models.CASCADE
+        "snusers.Student", related_name="student_university_decisions", on_delete=models.CASCADE
     )
     # University about which this decision is being made
     university = models.ForeignKey("University", related_name="student_university_decisions", on_delete=models.CASCADE)

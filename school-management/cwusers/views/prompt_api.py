@@ -1,8 +1,8 @@
 from rest_framework.generics import RetrieveAPIView
 from rest_framework.authentication import TokenAuthentication
-from cwusers.serializers.prompt import PromptCounselorSerializer, PromptStudentSerializer, PromptOrganizationSerializer
-from cwusers.models import Student, Counselor
-from cwusers.permissions import IsAdminOrPrompt
+from snusers.serializers.prompt import PromptCounselorSerializer, PromptStudentSerializer, PromptOrganizationSerializer
+from snusers.models import Student, Counselor
+from snusers.permissions import IsAdminOrPrompt
 
 
 class PromptStudentAPIView(RetrieveAPIView):

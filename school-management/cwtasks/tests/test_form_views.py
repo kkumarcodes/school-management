@@ -15,7 +15,7 @@ from rest_framework import status
 
 from cwtasks.models import Task, Form, FormSubmission, FormField, FormFieldEntry
 from cwtasks.serializers import FormSubmissionSerializer
-from cwusers.models import Student, Counselor, Parent, Administrator
+from snusers.models import Student, Counselor, Parent, Administrator
 
 
 class TestForm(TestCase):

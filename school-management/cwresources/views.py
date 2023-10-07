@@ -8,8 +8,8 @@ from django.urls import reverse
 from rest_framework.exceptions import ValidationError
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
-from cwusers.models import Student
-from cwusers.mixins import AccessStudentPermission
+from snusers.models import Student
+from snusers.mixins import AccessStudentPermission
 from cwresources.serializers import ResourceSerializer, ResourceGroupSerializer
 from cwresources.utilities.resource_permission_manager import get_resources_for_user
 from cwresources.models import Resource, ResourceGroup

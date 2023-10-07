@@ -15,8 +15,8 @@ from cwtutoring.models import (
     GroupTutoringSession,
 )
 from cwtutoring.utilities.tutoring_package_manager import StudentTutoringPackagePurchaseManager
-from cwusers.models import Student, Tutor, Administrator
-from cwusers.utilities.graph_helper import (
+from snusers.models import Student, Tutor, Administrator
+from snusers.utilities.graph_helper import (
     outlook_delete,
     outlook_update,
     outlook_create,

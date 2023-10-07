@@ -1,7 +1,7 @@
 """ Serializers for the user data we pass to Hubspot as part of our Hubspot extension
 """
 from rest_framework import serializers
-from cwusers.models import Student, Parent
+from snusers.models import Student, Parent
 from cwtutoring.utilities.tutoring_package_manager import (
     StudentTutoringPackagePurchaseManager,
 )

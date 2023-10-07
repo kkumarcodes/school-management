@@ -5,7 +5,7 @@ from rest_framework import serializers
 
 from cwcommon.serializers.base import AdminModelSerializer
 from cwtutoring.models import GroupTutoringSession, StudentTutoringSession, TutorTimeCard, TutorTimeCardLineItem
-from cwusers.models import Tutor
+from snusers.models import Tutor
 from cwtutoring.constants import (
     TIME_CARD_CATEGORY_CHECK_IN,
     TIME_CARD_CATEGORY_SESSION_NOTES_ADMIN,

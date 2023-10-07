@@ -14,7 +14,7 @@ from cwtutoring.models import (
     TutoringPackagePurchase,
 )
 from cwtutoring.constants import LATE_CANCEL_CHARGE
-from cwusers.models import Student, Administrator
+from snusers.models import Student, Administrator
 from cwnotifications.generator import create_notification
 from sentry_sdk import configure_scope, capture_exception
 

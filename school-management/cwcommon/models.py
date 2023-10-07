@@ -57,7 +57,7 @@ class FileUpload(CWModel):
 
     # Counselors can upload files for their students. Usually retrieved via reverse: Student.counseling_file_uploads
     counseling_student = models.ForeignKey(
-        "cwusers.Student", related_name="counseling_file_uploads", null=True, blank=True, on_delete=models.CASCADE,
+        "snusers.Student", related_name="counseling_file_uploads", null=True, blank=True, on_delete=models.CASCADE,
     )
 
     # The models that use file uploads use this field in different ways to categorize files
@@ -92,7 +92,7 @@ class TimeCardBase(CWModel):
 
     admin_approval_time = models.DateTimeField(null=True, blank=True)
     admin_approver = models.ForeignKey(
-        "cwusers.Administrator", related_name="+", null=True, blank=True, on_delete=models.SET_NULL,
+        "snusers.Administrator", related_name="+", null=True, blank=True, on_delete=models.SET_NULL,
     )
     # Note only for admins; not visible to tutor
     admin_note = models.TextField(blank=True)

@@ -24,7 +24,7 @@ from cwtutoring.serializers.time_cards import (
     TutorTimeCardAccountingSerializer,
 )
 from cwtutoring.utilities.time_card_manager import TutorTimeCardManager
-from cwusers.models import Tutor
+from snusers.models import Tutor
 from cwcommon.mixins import CSVMixin
 
 

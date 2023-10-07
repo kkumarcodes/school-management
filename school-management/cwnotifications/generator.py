@@ -16,7 +16,7 @@ from cwnotifications.activity_log_descriptions import ACTIVITY_LOG_DESCRIPTION_F
 from cwnotifications.constants.constants import get_notification_config, SYSTEM_NOTIFICATIONS
 from cwnotifications.mailer import send_email_for_notification
 from cwcommon.utilities.twilio import TwilioManager
-from cwusers.models import get_cw_user
+from snusers.models import get_cw_user
 
 # Functions that return (title) email subject, given notification key
 # Oh hey - while you're here: If users need to be able to turn off a notification, make sure you add it to

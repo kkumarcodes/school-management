@@ -8,7 +8,7 @@ from nose.plugins.attrib import attr
 from django.test import TestCase, override_settings
 from django.utils import timezone
 from django.urls import reverse
-from cwusers.models import Student, Counselor, Tutor, Parent
+from snusers.models import Student, Counselor, Tutor, Parent
 from cwmessages.models import Conversation, ConversationParticipant
 from cwmessages.tasks import send_unread_messages, UNREAD_MESSAGE_DELAY
 from cwmessages.utilities.conversation_manager import ConversationManager

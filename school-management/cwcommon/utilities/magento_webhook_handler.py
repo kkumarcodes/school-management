@@ -5,9 +5,9 @@ import re
 
 from rest_framework.exceptions import ValidationError
 from django.db.models import Q
-from cwusers.models import Counselor, Student, Parent
-from cwusers.serializers.users import ParentSerializer, StudentSerializer
-from cwusers.utilities.managers import StudentManager
+from snusers.models import Counselor, Student, Parent
+from snusers.serializers.users import ParentSerializer, StudentSerializer
+from snusers.utilities.managers import StudentManager
 from cwcounseling.constants import counseling_student_types
 
 SELF_ENROLLMENT_REQUIRED_FIELDS = ["mailing_student_email", "student_name", "graduation_year"]

@@ -8,9 +8,9 @@ from rest_framework.views import APIView
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
-from cwusers.models import Student, Parent
-from cwusers.serializers.hubspot import HubspotExtensionSerializer
-from cwusers.utilities.hubspot_manager import HubspotManager
+from snusers.models import Student, Parent
+from snusers.serializers.hubspot import HubspotExtensionSerializer
+from snusers.utilities.hubspot_manager import HubspotManager
 
 
 class HubspotUserCardView(APIView):

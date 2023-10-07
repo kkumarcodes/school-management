@@ -10,19 +10,19 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('cwmessages', '0002_initial'),
-        ('cwusers', '0001_initial'),
+        ('snusers', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
             model_name='conversation',
             name='counselor',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='conversations', to='cwusers.counselor'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='conversations', to='snusers.counselor'),
         ),
         migrations.AddField(
             model_name='conversation',
             name='parent',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='conversations', to='cwusers.parent'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='conversations', to='snusers.parent'),
         ),
         migrations.AddField(
             model_name='conversation',
@@ -32,11 +32,11 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='conversation',
             name='student',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='conversations', to='cwusers.student'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='conversations', to='snusers.student'),
         ),
         migrations.AddField(
             model_name='conversation',
             name='tutor',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='conversations', to='cwusers.tutor'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='conversations', to='snusers.tutor'),
         ),
     ]

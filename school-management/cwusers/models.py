@@ -162,11 +162,11 @@ class Student(CommonUser):
 
     # Student has one counselor (but many tutors)
     counselor = models.ForeignKey(
-        "cwusers.Counselor", related_name="students", null=True, blank=True, on_delete=models.SET_NULL,
+        "snusers.Counselor", related_name="students", null=True, blank=True, on_delete=models.SET_NULL,
     )
     program_advisor = models.CharField(max_length=255, blank=True)
     parent = models.ForeignKey(
-        "cwusers.Parent", related_name="students", null=True, blank=True, on_delete=models.SET_NULL,
+        "snusers.Parent", related_name="students", null=True, blank=True, on_delete=models.SET_NULL,
     )
 
     # Resources that have been made available to student
@@ -255,7 +255,7 @@ class StudentHighSchoolCourse(CWModel):
         These are setup to match the Common App
     """
 
-    student = models.ForeignKey("cwusers.Student", related_name="high_school_courses", on_delete=models.CASCADE)
+    student = models.ForeignKey("snusers.Student", related_name="high_school_courses", on_delete=models.CASCADE)
     course_level = models.CharField(max_length=255, blank=True)
     # The year representing the fall year. A value of 2020 indicates 2020-2021 school year
     school_year = models.IntegerField(blank=True, null=True)
@@ -298,7 +298,7 @@ class Tutor(CommonUser, ZoomFields):
     )
     degree = models.CharField(max_length=255, blank=True)
 
-    students = models.ManyToManyField("cwusers.Student", "tutors")
+    students = models.ManyToManyField("snusers.Student", "tutors")
 
     location = models.ForeignKey(
         "cwtutoring.Location", related_name="tutors", on_delete=models.PROTECT, default=get_default_location,
@@ -409,7 +409,7 @@ class Administrator(CommonUser):
     is_cas_administrator = models.BooleanField(default=True)
     is_cap_administrator = models.BooleanField(default=True)
     # Managing counselors only have access to a subset of counselors and their students
-    managed_counselors = models.ManyToManyField("cwusers.Counselor", related_name="managing_administrators", blank=True)
+    managed_counselors = models.ManyToManyField("snusers.Counselor", related_name="managing_administrators", blank=True)
 
     # Controls who gets notifications for diagnostics workflow
     is_diagnostic_scorer = models.BooleanField(default=False)

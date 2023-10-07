@@ -4,7 +4,7 @@
 from datetime import timedelta
 from django.utils import timezone
 from django.test import TestCase
-from cwusers.models import Student
+from snusers.models import Student
 from cwnotifications.models import Notification
 from cwtasks.models import Task, TaskTemplate
 from cwtasks.tasks import send_daily_task_digest

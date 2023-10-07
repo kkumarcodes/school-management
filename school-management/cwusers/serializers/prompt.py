@@ -2,7 +2,7 @@
 """
 from rest_framework import serializers
 from cwcommon.serializers.base import ReadOnlySerializer
-from cwusers.models import Student, Counselor
+from snusers.models import Student, Counselor
 from cwuniversities.models import StudentUniversityDecision
 
 # All organizations have the same name

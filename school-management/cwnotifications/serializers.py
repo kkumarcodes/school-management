@@ -9,7 +9,7 @@ from cwnotifications.constants.constants import UNSUBSCRIBABLE_NOTIFICATIONS
 from cwmessages.models import ConversationParticipant
 
 
-from cwusers.models import Parent, Student, get_cw_user
+from snusers.models import Parent, Student, get_cw_user
 
 CAP_STUDENT = "cap_student"
 CAS_STUDENT = "cas_student"

@@ -1,2 +1,2 @@
 # pylint: disable=invalid-name
-default_app_config = "cwusers.apps.CWUsersConfig"
+default_app_config = "snusers.apps.CWUsersConfig"

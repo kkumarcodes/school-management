@@ -6,7 +6,7 @@ from django.utils import timezone
 from django.shortcuts import reverse
 from django.contrib.auth.models import User
 
-from cwusers.models import Student, Counselor, Tutor, Administrator, Parent
+from snusers.models import Student, Counselor, Tutor, Administrator, Parent
 from cwresources.models import Resource, ResourceGroup
 from cwresources.utilities.resource_permission_manager import get_resources_for_user
 from cwtutoring.models import Diagnostic, GroupTutoringSession, StudentTutoringSession

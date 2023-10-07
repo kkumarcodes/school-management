@@ -4,7 +4,7 @@ from celery import shared_task
 from django.utils import timezone
 from django.contrib.contenttypes.models import ContentType
 
-from cwusers.models import Tutor, Administrator
+from snusers.models import Tutor, Administrator
 from cwtutoring.models import StudentTutoringSession, TutorTimeCard
 from cwtutoring.utilities.time_card_manager import TutorTimeCardManager
 from cwtutoring.utilities.tutoring_package_manager import StudentTutoringPackagePurchaseManager

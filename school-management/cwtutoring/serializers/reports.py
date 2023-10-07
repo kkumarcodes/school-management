@@ -9,7 +9,7 @@ from django.db.models import Q, Sum
 from cwcommon.serializers.base import ReadOnlySerializer
 
 from cwtutoring.models import TutoringPackagePurchase, StudentTutoringSession, GroupTutoringSession, TutoringService
-from cwusers.models import Tutor, Student
+from snusers.models import Tutor, Student
 
 
 class ReportTutorSerializer(ReadOnlySerializer):

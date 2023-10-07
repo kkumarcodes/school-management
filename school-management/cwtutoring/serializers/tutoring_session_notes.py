@@ -8,7 +8,7 @@ from cwtutoring.models import (
     StudentTutoringSession,
     GroupTutoringSession,
 )
-from cwusers.models import Tutor
+from snusers.models import Tutor
 from cwcommon.serializers.file_upload import UpdateFileUploadsSerializer
 
 

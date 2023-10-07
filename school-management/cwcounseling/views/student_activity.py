@@ -2,8 +2,8 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
 from cwcounseling.serializers.student_activity import StudentActivitySerializer
 from cwcounseling.models import StudentActivity
-from cwusers.models import Student, Counselor, Parent, Administrator
-from cwusers.mixins import AccessStudentPermission
+from snusers.models import Student, Counselor, Parent, Administrator
+from snusers.mixins import AccessStudentPermission
 from django.shortcuts import get_object_or_404
 
 

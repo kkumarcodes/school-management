@@ -33,12 +33,12 @@ from cwtutoring.serializers.tutoring_sessions import (
 from cwtutoring.utilities.tutoring_package_manager import StudentTutoringPackagePurchaseManager
 from cwtutoring.utilities.tutoring_session_manager import TutoringSessionManager
 from cwtutoring.utilities.tutoring_session_notes_generator import generate_pdf
-from cwusers.mixins import AccessStudentPermission
-from cwusers.models import Administrator, Student, Tutor
-from cwusers.permissions import IsAdministratorPermission, MayReadOnly
-from cwusers.utilities.graph_helper import outlook_create, outlook_delete, outlook_update, GraphHelperException
+from snusers.mixins import AccessStudentPermission
+from snusers.models import Administrator, Student, Tutor
+from snusers.permissions import IsAdministratorPermission, MayReadOnly
+from snusers.utilities.graph_helper import outlook_create, outlook_delete, outlook_update, GraphHelperException
 import json
-from cwusers.utilities.zoom_manager import PRO_ZOOM_URLS
+from snusers.utilities.zoom_manager import PRO_ZOOM_URLS
 import dateutil.parser
 
 

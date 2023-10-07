@@ -11,7 +11,7 @@ from cwmessages.models import Conversation, ConversationParticipant
 from cwnotifications.constants.notification_types import COUNSELOR_FORWARD_STUDENT_MESSAGE
 from cwnotifications.generator import create_notification
 from cwnotifications.models import Notification
-from cwusers.models import Counselor
+from snusers.models import Counselor
 
 
 class TwilioWebhookView(APIView):

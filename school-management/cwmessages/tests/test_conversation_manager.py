@@ -14,7 +14,7 @@ from nose.plugins.attrib import attr
 from django.test import TestCase, override_settings, tag
 from django.utils import timezone
 from django.shortcuts import reverse
-from cwusers.models import Student, Counselor, Tutor, Administrator, Parent
+from snusers.models import Student, Counselor, Tutor, Administrator, Parent
 from cwmessages.models import Conversation, ConversationParticipant, CWPhoneNumber
 from cwnotifications.models import NotificationRecipient
 from cwmessages.utilities.conversation_manager import (

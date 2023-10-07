@@ -20,8 +20,8 @@ from cwuniversities.models import (
     University,
     UniversityList,
 )
-from cwusers.models import Administrator, Counselor, Parent, Student, Tutor
-from cwusers.constants.counseling_student_types import NOT_TOO_LATE
+from snusers.models import Administrator, Counselor, Parent, Student, Tutor
+from snusers.constants.counseling_student_types import NOT_TOO_LATE
 
 WASHU_IPED = "179867"
 WASHU_DATA_POINTS = 191  # Count of datapoints for washu

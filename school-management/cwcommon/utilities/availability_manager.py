@@ -10,12 +10,12 @@ import sentry_sdk
 from rest_framework.serializers import ValidationError
 import pytz
 
-from cwusers.utilities.graph_helper import (
+from snusers.utilities.graph_helper import (
     outlook_retrieve,
     GraphHelperException,
 )
-from cwusers.models import Counselor, Tutor
-from cwusers.constants.user_types import COUNSELOR, TUTOR
+from snusers.models import Counselor, Tutor
+from snusers.constants.user_types import COUNSELOR, TUTOR
 from cwcounseling.models import CounselorMeeting, RecurringCounselorAvailability
 from cwcommon.serializers.availability import AvailableTimespanSerializer
 from cwtutoring.models import GroupTutoringSession, Location, RecurringTutorAvailability

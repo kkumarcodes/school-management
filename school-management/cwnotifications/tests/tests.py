@@ -10,7 +10,7 @@ from django.urls.exceptions import NoReverseMatch
 from django.core import mail
 from cwnotifications.mailer import send_email_for_notification
 
-from cwusers.models import Student, Administrator, Parent
+from snusers.models import Student, Administrator, Parent
 from cwnotifications.models import NotificationRecipient, Notification
 
 

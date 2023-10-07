@@ -12,7 +12,7 @@ from django.test import TestCase
 from django.utils import timezone
 from django.shortcuts import reverse
 from cwnotifications.constants.notification_types import COUNSELOR_FORWARD_STUDENT_MESSAGE
-from cwusers.models import Student, Counselor, Tutor, Parent
+from snusers.models import Student, Counselor, Tutor, Parent
 from cwmessages.models import Conversation, ConversationParticipant
 from cwnotifications.models import Notification, NotificationRecipient
 from cwmessages.utilities.conversation_manager import (

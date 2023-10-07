@@ -17,7 +17,7 @@ from cwnotifications.generator import create_notification
 from cwtasks.models import Task
 from cwtutoring.models import StudentTutoringSession, GroupTutoringSession, Course
 from cwcounseling.models import CounselorMeeting
-from cwusers.models import Counselor, Tutor, Student, Parent, Administrator
+from snusers.models import Counselor, Tutor, Student, Parent, Administrator
 
 OVERDUE_TASK_NOTI = "overdue_task_reminder"
 COMING_DUE_TASK_NOTI = "coming_due_task_reminder"

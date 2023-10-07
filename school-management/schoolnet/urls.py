@@ -19,7 +19,7 @@ from django.urls import include, path
 from django.conf.urls.static import static
 from django.conf import settings
 
-from cwusers.views.register_login import LoginView
+from snusers.views.register_login import LoginView
 from cwtutoring.views.courses import CourseLandingPageView
 from cwtutoring.views.diagnostic import DiagnosticLandingPageView
 
@@ -27,7 +27,7 @@ from rest_framework_simplejwt import views as jwt_views
 
 # pylint: disable=invalid-name
 app_patterns = [
-    path("user/", include("cwusers.urls")),
+    path("user/", include("snusers.urls")),
     path("tutoring/", include("cwtutoring.urls")),
     path("task/", include("cwtasks.urls")),
     path("cw/", include("cwcommon.urls")),

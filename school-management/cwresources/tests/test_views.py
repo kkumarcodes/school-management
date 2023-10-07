@@ -8,7 +8,7 @@ from django.shortcuts import reverse
 
 from cwresources.models import Resource, ResourceGroup
 from cwresources.utilities.resource_permission_manager import get_resources_for_user
-from cwusers.models import Student, Tutor, Counselor, Administrator, Parent
+from snusers.models import Student, Tutor, Counselor, Administrator, Parent
 from cwcommon.models import FileUpload
 
 

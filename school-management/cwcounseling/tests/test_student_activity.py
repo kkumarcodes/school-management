@@ -6,7 +6,7 @@ from django.test import TestCase
 from django.urls import reverse
 from rest_framework import status
 from cwcounseling.models import StudentActivity
-from cwusers.models import Parent, Student, Tutor, Counselor, Administrator
+from snusers.models import Parent, Student, Tutor, Counselor, Administrator
 
 
 class TestStudentActivity(TestCase):

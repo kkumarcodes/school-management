@@ -1,5 +1,5 @@
 """
-    This module contains CRUD views for all cwusers user types
+    This module contains CRUD views for all snusers user types
     as well as special actions:
 """
 
@@ -7,9 +7,9 @@ from django.http.response import HttpResponseRedirect
 from cwcommon.mixins import AdminContextMixin, CSVMixin
 from cwnotifications.generator import create_notification
 from cwresources.utilities.resource_permission_manager import get_resources_for_user
-from cwusers.mixins import AccessStudentPermission
-from cwusers.models import Administrator, Counselor, Parent, Student, StudentHighSchoolCourse, Tutor, get_cw_user
-from cwusers.serializers.users import (
+from snusers.mixins import AccessStudentPermission
+from snusers.models import Administrator, Counselor, Parent, Student, StudentHighSchoolCourse, Tutor, get_cw_user
+from snusers.serializers.users import (
     AdminListStudentSerializer,
     MODEL_TO_SERIALIZER,
     AdministratorSerializer,
@@ -21,7 +21,7 @@ from cwusers.serializers.users import (
     StudentSerializerCounseling,
     TutorSerializer,
 )
-from cwusers.utilities.zoom_manager import PRO_ZOOM_URLS, ZoomManager, ZoomManagerException
+from snusers.utilities.zoom_manager import PRO_ZOOM_URLS, ZoomManager, ZoomManagerException
 from django.contrib.auth.models import User
 from django.db.models import Q, Sum
 from django.http import HttpResponseBadRequest

@@ -15,24 +15,24 @@ class Migration(migrations.Migration):
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ('cwtasks', '0003_initial'),
         ('cwresources', '0001_initial'),
-        ('cwusers', '0001_initial'),
+        ('snusers', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
             model_name='tutortimecard',
             name='admin_approver',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='cwusers.administrator'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='snusers.administrator'),
         ),
         migrations.AddField(
             model_name='tutortimecard',
             name='tutor',
-            field=models.ForeignKey(editable=False, on_delete=django.db.models.deletion.CASCADE, related_name='time_cards', to='cwusers.tutor'),
+            field=models.ForeignKey(editable=False, on_delete=django.db.models.deletion.CASCADE, related_name='time_cards', to='snusers.tutor'),
         ),
         migrations.AddField(
             model_name='tutoringsessionnotes',
             name='author',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='tutoring_session_notes', to='cwusers.tutor'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='tutoring_session_notes', to='snusers.tutor'),
         ),
         migrations.AddField(
             model_name='tutoringsessionnotes',
@@ -52,7 +52,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='tutoringservice',
             name='tutors',
-            field=models.ManyToManyField(blank=True, related_name='tutoring_services', to='cwusers.tutor'),
+            field=models.ManyToManyField(blank=True, related_name='tutoring_services', to='snusers.tutor'),
         ),
         migrations.AddField(
             model_name='tutoringpackagepurchase',
@@ -67,7 +67,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='tutoringpackagepurchase',
             name='student',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='tutoring_package_purchases', to='cwusers.student'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='tutoring_package_purchases', to='snusers.student'),
         ),
         migrations.AddField(
             model_name='tutoringpackagepurchase',
@@ -92,17 +92,17 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='tutoringpackage',
             name='restricted_tutor',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='restricted_tutoring_packages', to='cwusers.tutor'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='restricted_tutoring_packages', to='snusers.tutor'),
         ),
         migrations.AddField(
             model_name='tutoravailability',
             name='tutor',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='availabilities', to='cwusers.tutor'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='availabilities', to='snusers.tutor'),
         ),
         migrations.AddField(
             model_name='testresult',
             name='student',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='test_results', to='cwusers.student'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='test_results', to='snusers.student'),
         ),
         migrations.AddField(
             model_name='studenttutoringsession',
@@ -117,7 +117,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='studenttutoringsession',
             name='individual_session_tutor',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='student_tutoring_sessions', to='cwusers.tutor'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='student_tutoring_sessions', to='snusers.tutor'),
         ),
         migrations.AddField(
             model_name='studenttutoringsession',
@@ -132,7 +132,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='studenttutoringsession',
             name='student',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='tutoring_sessions', to='cwusers.student'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='tutoring_sessions', to='snusers.student'),
         ),
         migrations.AddField(
             model_name='studenttutoringsession',
@@ -147,7 +147,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='recurringtutoravailability',
             name='tutor',
-            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='recurring_availability', to='cwusers.tutor'),
+            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='recurring_availability', to='snusers.tutor'),
         ),
         migrations.AddField(
             model_name='grouptutoringsession',
@@ -162,7 +162,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='grouptutoringsession',
             name='primary_tutor',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='primary_group_tutoring_sessions', to='cwusers.tutor'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='primary_group_tutoring_sessions', to='snusers.tutor'),
         ),
         migrations.AddField(
             model_name='grouptutoringsession',
@@ -172,7 +172,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='grouptutoringsession',
             name='support_tutors',
-            field=models.ManyToManyField(blank=True, related_name='support_group_tutoring_sessions', to='cwusers.tutor'),
+            field=models.ManyToManyField(blank=True, related_name='support_group_tutoring_sessions', to='snusers.tutor'),
         ),
         migrations.AddField(
             model_name='diagnosticresult',
@@ -192,7 +192,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='diagnosticresult',
             name='student',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='diagnostic_results', to='cwusers.student'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='diagnostic_results', to='snusers.student'),
         ),
         migrations.AddField(
             model_name='diagnosticresult',
@@ -217,7 +217,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='diagnosticgrouptutoringsessionregistration',
             name='student',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='diagnostic_gts_registrations', to='cwusers.student'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='diagnostic_gts_registrations', to='snusers.student'),
         ),
         migrations.AddField(
             model_name='diagnostic',
@@ -252,7 +252,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='course',
             name='primary_tutor',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='courses', to='cwusers.tutor'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='courses', to='snusers.tutor'),
         ),
         migrations.AddField(
             model_name='course',
@@ -262,6 +262,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='course',
             name='students',
-            field=models.ManyToManyField(blank=True, related_name='courses', to='cwusers.student'),
+            field=models.ManyToManyField(blank=True, related_name='courses', to='snusers.student'),
         ),
     ]

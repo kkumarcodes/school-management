@@ -14,7 +14,7 @@ from cwnotifications.generator import create_notification
 from cwnotifications.models import Notification
 from cwtasks.models import Task
 from cwtasks.utilities.task_manager import TaskManager
-from cwusers.models import Administrator, Tutor
+from snusers.models import Administrator, Tutor
 
 SCORE_NOTI = "score_diagnostic"
 RECOMMEND_NOTI = "recommend_diagnostic"

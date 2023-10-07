@@ -14,7 +14,7 @@ from cwnotifications.constants.constants import (
 from cwtasks.tasks import send_student_task_reminders
 from cwtasks.models import TaskTemplate, Task
 from cwtasks.tasks import MAX_REMINDER_HOURS
-from cwusers.models import Administrator, Parent, Student, Counselor, Tutor
+from snusers.models import Administrator, Parent, Student, Counselor, Tutor
 
 
 class TestTaskTasks(TestCase):

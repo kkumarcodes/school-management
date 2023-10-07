@@ -1,4 +1,4 @@
-# Different user types. Align with models in cwusers
+# Different user types. Align with models in snusers
 ADMINISTRATOR = "administrator"
 STUDENT = "student"
 COUNSELOR = "counselor"

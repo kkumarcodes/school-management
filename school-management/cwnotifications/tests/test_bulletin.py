@@ -14,10 +14,10 @@ from cwcommon.models import FileUpload
 from cwnotifications.constants import notification_types
 from cwnotifications.models import Bulletin, Notification, NotificationRecipient
 from cwnotifications.utilities.bulletin_manager import BulletinManager
-from cwusers.constants.counseling_student_types import PAYGO, PAYGO_ESSAY
-from cwusers.models import Administrator, Counselor, Parent, Student, Tutor
-from cwusers.serializers.users import ParentSerializer, StudentSerializer
-from cwusers.utilities.managers import StudentManager
+from snusers.constants.counseling_student_types import PAYGO, PAYGO_ESSAY
+from snusers.models import Administrator, Counselor, Parent, Student, Tutor
+from snusers.serializers.users import ParentSerializer, StudentSerializer
+from snusers.utilities.managers import StudentManager
 
 
 class TestBulletinManager(TestCase):
@@ -26,7 +26,7 @@ class TestBulletinManager(TestCase):
     fixtures = ("fixture.json",)
 
     def setUp(self):
-        # DRF Router Base URLs from cwusers.urls
+        # DRF Router Base URLs from snusers.urls
         self.admin = Administrator.objects.first()
         self.parent = Parent.objects.first()
         self.counselor = Counselor.objects.first()
@@ -334,7 +334,7 @@ class TestBulletinViewset(TestCase):
     fixtures = ("fixture.json",)
 
     def setUp(self):
-        # DRF Router Base URLs from cwusers.urls
+        # DRF Router Base URLs from snusers.urls
         self.admin = Administrator.objects.first()
         self.parent = Parent.objects.first()
         self.counselor = Counselor.objects.first()

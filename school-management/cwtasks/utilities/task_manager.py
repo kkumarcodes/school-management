@@ -9,7 +9,7 @@ from cwnotifications.generator import create_notification
 from cwnotifications.models import Notification
 from cwtasks.constants import TASK_TEMPLATE_TASK_UPDATE_FIELDS
 from cwtasks.models import Task, TaskTemplate
-from cwusers.models import Administrator, Counselor, Student
+from snusers.models import Administrator, Counselor, Student
 
 # Deprecated
 NOTIFICATION_TYPES = {

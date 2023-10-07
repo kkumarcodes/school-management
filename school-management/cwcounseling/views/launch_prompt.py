@@ -6,8 +6,8 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseForbidden, HttpResponseRedirect, HttpResponseBadRequest
 from django.contrib.auth.models import User
-from cwusers.models import Student
-from cwusers.utilities.prompt_api_manager import PromptAPIManager, PromptAPIManagerException
+from snusers.models import Student
+from snusers.utilities.prompt_api_manager import PromptAPIManager, PromptAPIManagerException
 
 PROMPT_PLATFORM_URL = f"{settings.PROMPT_URL_BASE}/admissions/jwt/"  # JWT goes on the end here
 

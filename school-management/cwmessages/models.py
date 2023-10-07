@@ -1,6 +1,6 @@
 from django.db import models
 from cwcommon.model_base import CWModel
-from cwusers.models import Counselor, Tutor, get_cw_user
+from snusers.models import Counselor, Tutor, get_cw_user
 
 
 class CWPhoneNumber(CWModel):
@@ -43,16 +43,16 @@ class Conversation(CWModel):
         "cwmessages.CWPhoneNumber", related_name="conversations", null=True, blank=True, on_delete=models.SET_NULL,
     )
     student = models.ForeignKey(
-        "cwusers.Student", related_name="conversations", on_delete=models.SET_NULL, null=True, blank=True,
+        "snusers.Student", related_name="conversations", on_delete=models.SET_NULL, null=True, blank=True,
     )
     parent = models.ForeignKey(
-        "cwusers.Parent", related_name="conversations", on_delete=models.SET_NULL, null=True, blank=True,
+        "snusers.Parent", related_name="conversations", on_delete=models.SET_NULL, null=True, blank=True,
     )
     counselor = models.ForeignKey(
-        "cwusers.Counselor", related_name="conversations", on_delete=models.SET_NULL, null=True, blank=True,
+        "snusers.Counselor", related_name="conversations", on_delete=models.SET_NULL, null=True, blank=True,
     )
     tutor = models.ForeignKey(
-        "cwusers.Tutor", related_name="conversations", on_delete=models.SET_NULL, null=True, blank=True
+        "snusers.Tutor", related_name="conversations", on_delete=models.SET_NULL, null=True, blank=True
     )
     conversation_type = models.CharField(max_length=2, default=CONVERSATION_TYPE_OTHER, choices=CONVERSATION_TYPES)
     conversation_id = models.CharField(max_length=255)  # SID of Twilio Conversation obj

@@ -7,7 +7,7 @@ from decimal import Decimal
 from typing import Optional, Union
 from cwcounseling.constants import roadmap_semesters
 
-from cwusers.models import Student
+from snusers.models import Student
 from cwcounseling.models import CounselingHoursGrant, CounselingPackage
 
 

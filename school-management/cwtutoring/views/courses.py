@@ -18,9 +18,9 @@ from cwtutoring.utilities.tutoring_session_manager import (
     TutoringSessionManager,
     TutoringSessionManagerException,
 )
-from cwusers.models import Student
-from cwusers.serializers.users import StudentSerializer
-from cwusers.mixins import AccessStudentPermission
+from snusers.models import Student
+from snusers.serializers.users import StudentSerializer
+from snusers.mixins import AccessStudentPermission
 from cwcommon.mixins import CSVMixin
 
 

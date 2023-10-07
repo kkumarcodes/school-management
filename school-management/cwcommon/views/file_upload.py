@@ -18,8 +18,8 @@ from rest_framework import status
 from cwcommon.utilities.google_drive import GoogleDriveManager, GoogleDriveException
 from cwcommon.models import FileUpload
 from cwcommon.serializers.file_upload import FileUploadSerializer
-from cwusers.models import get_cw_user, Student
-from cwusers.mixins import AccessStudentPermission
+from snusers.models import get_cw_user, Student
+from snusers.mixins import AccessStudentPermission
 from cwnotifications.generator import create_notification
 from cwtasks.models import Task
 

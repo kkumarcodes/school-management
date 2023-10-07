@@ -7,7 +7,7 @@ from cwuniversities.constants.application_requirements import INTERVIEW_REQUIRED
 from cwuniversities.constants.application_tracker_status import NONE, OPTIONAL, REQUIRED
 from cwuniversities.managers.student_university_decision_manager import StudentUniversityDecisionManager
 from cwuniversities.models import University
-from cwusers.models import Student
+from snusers.models import Student
 
 
 class TestStudentUniversityDecisionManager(TestCase):

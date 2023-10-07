@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     'corsheaders',
     'cwuniversities',
-    'cwusers',
+    'snusers',
     'cwcommon',
     'cwcounseling',
     'cwmessages',

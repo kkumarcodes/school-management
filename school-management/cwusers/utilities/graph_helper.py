@@ -1,11 +1,11 @@
-from cwusers.constants.outlook_integration import NUM_OF_DAYS_TO_RETRIEVE_CW_EVENTS
+from snusers.constants.outlook_integration import NUM_OF_DAYS_TO_RETRIEVE_CW_EVENTS
 import os
 from datetime import timedelta
 
 from cwcounseling.models import CounselorMeeting
 from cwtutoring.models import GroupTutoringSession, StudentTutoringSession
 
-from cwusers.models import Counselor, Tutor
+from snusers.models import Counselor, Tutor
 
 # from django.urls.base import reverse
 from django.conf import settings

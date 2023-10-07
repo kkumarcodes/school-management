@@ -18,8 +18,8 @@ from cwnotifications.serializers import NotificationRecipientSerializer, Notific
 from cwnotifications.generator import create_notification
 from cwnotifications.constants.constants import SYSTEM_NOTIFICATIONS
 from cwcommon.utilities.twilio import TwilioManager
-from cwusers.mixins import AccessStudentPermission
-from cwusers.models import Student
+from snusers.mixins import AccessStudentPermission
+from snusers.models import Student
 
 
 class CreateNotificationView(AccessStudentPermission, APIView):

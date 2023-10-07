@@ -2,7 +2,7 @@ from django.conf import settings
 from django.db.models import Q
 from rest_framework import permissions
 
-from cwusers.models import Administrator, Student, Tutor, Parent, Counselor
+from snusers.models import Administrator, Student, Tutor, Parent, Counselor
 
 
 class MayReadOnly(permissions.BasePermission):

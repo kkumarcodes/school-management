@@ -12,7 +12,7 @@ from cwcommon.model_base import CWModel
 # Though it's not used, we need to keep get_default_availability because it is referenced in migrations
 # as being in this module (it used to be)
 from cwcommon.models import BaseAvailability, BaseRecurringAvailability, TimeCardBase, get_default_availability
-from cwusers.models import AddressFields
+from snusers.models import AddressFields
 
 
 class Diagnostic(CWModel):
@@ -86,7 +86,7 @@ class DiagnosticResult(CWModel):
         "auth.user", related_name="submitted_tasks", blank=True, null=True, on_delete=models.SET_NULL,
     )
 
-    student = models.ForeignKey("cwusers.Student", related_name="diagnostic_results", on_delete=models.CASCADE)
+    student = models.ForeignKey("snusers.Student", related_name="diagnostic_results", on_delete=models.CASCADE)
     task = models.OneToOneField(
         "cwtasks.Task", related_name="diagnostic_result", blank=True, null=True, on_delete=models.SET_NULL,
     )
@@ -142,7 +142,7 @@ class DiagnosticGroupTutoringSessionRegistration(CWModel):
 
     registration_type = models.CharField(max_length=4, choices=REGISTRATION_TYPE_CHOICES)
     student = models.ForeignKey(
-        "cwusers.Student", related_name="diagnostic_gts_registrations", on_delete=models.CASCADE,
+        "snusers.Student", related_name="diagnostic_gts_registrations", on_delete=models.CASCADE,
     )
 
     # The diagnostics student registered for
@@ -165,7 +165,7 @@ class TestResult(CWModel):
     title = models.CharField(max_length=255, blank=True)
     test_date = models.DateTimeField(null=True, blank=True)
     test_type = models.CharField(max_length=255)
-    student = models.ForeignKey("cwusers.Student", related_name="test_results", on_delete=models.CASCADE)
+    student = models.ForeignKey("snusers.Student", related_name="test_results", on_delete=models.CASCADE)
     test_missed = models.BooleanField(default=False)
     # When test was marked complete
     test_complete = models.DateTimeField(null=True, blank=True)
@@ -228,7 +228,7 @@ class TutorAvailability(BaseAvailability):
         See BaseAvailability doscstring for more
     """
 
-    tutor = models.ForeignKey("cwusers.Tutor", related_name="availabilities", on_delete=models.CASCADE)
+    tutor = models.ForeignKey("snusers.Tutor", related_name="availabilities", on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.tutor.name} from {self.start} to {self.end}"
@@ -237,7 +237,7 @@ class TutorAvailability(BaseAvailability):
 class RecurringTutorAvailability(BaseRecurringAvailability):
     """ Weekly recurring availability for a tutor. See BaseRecurringAvailability docstring for more """
 
-    tutor = models.OneToOneField("cwusers.Tutor", related_name="recurring_availability", on_delete=models.CASCADE)
+    tutor = models.OneToOneField("snusers.Tutor", related_name="recurring_availability", on_delete=models.CASCADE)
 
 
 def get_default_location():
@@ -248,7 +248,7 @@ def get_default_location():
 
 class GroupTutoringSession(CWModel):
     primary_tutor = models.ForeignKey(
-        "cwusers.Tutor",
+        "snusers.Tutor",
         related_name="primary_group_tutoring_sessions",
         null=True,
         blank=True,
@@ -262,7 +262,7 @@ class GroupTutoringSession(CWModel):
     # Used to determine tutor pay. If not set, then we use calculated duration (start-end)
     set_pay_tutor_duration = models.IntegerField(null=True, blank=True)
 
-    support_tutors = models.ManyToManyField("cwusers.Tutor", related_name="support_group_tutoring_sessions", blank=True)
+    support_tutors = models.ManyToManyField("snusers.Tutor", related_name="support_group_tutoring_sessions", blank=True)
     location = models.ForeignKey(
         "cwtutoring.Location",
         related_name="group_tutoring_sessions",
@@ -363,7 +363,7 @@ class Course(CWModel):
     display_on_landing_page = models.BooleanField(default=False)
 
     # Students enrolled in the course
-    students = models.ManyToManyField("cwusers.Student", related_name="courses", blank=True)
+    students = models.ManyToManyField("snusers.Student", related_name="courses", blank=True)
 
     # If package must be purchased to enroll in course
     package = models.ForeignKey(
@@ -372,7 +372,7 @@ class Course(CWModel):
 
     # Note that sessions still have their own primary and support tutors, which technically can be different
     primary_tutor = models.ForeignKey(
-        "cwusers.Tutor", related_name="courses", blank=True, null=True, on_delete=models.SET_NULL,
+        "snusers.Tutor", related_name="courses", blank=True, null=True, on_delete=models.SET_NULL,
     )
 
     # Non-null location. Obviously can be remote Location
@@ -433,7 +433,7 @@ class StudentTutoringSession(CWModel):
         "auth.user", related_name="created_student_tutoring_sessions", blank=True, null=True, on_delete=models.SET_NULL,
     )
     student = models.ForeignKey(
-        "cwusers.Student", related_name="tutoring_sessions", null=True, blank=True, on_delete=models.SET_NULL,
+        "snusers.Student", related_name="tutoring_sessions", null=True, blank=True, on_delete=models.SET_NULL,
     )
     # One of the next two fields should be set. We can figure out the tutor(s) via these fields
     group_tutoring_session = models.ForeignKey(
@@ -446,7 +446,7 @@ class StudentTutoringSession(CWModel):
 
     # If is individual session ONLY
     individual_session_tutor = models.ForeignKey(
-        "cwusers.Tutor", related_name="student_tutoring_sessions", null=True, blank=True, on_delete=models.SET_NULL,
+        "snusers.Tutor", related_name="student_tutoring_sessions", null=True, blank=True, on_delete=models.SET_NULL,
     )
 
     # Note added by student/family when booking session
@@ -595,7 +595,7 @@ class TutoringService(CWModel):
 
     # If set, then these are the ONLY tutors or locations that offer the service
     # If empty, then assume all tutors/locations
-    tutors = models.ManyToManyField("cwusers.Tutor", related_name="tutoring_services", blank=True)
+    tutors = models.ManyToManyField("snusers.Tutor", related_name="tutoring_services", blank=True)
 
     # TODO: Not currently used
     locations = models.ManyToManyField("cwtutoring.Location", related_name="tutoring_services", blank=True)
@@ -632,7 +632,7 @@ class TutoringService(CWModel):
 class TutoringSessionNotes(CWModel):
     # Notes provided to one or more students as a result of a tutoring session
     author = models.ForeignKey(
-        "cwusers.Tutor", related_name="tutoring_session_notes", null=True, blank=True, on_delete=models.SET_NULL,
+        "snusers.Tutor", related_name="tutoring_session_notes", null=True, blank=True, on_delete=models.SET_NULL,
     )
     notes = models.TextField(blank=True)  # HTML!
     resources = models.ManyToManyField("cwresources.Resource", related_name="tutoring_session_notes")
@@ -674,7 +674,7 @@ class TutoringPackage(CWModel):
 
     # Package only available when working with this tutor
     restricted_tutor = models.ForeignKey(
-        "cwusers.Tutor", related_name="restricted_tutoring_packages", blank=True, null=True, on_delete=models.SET_NULL,
+        "snusers.Tutor", related_name="restricted_tutoring_packages", blank=True, null=True, on_delete=models.SET_NULL,
     )
 
     # Tutoring hours student gets when they purchase this package
@@ -722,7 +722,7 @@ class TutoringPackagePurchase(CWModel):
         of TutoringPackage, (i.e. if discounts were applied)
     """
 
-    student = models.ForeignKey("cwusers.Student", related_name="tutoring_package_purchases", on_delete=models.CASCADE,)
+    student = models.ForeignKey("snusers.Student", related_name="tutoring_package_purchases", on_delete=models.CASCADE,)
     tutoring_package = models.ForeignKey(
         "cwtutoring.TutoringPackage", related_name="tutoring_package_purchases", on_delete=models.CASCADE,
     )
@@ -771,7 +771,7 @@ class TutorTimeCard(TimeCardBase):
         a year apart, there is a separate time card model for counselors (in cwcounseling): CounselorTimeCard
     """
 
-    tutor = models.ForeignKey("cwusers.Tutor", related_name="time_cards", on_delete=models.CASCADE, editable=False,)
+    tutor = models.ForeignKey("snusers.Tutor", related_name="time_cards", on_delete=models.CASCADE, editable=False,)
 
     # When approval took place (for tutor and an admin)
     tutor_approval_time = models.DateTimeField(null=True, blank=True)

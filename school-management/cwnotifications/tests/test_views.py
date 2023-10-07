@@ -8,7 +8,7 @@ from django.shortcuts import reverse
 from django.contrib.contenttypes.models import ContentType
 from django.utils import timezone
 
-from cwusers.models import Student, Parent, Administrator, Tutor, Counselor
+from snusers.models import Student, Parent, Administrator, Tutor, Counselor
 from cwnotifications.generator import create_notification
 from cwnotifications.models import Notification
 from cwcommon.utilities.magento import MagentoAPIManager, MagentoAPIManagerException
@@ -27,7 +27,7 @@ class TestActivityLogView(TestCase):
     fixtures = ("fixture.json",)
 
     def setUp(self):
-        # DRF Router Base URLs from cwusers.urls
+        # DRF Router Base URLs from snusers.urls
         self.admin = Administrator.objects.first()
         self.parent = Parent.objects.first()
         self.counselor = Counselor.objects.first()

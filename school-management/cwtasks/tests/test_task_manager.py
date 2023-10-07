@@ -13,7 +13,7 @@ from cwtasks.utilities.task_manager import TaskManager
 from cwtasks.models import Task, TaskTemplate
 from cwuniversities.managers.student_university_decision_manager import StudentUniversityDecisionManager
 
-from cwusers.models import Student, Counselor
+from snusers.models import Student, Counselor
 from cwuniversities.models import University
 
 

@@ -4,8 +4,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 
 from django.shortcuts import get_object_or_404
-from cwusers.models import Student
-from cwusers.mixins import AccessStudentPermission
+from snusers.models import Student
+from snusers.mixins import AccessStudentPermission
 from cwcounseling.utilities.counseling_prompt_api_manager import (
     CounselingPromptAPIManagerException,
     CounselingPromptAPIManager,

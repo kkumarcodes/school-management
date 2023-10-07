@@ -9,7 +9,7 @@ from cwmessages.models import (
     ConversationParticipant,
     Conversation,
 )
-from cwusers.models import Counselor, Tutor
+from snusers.models import Counselor, Tutor
 
 # Some constants we use for testing
 TEST_CONVERSATION_ID = "testconversation"

@@ -17,7 +17,7 @@ from cwcounseling.models import CounselorMeeting
 from cwresources.models import Resource
 from cwuniversities.managers.student_university_decision_manager import StudentUniversityDecisionManager
 
-from cwusers.models import Student, Counselor, Tutor, Parent, Administrator
+from snusers.models import Student, Counselor, Tutor, Parent, Administrator
 from cwtutoring.models import Diagnostic
 from cwnotifications.models import Notification
 from cwtasks.models import Task, TaskTemplate, Form

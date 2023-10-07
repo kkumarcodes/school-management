@@ -14,9 +14,9 @@ from django.conf import settings
 from rest_framework_simplejwt.exceptions import AuthenticationFailed, InvalidToken, TokenError
 from rest_framework_simplejwt.tokens import AccessToken
 
-from cwusers.models import Student, Counselor, Parent, Tutor, Administrator, get_cw_user
-from cwusers.constants.user_types import USER_TYPES
-from cwusers.authentication import JWTSpecifyTokenAuthentication
+from snusers.models import Student, Counselor, Parent, Tutor, Administrator, get_cw_user
+from snusers.constants.user_types import USER_TYPES
+from snusers.authentication import JWTSpecifyTokenAuthentication
 
 # Dictionary of user model managers based on user type
 USER_MODELS = {
@@ -35,7 +35,7 @@ class PlatformView(View):
         user in and create a session for them.
     """
 
-    template_name = "cwusers/application.html"
+    template_name = "snusers/application.html"
 
     def get(self, request, platform_type, student_uuid=None):
         """Arguments

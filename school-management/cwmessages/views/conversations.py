@@ -18,8 +18,8 @@ from rest_framework.exceptions import ValidationError
 from rest_framework.decorators import action
 
 from cwnotifications.models import NotificationRecipient
-from cwusers.mixins import AccessStudentPermission
-from cwusers.models import Counselor, Parent, Student, Tutor
+from snusers.mixins import AccessStudentPermission
+from snusers.models import Counselor, Parent, Student, Tutor
 from cwmessages.models import Conversation, ConversationParticipant
 from cwmessages.utilities.conversation_manager import (
     ConversationManager,

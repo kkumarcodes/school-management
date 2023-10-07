@@ -2,7 +2,7 @@
 """
 
 from rest_framework import serializers
-from cwusers.models import Student
+from snusers.models import Student
 from django.db.models import Sum
 
 

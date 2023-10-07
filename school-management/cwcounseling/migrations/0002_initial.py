@@ -15,24 +15,24 @@ class Migration(migrations.Migration):
         ('cwresources', '0001_initial'),
         ('cwcounseling', '0001_initial'),
         ('cwtasks', '0002_initial'),
-        ('cwusers', '0001_initial'),
+        ('snusers', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
             model_name='studentactivity',
             name='student',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='activity', to='cwusers.student'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='activity', to='snusers.student'),
         ),
         migrations.AddField(
             model_name='recurringcounseloravailability',
             name='counselor',
-            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='recurring_availability', to='cwusers.counselor'),
+            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='recurring_availability', to='snusers.counselor'),
         ),
         migrations.AddField(
             model_name='counselortimeentry',
             name='counselor',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='time_entries', to='cwusers.counselor'),
+            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='time_entries', to='snusers.counselor'),
         ),
         migrations.AddField(
             model_name='counselortimeentry',
@@ -52,17 +52,17 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='counselortimeentry',
             name='student',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='counseling_time_entries', to='cwusers.student'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='counseling_time_entries', to='snusers.student'),
         ),
         migrations.AddField(
             model_name='counselortimecard',
             name='admin_approver',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='cwusers.administrator'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='snusers.administrator'),
         ),
         migrations.AddField(
             model_name='counselortimecard',
             name='counselor',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cwusers.counselor'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='snusers.counselor'),
         ),
         migrations.AddField(
             model_name='counselornote',
@@ -72,7 +72,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='counselornote',
             name='note_student',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='counselor_notes', to='cwusers.student'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='counselor_notes', to='snusers.student'),
         ),
         migrations.AddField(
             model_name='counselormeetingtemplate',
@@ -117,7 +117,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='counselormeeting',
             name='student',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='counselor_meetings', to='cwusers.student'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='counselor_meetings', to='snusers.student'),
         ),
         migrations.AddField(
             model_name='counselormeeting',
@@ -127,12 +127,12 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='counseloreventtype',
             name='created_by',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='event_types', to='cwusers.counselor'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='event_types', to='snusers.counselor'),
         ),
         migrations.AddField(
             model_name='counseloravailability',
             name='counselor',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='availabilities', to='cwusers.counselor'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='availabilities', to='snusers.counselor'),
         ),
         migrations.AddField(
             model_name='counselinghoursgrant',
@@ -147,7 +147,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='counselinghoursgrant',
             name='student',
-            field=models.ForeignKey(help_text='Student hours grant is for', on_delete=django.db.models.deletion.PROTECT, related_name='counseling_hours_grants', to='cwusers.student'),
+            field=models.ForeignKey(help_text='Student hours grant is for', on_delete=django.db.models.deletion.PROTECT, related_name='counseling_hours_grants', to='snusers.student'),
         ),
         migrations.AddField(
             model_name='agendaitemtemplate',

@@ -177,7 +177,7 @@ class CounselorMeeting(CWModel):
         related_name="counselor_meetings",
     )
 
-    student = models.ForeignKey("cwusers.Student", related_name="counselor_meetings", on_delete=models.CASCADE)
+    student = models.ForeignKey("snusers.Student", related_name="counselor_meetings", on_delete=models.CASCADE)
 
     created_by = models.ForeignKey(
         "auth.user", related_name="created_counselor_meetings", null=True, blank=True, on_delete=models.SET_NULL
@@ -284,7 +284,7 @@ class CounselorNote(CWModel):
     note_date = models.DateField(null=True, blank=True)
     # Associated student for non-meeting notes
     note_student = models.ForeignKey(
-        "cwusers.Student", related_name="counselor_notes", null=True, blank=True, on_delete=models.CASCADE
+        "snusers.Student", related_name="counselor_notes", null=True, blank=True, on_delete=models.CASCADE
     )
     # note_title is a custom title on non-meeting notes based on counselor input (only non-blank for non-meeting notes)
     note_title = models.TextField(blank=True)
@@ -323,7 +323,7 @@ class StudentActivity(CWModel):
     during_school_break = models.BooleanField(default=False)
     all_year = models.BooleanField(default=False)
 
-    student = models.ForeignKey("cwusers.Student", related_name="activity", on_delete=models.CASCADE)
+    student = models.ForeignKey("snusers.Student", related_name="activity", on_delete=models.CASCADE)
     years_active = ArrayField(models.IntegerField(), blank=True, default=list)
     hours_per_week = models.DecimalField(max_digits=5, decimal_places=1, default=0.0)
     weeks_per_year = models.DecimalField(max_digits=5, decimal_places=1, default=0.0)
@@ -371,7 +371,7 @@ class CounselingHoursGrant(CWModel):
     """
 
     student = models.ForeignKey(
-        "cwusers.Student",
+        "snusers.Student",
         related_name="counseling_hours_grants",
         on_delete=models.PROTECT,
         help_text="Student hours grant is for",
@@ -481,7 +481,7 @@ class CounselorTimeEntry(CWModel):
     amount_paid = models.DecimalField(default=0.0, decimal_places=2, max_digits=8, null=True, blank=True)
 
     student = ForeignKey(
-        "cwusers.Student", null=True, blank=True, on_delete=models.SET_NULL, related_name="counseling_time_entries"
+        "snusers.Student", null=True, blank=True, on_delete=models.SET_NULL, related_name="counseling_time_entries"
     )
     category = models.CharField(
         max_length=255, default=counselor_time_entry_category.TIME_CATEGORY_MEETING_GENERAL, choices=CATEGORIES
@@ -491,7 +491,7 @@ class CounselorTimeEntry(CWModel):
         "auth.user", related_name="counselor_time_entry", null=True, on_delete=models.SET_NULL
     )
     counselor = models.ForeignKey(
-        "cwusers.counselor", null=True, on_delete=models.SET_NULL, related_name="time_entries"
+        "snusers.counselor", null=True, on_delete=models.SET_NULL, related_name="time_entries"
     )
 
     # If this time entry is for a specific meeting
@@ -525,7 +525,7 @@ class CounselorTimeEntry(CWModel):
 class CounselorTimeCard(TimeCardBase):
     """Time card with CounselorTimeEntries"""
 
-    counselor = models.ForeignKey("cwusers.Counselor", on_delete=models.CASCADE)
+    counselor = models.ForeignKey("snusers.Counselor", on_delete=models.CASCADE)
     counselor_approval_time = models.DateTimeField(null=True, blank=True)
     counselor_note = models.TextField(blank=True)
 
@@ -546,7 +546,7 @@ class CounselorEventType(CWModel):
     """An EventType is specified by a Counselor"""
 
     created_by = models.ForeignKey(
-        "cwusers.counselor", related_name="event_types", null=True, blank=True, on_delete=models.SET_NULL,
+        "snusers.counselor", related_name="event_types", null=True, blank=True, on_delete=models.SET_NULL,
     )
     # Duration in minutes
     duration = models.IntegerField(null=True)
@@ -562,7 +562,7 @@ class CounselorAvailability(BaseAvailability):
     See BaseAvailability doscstring for more
     """
 
-    counselor = models.ForeignKey("cwusers.Counselor", related_name="availabilities", on_delete=models.CASCADE)
+    counselor = models.ForeignKey("snusers.Counselor", related_name="availabilities", on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.counselor.name} from {self.start} to {self.end}"
@@ -572,5 +572,5 @@ class RecurringCounselorAvailability(BaseRecurringAvailability):
     """Weekly recurring availability for a counselor. See BaseRecurringAvailability docstring for more"""
 
     counselor = models.OneToOneField(
-        "cwusers.Counselor", related_name="recurring_availability", on_delete=models.CASCADE
+        "snusers.Counselor", related_name="recurring_availability", on_delete=models.CASCADE
     )

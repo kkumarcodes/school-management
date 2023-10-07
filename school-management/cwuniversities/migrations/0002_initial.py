@@ -10,14 +10,14 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('cwuniversities', '0001_initial'),
-        ('cwusers', '0001_initial'),
+        ('snusers', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
             model_name='studentuniversitydecision',
             name='student',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='student_university_decisions', to='cwusers.student'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='student_university_decisions', to='snusers.student'),
         ),
         migrations.AddField(
             model_name='studentuniversitydecision',

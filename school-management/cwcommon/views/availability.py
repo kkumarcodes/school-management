@@ -19,8 +19,8 @@ from rest_framework.generics import (
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 
-from cwusers.models import Counselor, Tutor, Administrator
-from cwusers.constants import user_types
+from snusers.models import Counselor, Tutor, Administrator
+from snusers.constants import user_types
 from cwtutoring.models import Location, TutorAvailability, RecurringTutorAvailability
 from cwtutoring.serializers.tutoring_sessions import (
     TutorAvailabilitySerializer,

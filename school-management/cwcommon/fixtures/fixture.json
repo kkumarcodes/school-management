@@ -738,7 +738,7 @@
     }
   },
   {
-    "model": "cwusers.administrator",
+    "model": "snusers.administrator",
     "pk": 2,
     "fields": {
       "slug": "e420ac8f-217a-4876-b3e4-9204914a6726",
@@ -759,7 +759,7 @@
     }
   },
   {
-    "model": "cwusers.parent",
+    "model": "snusers.parent",
     "pk": 1,
     "fields": {
       "slug": "ef907d22-73da-4f49-9091-4babd91c654e",
@@ -779,7 +779,7 @@
     }
   },
   {
-    "model": "cwusers.counselor",
+    "model": "snusers.counselor",
     "pk": 1,
     "fields": {
       "slug": "861a042b-573c-42e3-8953-7ffc9edd7dde",
@@ -800,7 +800,7 @@
     }
   },
   {
-    "model": "cwusers.tutor",
+    "model": "snusers.tutor",
     "pk": 1,
     "fields": {
       "location": 3,
@@ -827,7 +827,7 @@
     }
   },
   {
-    "model": "cwusers.student",
+    "model": "snusers.student",
     "pk": 1,
     "fields": {
       "location": 3,

@@ -7,7 +7,7 @@ from django.test import TestCase
 from django.shortcuts import reverse
 from django.core.files.base import ContentFile
 
-from cwusers.models import Student, Counselor, Tutor, Parent
+from snusers.models import Student, Counselor, Tutor, Parent
 from cwcommon.models import FileUpload
 
 TEST_GOOGLE_DOC_ID = "1V9mLgzBjGuz7qD_Bv76MaQS0lgkdc41I"

@@ -5,7 +5,7 @@ import json
 import requests
 import sentry_sdk
 from django.conf import settings
-from cwusers.models import Student, Counselor
+from snusers.models import Student, Counselor
 
 
 class PromptAPIManagerException(Exception):

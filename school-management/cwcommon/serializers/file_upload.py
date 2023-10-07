@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from cwcommon.models import FileUpload
-from cwusers.models import Student
+from snusers.models import Student
 
 
 class FileUploadSerializer(serializers.ModelSerializer):

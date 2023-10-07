@@ -7,7 +7,7 @@ from cwnotifications.constants.notification_types import CAP_MAGENTO_STUDENT_CRE
 from cwnotifications.generator import create_notification
 from cwnotifications.models import Notification, NotificationRecipient
 from cwnotifications.utilities.bulletin_manager import BulletinManager
-from cwusers.models import Administrator, Student, Parent, Counselor, Tutor
+from snusers.models import Administrator, Student, Parent, Counselor, Tutor
 from cwcommon.utilities.manager_base import ModelManagerBase
 
 

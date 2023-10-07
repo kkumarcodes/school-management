@@ -6,7 +6,7 @@ from django.urls import reverse
 from cwcounseling.tasks import sync_all_prompt_assignment_tasks
 from cwcounseling.utilities.counseling_prompt_api_manager import CounselingPromptAPIManager
 from cwuniversities.managers.student_university_decision_manager import StudentUniversityDecisionManager
-from cwusers.models import Counselor, Student
+from snusers.models import Counselor, Student
 from cwuniversities.models import StudentUniversityDecision, University
 from cwtasks.models import TaskTemplate
 

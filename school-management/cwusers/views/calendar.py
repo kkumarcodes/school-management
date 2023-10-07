@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django_ical.views import ICalFeed
 
 from cwtutoring.models import GroupTutoringSession, StudentTutoringSession
-from cwusers.models import get_cw_user, Student, Tutor
+from snusers.models import get_cw_user, Student, Tutor
 from cwcounseling.models import CounselorMeeting
 
 

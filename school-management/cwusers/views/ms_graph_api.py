@@ -10,8 +10,8 @@ from django.http import HttpResponseRedirect
 from django.conf import settings
 from rest_framework.viewsets import ViewSet
 from rest_framework.decorators import action
-from cwusers.models import get_cw_user
-from cwusers.utilities.auth_helper import get_sign_in_url, get_token_from_code
+from snusers.models import get_cw_user
+from snusers.utilities.auth_helper import get_sign_in_url, get_token_from_code
 
 
 class MSOutlookAPIView(ViewSet):

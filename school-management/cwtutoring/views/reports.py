@@ -5,7 +5,7 @@ from rest_framework.exceptions import ValidationError
 from cwcommon.mixins import CSVMixin
 from cwtutoring.serializers.reports import ReportTutoringPackagePurchaseSerializer, ReportTutorSerializer
 from cwtutoring.models import TutoringPackagePurchase
-from cwusers.models import Tutor
+from snusers.models import Tutor
 
 
 class ReportTutoringPackagePurchaseView(CSVMixin, ListAPIView):

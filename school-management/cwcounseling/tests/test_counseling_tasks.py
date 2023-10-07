@@ -9,7 +9,7 @@ from django.utils import timezone
 import pytz
 from cwtasks.models import Task
 from cwtasks.utilities.task_manager import TaskManager
-from cwusers.models import Student, Counselor
+from snusers.models import Student, Counselor
 from cwcounseling.models import CounselorMeeting
 from cwcounseling.tasks import send_counselor_completed_task_digest, send_counselor_task_digest
 from cwnotifications.models import Notification

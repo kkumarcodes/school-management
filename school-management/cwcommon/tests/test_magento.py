@@ -20,9 +20,9 @@ from cwtutoring.models import (
     Location,
 )
 from cwtutoring.utilities.tutoring_package_manager import StudentTutoringPackagePurchaseManager
-from cwusers.serializers.users import CounselorSerializer
-from cwusers.models import Administrator, Student, Counselor, Parent
-from cwusers.utilities.managers import StudentManager
+from snusers.serializers.users import CounselorSerializer
+from snusers.models import Administrator, Student, Counselor, Parent
+from snusers.utilities.managers import StudentManager
 from cwnotifications.models import Notification, NotificationRecipient
 
 TEST_PAYLOAD = "cwcommon/tests/magento_test_payload.json"

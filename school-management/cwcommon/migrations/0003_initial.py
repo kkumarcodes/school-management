@@ -15,14 +15,14 @@ class Migration(migrations.Migration):
         ('cwcounseling', '0001_initial'),
         ('cwcommon', '0002_initial'),
         ('cwtasks', '0002_initial'),
-        ('cwusers', '0001_initial'),
+        ('snusers', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
             model_name='fileupload',
             name='counseling_student',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='counseling_file_uploads', to='cwusers.student'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='counseling_file_uploads', to='snusers.student'),
         ),
         migrations.AddField(
             model_name='fileupload',

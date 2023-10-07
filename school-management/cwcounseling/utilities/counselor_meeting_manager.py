@@ -22,8 +22,8 @@ from cwnotifications.constants.notification_types import (
     COUNSELOR_MEETING_CANCELLED,
 )
 from cwtasks.models import Task
-from cwusers.models import Counselor
-from cwusers.utilities.graph_helper import GraphHelperException, outlook_create, outlook_delete, outlook_update
+from snusers.models import Counselor
+from snusers.utilities.graph_helper import GraphHelperException, outlook_create, outlook_delete, outlook_update
 
 
 class CounselorMeetingManager:

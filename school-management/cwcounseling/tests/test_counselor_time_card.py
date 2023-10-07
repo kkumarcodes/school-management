@@ -16,7 +16,7 @@ from cwcounseling.utilities.counselor_time_card_manager import (
     CounselorTimeCardManager,
     CounselorTimeCardManagerException,
 )
-from cwusers.models import Administrator, Counselor, Parent, Student, Tutor
+from snusers.models import Administrator, Counselor, Parent, Student, Tutor
 
 
 class TestCounselingHoursGrantViewset(TestCase):

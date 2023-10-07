@@ -14,8 +14,8 @@ from cwtutoring.models import Course, Location, StudentTutoringSession, Tutoring
 from cwtutoring.serializers.tutoring_sessions import LocationSerializer
 from cwtutoring.utilities.tutoring_package_manager import StudentTutoringPackagePurchaseManager
 from cwuniversities.models import StudentUniversityDecision, University
-from cwusers.models import Administrator, Counselor, Parent, Student, StudentHighSchoolCourse, Tutor
-from cwusers.utilities.managers import StudentManager, USER_MANAGERS_BY_USER_CLASS
+from snusers.models import Administrator, Counselor, Parent, Student, StudentHighSchoolCourse, Tutor
+from snusers.utilities.managers import StudentManager, USER_MANAGERS_BY_USER_CLASS
 
 # Fields on every user model
 BASE_FIELDS = (

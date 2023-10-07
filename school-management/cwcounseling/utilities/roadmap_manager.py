@@ -9,7 +9,7 @@ from cwcounseling.types import RoadmapMeeting
 from cwcounseling.utilities.counselor_meeting_manager import CounselorMeetingManager
 from cwtasks.models import TaskTemplate
 from cwtasks.utilities.task_manager import TaskManager
-from cwusers.models import Student
+from snusers.models import Student
 
 
 class RoadmapManagerException(Exception):

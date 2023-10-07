@@ -25,7 +25,7 @@ from cwcounseling.utilities.counselor_meeting_manager import CounselorMeetingMan
 from cwcounseling.utilities.counselor_time_card_manager import CounselorTimeCardManager
 from cwtasks.models import Task, TaskTemplate
 from cwtutoring.models import Location
-from cwusers.models import Counselor, Student
+from snusers.models import Counselor, Student
 from cwresources.serializers import ResourceSerializer
 
 

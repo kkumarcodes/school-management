@@ -19,12 +19,12 @@ from rest_framework.authentication import TokenAuthentication
 from cwcounseling.models import CounselingPackage
 from cwcounseling.utilities.counseling_hours_manager import CounselingHoursManager
 
-from cwusers.constants.counseling_student_types import COUNSELING_PRODUCT_IDS
-from cwusers.utilities.managers import StudentManager
-from cwusers.models import Student, Parent, Counselor
-from cwusers.serializers.users import StudentSerializer, ParentSerializer
-from cwusers.mixins import AccessStudentPermission
-from cwusers.utilities.hubspot_manager import HubspotDealManager
+from snusers.constants.counseling_student_types import COUNSELING_PRODUCT_IDS
+from snusers.utilities.managers import StudentManager
+from snusers.models import Student, Parent, Counselor
+from snusers.serializers.users import StudentSerializer, ParentSerializer
+from snusers.mixins import AccessStudentPermission
+from snusers.utilities.hubspot_manager import HubspotDealManager
 from cwtutoring.models import (
     TutoringPackagePurchase,
     TutoringPackage,

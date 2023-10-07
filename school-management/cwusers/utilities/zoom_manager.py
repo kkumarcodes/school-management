@@ -3,7 +3,7 @@
 import json
 import requests
 from django.conf import settings
-from cwusers.models import ZoomFields
+from snusers.models import ZoomFields
 
 USER_ENDPOINT = "https://api.zoom.us/v2/users"
 PRO_ZOOM_URLS = [

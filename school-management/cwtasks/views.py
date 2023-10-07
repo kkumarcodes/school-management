@@ -14,8 +14,8 @@ from rest_framework.decorators import action
 from cwnotifications.constants import notification_types
 from cwnotifications.generator import create_notification
 
-from cwusers.mixins import AccessStudentPermission
-from cwusers.models import Student, Administrator, Counselor, Parent
+from snusers.mixins import AccessStudentPermission
+from snusers.models import Student, Administrator, Counselor, Parent
 from cwtasks.constants import COLLEGE_RESEARCH_FORM_KEY, TASK_TYPE_SCHOOL_RESEARCH
 from cwtasks.utilities.task_manager import TaskManager
 from cwuniversities.models import StudentUniversityDecision

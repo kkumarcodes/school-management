@@ -3,7 +3,7 @@
 """
 from django.db.models import Q
 
-from cwusers.models import Parent, Student
+from snusers.models import Parent, Student
 
 
 class AccessStudentPermission:

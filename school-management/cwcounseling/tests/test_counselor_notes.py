@@ -5,7 +5,7 @@ import json
 from django.test import TestCase
 from django.shortcuts import reverse
 from django.contrib.auth.models import User
-from cwusers.models import Student, Counselor, Parent, Tutor, Administrator
+from snusers.models import Student, Counselor, Parent, Tutor, Administrator
 from cwcounseling.models import CounselorMeeting, CounselorNote
 from cwcounseling.constants.counselor_note_category import NOTE_CATEGORY_PRIVATE, NOTE_CATEGORY_MAJORS
 

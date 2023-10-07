@@ -36,8 +36,8 @@ from cwcounseling.serializers.counselor_meeting import (
 from cwcounseling.utilities.counselor_meeting_manager import CounselorMeetingManager
 from cwtasks.models import Task
 from cwtasks.serializers import TaskSerializer
-from cwusers.mixins import AccessStudentPermission
-from cwusers.models import Counselor, Student
+from snusers.mixins import AccessStudentPermission
+from snusers.models import Counselor, Student
 
 
 class CounselorMeetingViewset(ModelViewSet, AccessStudentPermission):

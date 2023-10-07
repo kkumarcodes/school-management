@@ -27,7 +27,7 @@ from cwcounseling.fixtures.roadmaps import import_roadmap
 from cwnotifications.models import Notification
 from cwtasks.models import Task, TaskTemplate
 from cwresources.models import Resource
-from cwusers.models import Administrator, Student, Counselor, Parent
+from snusers.models import Administrator, Student, Counselor, Parent
 
 
 class TestCounselorMeetingManager(TestCase):

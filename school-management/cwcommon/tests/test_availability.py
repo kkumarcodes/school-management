@@ -15,7 +15,7 @@ from cwcommon.models import BaseRecurringAvailability, get_default_locations
 from cwcommon.utilities.availability_manager import AvailabilityManager
 from cwcounseling.models import CounselorAvailability, CounselorMeeting, RecurringCounselorAvailability
 
-from cwusers.models import Counselor, Student, Tutor, Administrator
+from snusers.models import Counselor, Student, Tutor, Administrator
 from cwtutoring.models import (
     Location,
     TutorAvailability,

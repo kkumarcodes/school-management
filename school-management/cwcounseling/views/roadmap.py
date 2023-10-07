@@ -10,9 +10,9 @@ from cwcounseling.serializers.counselor_meeting import CounselorMeetingSerialize
 from cwcounseling.models import AgendaItemTemplate, CounselorMeetingTemplate, Roadmap
 from cwcounseling.utilities.roadmap_manager import RoadmapManager
 from cwcounseling.types import RoadmapMeeting
-from cwusers.models import Student
+from snusers.models import Student
 from cwtasks.models import TaskTemplate
-from cwusers.serializers.users import StudentSerializerCounseling
+from snusers.serializers.users import StudentSerializerCounseling
 from cwtasks.serializers import TaskSerializer
 from django.db.models.query_utils import Q
 

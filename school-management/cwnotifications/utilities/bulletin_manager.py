@@ -8,7 +8,7 @@ from django.contrib.contenttypes.models import ContentType
 from cwnotifications.models import Bulletin, NotificationRecipient
 from cwnotifications.generator import create_notification
 from cwnotifications.constants import notification_types
-from cwusers.models import Parent, Student
+from snusers.models import Parent, Student
 
 
 class BulletinManager:
