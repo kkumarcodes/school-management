@@ -189,7 +189,7 @@ MAGENTO_API_PASSWORD = os.environ.get("MAGENTO_API_PASSWORD")
 
 # Settings for MS Azure App (for Outlook calendar integration)
 MS_APP_SECRET = os.environ.get("MS_APP_SECRET")
-MS_APP_ID = "8f7796f9-ce64-4677-8ec6-923efd6c4e3c"
+MS_APP_ID = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx"
 
 # Zoom Keys
 ZOOM_API_JWT = os.environ.get("ZOOM_API_JWT")
