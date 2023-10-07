@@ -1,0 +1,13 @@
+{% extends 'snnotifications/email_templates/base.html' %} {% load tz %} {% block content %}
+{% with notification.related_object as counselor_meeting %}
+{% timezone counselor_meeting.student.counselor.timezone %} {% localtime on %}
+<p>
+  Your {{ counselor_meeting.title }} meeting with {{counselor_meeting.student.name}} has
+  been rescheduled. The meeting is now on {{ counselor_meeting.start|date:"F jS" }} at {{ counselor_meeting.start|date:"g:i a" }}
+</p>
+<p>
+  You can find a complete list of your scheduled meetings in
+  <a href="{{ SITE_URL }}">{{ SITE_NAME }}</a>.
+</p>
+
+{% endlocaltime %} {% endtimezone %} {% endwith %} {% endblock %} {% block CTA%} {% endblock %}

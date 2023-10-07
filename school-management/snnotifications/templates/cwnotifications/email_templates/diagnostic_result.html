@@ -1,0 +1,20 @@
+{% extends 'snnotifications/email_templates/base.html' %}
+
+{% block content %}
+{% with notification.related_object as diagnostic_result %}
+<p>{{ diagnostic_result.student.name }}'s diagnostic "{{ diagnostic_result.diagnostic }}" has been submitted.</p>
+{% if diagnostic_result.file_uploads.exists %}
+<p>The submission includes the following files:</p>
+<ul>
+    {% for file_upload in diagnostic_result.file_uploads.all %}
+    <li><a href="{{SITE_URL}}{{ file_upload.url }}">{{ file_upload.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if diagnostic_result.submission_note %}
+<p>The submission includes the following note:</p>
+<p>{{ diagnostic_result.submission_note }}</p>
+{% endif %}
+{% endwith %}
+{% endblock %}

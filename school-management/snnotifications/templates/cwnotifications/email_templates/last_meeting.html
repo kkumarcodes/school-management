@@ -1,0 +1,32 @@
+{% extends 'snnotifications/email_templates/base.html' %}
+
+{% block content %}
+{% if students.count == 1%}
+There is 1 student who has their last tutoring session within the next week.
+{% else %}
+There are {{ students.count }} students who have their last tutoring session scheduled within the next week.
+{% endif %}
+
+{% if non_paygo_sessions.exists %}
+<h3>Non-Paygo Student Final Sessions</h3>
+<ul>
+  {% for session in non_paygo_sessions %}
+  <li>{{ session.student.invitation_name }} ({{ session.student.invitation_email}}) -- final session with {{ session.individual_session_tutor.invitation_name }} on {{ session.start|date:"F jS" }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if paygo_sessions.exists %}
+<h3>Paygo Student Final Sessions</h3>
+<ul>
+  {% for session in paygo_sessions %}
+  <li>{{ session.student.invitation_name }} ({{ session.student.invitation_email}}) -- final session with {{ session.individual_session_tutor.invitation_name }} on {{ session.start|date:"F jS" }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% endblock %}
+
+{% block CTA %}
+
+{% endblock %}

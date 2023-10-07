@@ -1,0 +1,31 @@
+{% extends 'snnotifications/email_templates/base.html' %}
+{% load tz %}
+
+{% block content %}
+{% with notification.related_object as session %}
+{% timezone session.student.timezone %}
+{% localtime on %}
+
+<p>
+  You are registered to take our {{ session.group_tutoring_session.title }} on {{ session.start|date:"F jS" }} from {{ session.start|date:"g:ia" }} to {{ session.end|date:"g:ia" }}. (Timezone: {{ session.student.timezone }})
+</p>
+
+<p>You will receive a separate email directly from our academic platform, UMS, to set up your online account with us. UMS is where we will share your test results, academic resources, and links to register directly in a tutoring package or small group class. Pro tip: sometimes this email lands in your clutter folder, so you might need to check there! To get started, we encourage you to watch these short, instructional videos:</p>
+<ul>
+  <li><a href="https://www.dropbox.com/s/87sxn90miej5vry/student_and_parent_overview.mp4?dl=0">UMS Overview</a></li>
+  <li><a href="https://www.dropbox.com/s/0hbpunges4cuxvp/register.mp4?dl=0">Registering your account</a></li>
+  <li><a href="https://www.dropbox.com/s/stxqyilpf8f4hdx/getting_started.mp4?dl=0">Getting started</a></li>
+</ul>
+ 
+
+<p>A few days before the exam, our office will send you a reminder email with specific instructions on how to access your proctored Zoom room and test materials.</p>
+<p>If you have any questions beforehand, you can reach me via email or call us at (908)322-0533.</p>
+<p>Thank you!</p>
+
+{% endlocaltime %}
+{% endtimezone %}
+{% endwith %}
+{% endblock %}
+
+{% block CTA %}
+{% endblock %}

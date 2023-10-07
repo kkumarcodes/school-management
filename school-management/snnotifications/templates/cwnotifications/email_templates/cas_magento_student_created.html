@@ -1,0 +1,30 @@
+{% extends 'snnotifications/email_templates/base.html' %}
+
+{% block content %}
+{% with notification.related_object as student %}
+A new CAS student account has been created for {{ student.name }} via a new package purchase. {{ student.user.first_name }} has the following hours:
+<ul>
+  <li><strong>Individual Curriculum:</strong> {{ hours.individual_curriculum }}</li>
+  <li><strong>Individual Test Prep:</strong> {{ hours.individual_test_prep }}</li>
+  <li><strong>Group Test Prep:</strong> {{ hours.group_test_prep }}</li>
+</ul>
+{% if student.courses.exists %}
+<p>{{ student.user.first_name }} is enrolled in the following courses:</p>
+<ul>
+  {% for course in student.courses.all %}
+  <li>{{ course.verbose_name }}</li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>{{ student.user.first_name }} is not enrolled in any courses.</p>
+{% endif %}
+{% if student.counselor %}
+{{ student.name }}'s counselor is {{ student.counselor.name }}.
+{% endif %}
+
+{% endwith %}
+{% endblock %}
+
+{% block CTA %}
+
+{% endblock %}

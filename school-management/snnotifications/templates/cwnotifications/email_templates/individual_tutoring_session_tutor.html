@@ -1,0 +1,20 @@
+{% extends 'snnotifications/email_templates/base.html' %}
+{% load tz %}
+
+{% block content %}
+{% with notification.related_object as session %}
+{% timezone session.individual_session_tutor.timezone %}
+{% localtime on %}
+<p>A new individual tutoring session has been scheduled:</p>
+<p><label>Student:</label>&nbsp;{{ session.student.name }}</p>
+<p><label>Date:</label>&nbsp;{{session.start|date:"F jS"}} at {{session.start|date:"g:i A"}}</p>
+{% if session.note %}
+<p><label>Note:</label>&nbsp;{{ session.note }}</p>
+{% endif %}
+{% endlocaltime %}
+{% endtimezone %}
+{% endwith %}
+{% endblock %}
+
+{% block CTA %}
+{% endblock %}

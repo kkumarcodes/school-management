@@ -1,0 +1,10 @@
+{% extends 'snnotifications/email_templates/base.html' %}
+<!-- Note that we also have cw_user in context -->
+{% block content %}
+{% with notification.related_object as user %}
+{{ user.get_full_name }}, a {{ cw_user.user_type }}, has accepted their invitation to UMS 🎉.
+{% endwith %}
+{% endblock %}
+
+{% block CTA %}
+{% endblock %}

@@ -1,0 +1,128 @@
+[
+  {
+    "model": "sncounseling.counselormeetingtemplate",
+    "pk": 1,
+    "fields": {
+      "slug": "838f34aa-d656-4cef-9ecf-f0180d98f507",
+      "created": "2020-08-31T21:11:07.625Z",
+      "updated": "2020-09-02T17:36:37.112Z",
+      "title": "1 - Intake Meeting",
+      "counselor_instructions": "<ul>\r\n<li>Review transcript/senior year courses, test scores, review questionnaires</li>\r\n<li>Confirm if any additional fall testing needed</li>\r\n<li>Review CSQs and assign researching first college list''</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li><u>Counselor To-Dos:</u>\r\n<ul>\r\n<li>Create and send first list for student to research</li>\r\n</ul>\r\n</li>\r\n</ul>\r\n<ul>\r\n<li><u>Student To-Dos:</u>\r\n<ul>\r\n<li><strong>Research SUGGESTED College List: </strong>Click on the schools in your COLLEGE tab and use the links on the left side (in the Research Launch Pad) once you click on each college to learn more about each school.\r\n<p>Take notes in the file \"College Research Notes\" file in College Search folder. Print them out and bring them in with you. You can ALSO add notes to the \"College Notes\" tab that shows up when you click on the colleges. Either way, you MUST HAVE ACCESS TO NOTES.</p>\r\n<p>&nbsp;</p>\r\n<p>Here is a little video that walks you through how to research schools: <a href=\"https://vimeo.com/285329012\">https://vimeo.com/285329012</a></p>\r\n<p>&nbsp;</p>\r\n<p>I want to know things you like AND don&rsquo;t like. As much detail as possible!</p>\r\n<p>&nbsp;</p>\r\n<u>If you have questions or don't understand how to do this task, TEXT or EMAIL me please</u></li>\r\n</ul>\r\n</li>\r\n</ul>",
+      "student_instructions": "Start school research",
+      "set_related_task_types": "[\"school_research\"]",
+      "counselor_resources": []
+    }
+  },
+  {
+    "model": "sncounseling.counselormeetingtemplate",
+    "pk": 2,
+    "fields": {
+      "slug": "185d3473-272e-4fcb-889c-27bf2b0b6bc6",
+      "created": "2020-09-02T17:11:39.984Z",
+      "updated": "2020-09-02T17:37:27.641Z",
+      "title": "2 - Review College Research",
+      "counselor_instructions": "<ul>\r\n<li>Review college research. Assign more colleges to research.</li>\r\n<li>Discuss the activity resume and assign.</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li><u>Counselor To-Dos:</u>\r\n<ul>\r\n<li>Assign more colleges to research</li>\r\n</ul>\r\n</li>\r\n</ul>\r\n<ul>\r\n<li><u>Student To-Dos:</u>\r\n<ul>\r\n<li><strong>Research SUGGESTED College List: </strong>Click on the schools in your COLLEGE tab and use the links on the left side (in the Research Launch Pad) once you click on each college to learn more about each school.\r\n<p>Take notes in the file \"College Research Notes\" file in College Search folder. Print them out and bring them in with you. You can ALSO add notes to the \"College Notes\" tab that shows up when you click on the colleges. Either way, you MUST HAVE ACCESS TO NOTES.</p>\r\n<p>&nbsp;</p>\r\n<p>Here is a little video that walks you through how to research schools: <a href=\"https://vimeo.com/285329012\">https://vimeo.com/285329012</a></p>\r\n<p>&nbsp;</p>\r\n<p>I want to know things you like AND don&rsquo;t like. As much detail as possible!</p>\r\n<p>&nbsp;</p>\r\n<u>If you have questions or don't understand how to do this task, TEXT or EMAIL me please<br /><br /></u></li>\r\n<li><strong>Fill out the Activities Summary: </strong>Look in the Files tab for the example and blank version. Include EVERYTHING you can think of and make sure to figure out your hours/weeks per year and upload it or email it back to me.&nbsp; We&rsquo;ll review it together!<u></u></li>\r\n</ul>\r\n</li>\r\n</ul>",
+      "student_instructions": "<ul>\r\n<li>Research colleges</li>\r\n<li>Activities summary</li>\r\n</ul>",
+      "set_related_task_types": "[\"school_research\"]",
+      "counselor_resources": []
+    }
+  },
+  {
+    "model": "sncounseling.counselormeetingtemplate",
+    "pk": 3,
+    "fields": {
+      "slug": "17df634a-b855-4f97-8a53-ba7481e62a5d",
+      "created": "2020-09-02T17:25:34.785Z",
+      "updated": "2020-09-02T17:37:31.073Z",
+      "title": "3 - Review College Search & Activity Summary",
+      "counselor_instructions": "<ul>\r\n<li>Review college research. Discuss narrowing the list, give any additional colleges to research</li>\r\n<li>Review activities</li>\r\n<li>Schedule Essay Brainstorming meeting</li>\r\n</ul>\r\n<p><u>Counselor To-Dos:</u></p>\r\n<ul>\r\n<li>Assign any additional colleges if needed</li>\r\n<li>Review students brainstorming responses after they completed them, prior to brainstorming meeting</li>\r\n</ul>\r\n<p><u>Student To-Dos:</u></p>\r\n<ul>\r\n<li><strong>Start to trim your college list &ndash; which are your favorites? </strong>Look further into the schools on your college list and decide which are your favorites.<br /><br />We can&rsquo;t keep all the schools on your list so now is when you have to do the hard work of separating the &ldquo;good for you schools&rdquo; from the ones you are less excited about.&nbsp; Use the Narrowing the College List spreadsheet as you dig back in.<br /><br />Think about location, major options, campus and class size, activities, internship opportunities, Greek life, core curriculum requirements, travel time (direct flights, long drives?), access to a city and whether you could be happy there for four years.</li>\r\n<li><strong>The Essay Kickoff: </strong>Watch this video to introduce you to the upcoming essay process: <a href=\"https://vimeo.com/collegewise/essays-introduction\">https://vimeo.com/collegewise/essays-introduction</a><br /><br />Read this blog post to remember what matters: <a href=\"http://wiselikeus.com/collegewise/2017/08/college-essays-give-admissions-officers-what-they-really-want.html\">http://wiselikeus.com/collegewise/2017/08/college-essays-give-admissions-officers-what-they-really-want.html</a><br /><br />For now, please block off the rest of the day after our brainstorming session. You&rsquo;ll need that time to dig into your first draft (and the best drafts come right after the brainstorm!).<br /><br /></li>\r\n<li><strong>Essay Brainstorm: </strong>Please go into your essays tab in your portal and click into CW Brainstorm 1 with the right arrow.<br />Click &ldquo;Start Writing&rdquo; to open up a Google Doc.<br />You&rsquo;ll see 2 video links at the top, then some brainstorming exercises below.<br />Please set aside an hour to watch the first two videos, then respond to the prompts <em>after</em> you watch the videos.<br />Click &ldquo;Use this link to share with your advisor&rdquo; when complete &ndash; that will let me know when you&rsquo;ve finished this brainstorming exercise!<br />Repeat for CW Brainstorm 2!</li>\r\n</ul>\r\n<ul>\r\n<li><strong>Assignment for Parents: </strong>Watch this video to introduce you to the upcoming essay process: <a href=\"https://vimeo.com/collegewise/essays-introduction\">https://vimeo.com/collegewise/essays-introduction<br /><br /></a>Read <a href=\"https://pwp.gatech.edu/admission-blog/2019/10/31/a-parents-guide-the-college-admission-essay/\">this</a><u> insightful blog post from an admissions dean we respect about the role of the college essay<br /><br /></u>Review the attached letter, which introduces you to how we navigate this upcoming essay process with your student</li>\r\n</ul>",
+      "student_instructions": "",
+      "set_related_task_types": "[\"school_research\"]",
+      "counselor_resources": []
+    }
+  },
+  {
+    "model": "sncounseling.counselormeetingtemplate",
+    "pk": 4,
+    "fields": {
+      "slug": "f80da966-9192-4d82-99c0-20879f403122",
+      "created": "2020-09-02T17:26:57.375Z",
+      "updated": "2020-09-02T17:37:33.827Z",
+      "title": "4 -  Essay Brainstorming Meeting",
+      "counselor_instructions": "<ul>\r\n<li>Brainstorm main essay</li>\r\n<li style=\"list-style-type: none;\">\r\n<p>&nbsp;</p>\r\n</li>\r\n<li><u>Counselor To-Dos:</u>\r\n<ul>\r\n<li>After student writes, edit essay drafts as student submits<br /><br /></li>\r\n</ul>\r\n</li>\r\n<li><u>Student To-Dos:</u>\r\n<ul>\r\n<li><strong>Submit your first essay draft in 24 hours!</strong></li>\r\n<li>Independent of meeting cadence, <strong>&ldquo;Edit your essay&rdquo; To Do</strong> as needed for each round of the essay</li>\r\n</ul>\r\n</li>\r\n</ul>",
+      "student_instructions": "",
+      "set_related_task_types": "[]",
+      "counselor_resources": []
+    }
+  },
+  {
+    "model": "sncounseling.counselormeetingtemplate",
+    "pk": 5,
+    "fields": {
+      "slug": "5bcec9b8-bd8b-4b96-80f1-48cddea0a265",
+      "created": "2020-09-02T17:30:07.494Z",
+      "updated": "2020-09-02T17:37:36.254Z",
+      "title": "5 - Narrowing the College List",
+      "counselor_instructions": "<ul>\r\n<li>Narrow the college list</li>\r\n<li>Discuss Letters of Recommendation</li>\r\n<li>Assign Common App and send Common App Guide.</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li><u>Counselor To-Dos:</u>\r\n<ul>\r\n<li>Review Common App after the student works on it, prior to next meeting<br /><br /></li>\r\n</ul>\r\n</li>\r\n<li><u>Student To-Dos:</u>\r\n<ul>\r\n<li><strong>Choose your final colleges!<br /><br /></strong>Look further into the schools on your Almost Final College List and decide which ones are the final keepers.&nbsp; Shoot for these numbers<br />2-3 Reaches (red)<br />4-6 Targets (blue)<br />2-3Likelies (green)<br /><br />Make sure to review location, major options, campus and class size, activities, internship opportunities, Greek life, core curriculum requirements, travel time (direct flights, long drives?), access to a city and whether you could be happy there for four years.</li>\r\n</ul>\r\n</li>\r\n</ul>\r\n<ul>\r\n<li><strong>Start and fill out your Common Application<br /></strong><a href=\"http://www.commonapp.org\">www.commonapp.org</a><br />Complete the Common App - click on the Common App tab and finish the Profile, Family, Education, Testing, and Activities section.<br /><br />Here is a video tutorial walking you through the Common App: <a href=\"https://vimeo.com/352370912\">https://vimeo.com/352370912</a>&nbsp;<br /><br />I'd suggest pulling the Common App on one tab and this video on another so you can work through the app while listening.<br /><br />DO NOT SUBMIT YOUR APPLICATION. Just fill it out and save it.</li>\r\n</ul>",
+      "student_instructions": "",
+      "set_related_task_types": "[\"narrow_college_list\"]",
+      "counselor_resources": []
+    }
+  },
+  {
+    "model": "sncounseling.counselormeetingtemplate",
+    "pk": 6,
+    "fields": {
+      "slug": "fb03e5bb-f34d-492c-b44c-c17758e44ffb",
+      "created": "2020-09-02T17:31:26.519Z",
+      "updated": "2020-09-02T17:37:38.902Z",
+      "title": "6 - Finalize College List",
+      "counselor_instructions": "<ul>\r\n<li>Finalize the College list</li>\r\n<li>Review Common App</li>\r\n<li>Share out application plan with family</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li><u>Counselor To-Dos:</u>\r\n<ul>\r\n<li>Map out application plan and timeline<br /><br /></li>\r\n</ul>\r\n</li>\r\n<li><u>Student To-Dos:</u>\r\n<ul>\r\n<li><strong>Fill out the My Colleges tab on Common Application<br /></strong>So, you've started the Common App. Yay! It is now time for you to make sure you roll it over and then add your colleges.\r\n<p><br /> Steps:<br /> 1.&nbsp; Login and if you need to and are prompted, follow the steps to roll your account over again. You will be asked about which year you are applying to, your age, etc., and then you will bounce back into the application.</p>\r\n<ol start=\"2\">\r\n<li>Once logged in, click on the College Search tab and look up all of your colleges and click the + sign next to your colleges to add them to the app. NOT all colleges will be on here. Only add the ones that come up.</li>\r\n<li>Once you've added your colleges, go to the My Colleges tab and then fill out all of the sections in the \"Questions\" part under each college. DO NOT do essays or answers that are in large boxes. We will do those together.</li>\r\n</ol>\r\n<ul>\r\n<ul>\r\n<li><strong>Ask your Recommenders:</strong> Ask your recommenders for your letters. Use the grid in your general folder for due dates and whether they are on the Common App or not.</li>\r\n</ul>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>Remember to ask for a strong letter of recommendation, let them know your earliest deadline, and that you will send them the electronic invites for each application.</p>\r\n<p>&nbsp;</p>\r\n<p>We'll add them to your applications and send electronic invites in your next meeting!</p>\r\n</li>\r\n</ul>\r\n</li>\r\n</ul>",
+      "student_instructions": "",
+      "set_related_task_types": "[]",
+      "counselor_resources": []
+    }
+  },
+  {
+    "model": "sncounseling.counselormeetingtemplate",
+    "pk": 7,
+    "fields": {
+      "slug": "fb13b92e-dd3a-44ff-bc11-423dad6b555d",
+      "created": "2020-09-02T17:33:35.346Z",
+      "updated": "2020-09-02T17:41:15.257Z",
+      "title": "7 - Supplement Essay Brainstorming",
+      "counselor_instructions": "<p>(repeat this meeting as needed for any subsequent batches of supplements)</p>\r\n<ul>\r\n<li>Brainstorm and outline supplements<br /><br /></li>\r\n</ul>\r\n<ul>\r\n<li><u>Counselor To-Dos:</u>\r\n<ul>\r\n<li>After student writes, edit essay drafts as student submits</li>\r\n</ul>\r\n</li>\r\n<li><u>Student To-Dos</u>:\r\n<ul>\r\n<li><strong>Short Answer Writing</strong> &amp; <strong>Short Answer Edits</strong> on repeat as needed for each draft<br /><br /></li>\r\n<li><strong>Order ACT/SAT Scores:</strong> You need to send these test scores:<br />To these schools ONLY:\r\n<p>&nbsp;</p>\r\n<p>To learn how to do that go to FILES tab, look in the Senior Assignments and download the document titled \"How to Send Test Scores 2020.\"</p>\r\n<p>&nbsp;</p>\r\n<p>Follow those instructions. EMAIL/TEXT me when you have done it so I can verify.</p>\r\n</li>\r\n<li><strong>Send your transcripts</strong>\r\n<p>PARCHMENT:<br /> If your school uses Parchment, create an account at www.parchment.com (put login in keychain) and then go to FILES tab, and look in Testing folder for directions on how to send Parchment transcripts (pdf file). Download it and follow directions.</p>\r\n<p>NAVIANCE:<br /> Login to your Naviance account and follow the directions to request OFFICIAL transcripts to be sent to your colleges.</p>\r\n<p>&nbsp;</p>\r\n<p>OFFICE:<br /> Go to your counseling office at school and find out what form you need to fill out to request OFFICIAL transcripts be sent to your colleges. Fill that out and make sure you turn it in and pay.</p>\r\n<p>&nbsp;</p>\r\nEMAIL/TEXT me once it's done so I can verify.</li>\r\n</ul>\r\n</li>\r\n</ul>",
+      "student_instructions": "",
+      "set_related_task_types": "[\"transcripts\", \"essay\"]",
+      "counselor_resources": []
+    }
+  },
+  {
+    "model": "sncounseling.counselormeetingtemplate",
+    "pk": 8,
+    "fields": {
+      "slug": "a39a5314-18c3-41d2-a837-2c9fb4a71f58",
+      "created": "2020-09-02T17:35:05.129Z",
+      "updated": "2020-09-02T17:37:44.672Z",
+      "title": "8 - Submit  First Applications",
+      "counselor_instructions": "<ul>\r\n<li>Submit first applications</li>\r\n<li>Discuss interview process</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li><u>Counselor To-Dos:</u>\r\n<ul>\r\n<li>Prior to meeting, send PDF of application for parent review</li>\r\n<li>Confirm test scores have been ordered/sent</li>\r\n<li>Confirm transcripts have been ordered/sent</li>\r\n<li>Confirm Letters of Rec have been requested</li>\r\n</ul>\r\n</li>\r\n</ul>\r\n<ul>\r\n<li><u>Student To-Dos:</u>\r\n<ul>\r\n<li><strong>Research Interview Requirements:</strong> It's time to think about interviews!<br /><br />Please note that you will be responsible for managing and scheduling your college admissions interviews. What does that mean? You will need to look at the schools on your college list that offer interviews determine your next steps. Not all of your colleges will offer an interview and for those that do, MANY (almost all) are optional. Policies vary so be sure to be thorough here.&nbsp;\r\n<p>Directions:</p>\r\n<p>1) I&rsquo;ve gone through your list and evaluated who offers interviews.&nbsp; You'll see the breakdown in your GENERAL FOLDER</p>\r\n<p>2) Download the \"Interview Chart\" spreadsheet from your SENIOR ASSIGNMENTS folder. Complete this spreadsheet for each school that offers/requires the admissions interview.</p>\r\n<p>3) Keep track of scheduling your interview via the tracker (above) and upload to your files.</p>\r\n<p>4) Preparing for your interview:</p>\r\n<p>Before your first interview, watch our Interview Prep Video:</p>\r\n<p>Link: https://collegewise.com/interviews-video/</p>\r\n<p>Password: accepted</p>\r\n<p>Download and read through the document \"Common Interview Questions\" under your SENIOR ASSIGNMENTS folder</p>\r\n<p>&nbsp;</p>\r\n<p>Schedule a mock interview (if you&rsquo;d like) at least 1-2 weeks prior to your first interview. I&rsquo;ll have you do that with another counselor in the office (it&rsquo;s good for it to be with someone you haven&rsquo;t met yet), but let me know and I can assist in scheduling.</p>\r\n</li>\r\n</ul>\r\n</li>\r\n</ul>",
+      "student_instructions": "",
+      "set_related_task_types": "[]",
+      "counselor_resources": []
+    }
+  },
+  {
+    "model": "sncounseling.counselormeetingtemplate",
+    "pk": 9,
+    "fields": {
+      "slug": "a006d56f-b366-4a4c-bdf6-5d6b30310e94",
+      "created": "2020-09-02T17:35:42.904Z",
+      "updated": "2020-09-02T17:37:47.136Z",
+      "title": "9+ - Continue with app submissions and follow-up work",
+      "counselor_instructions": "<p>(repeat this meeting as needed for any subsequent batches of supplements)</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li>Submit applications</li>\r\n<li>Discuss any outstanding/lingering items</li>\r\n</ul>",
+      "student_instructions": "",
+      "set_related_task_types": "[]",
+      "counselor_resources": []
+    }
+  }
+]

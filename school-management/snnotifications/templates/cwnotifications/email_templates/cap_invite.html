@@ -1,0 +1,29 @@
+{% extends 'snnotifications/email_templates/base.html' %} {% block content %}
+
+<p>Welcome to UMS!</p>
+<p>UMS will be your portal for everything you do with your counselor at Collegewise.</p>
+<p>For students, all your to-do items will be listed in the system, and you will see when upcoming meetings are scheduled. Essentially, everything your counselor will ask you to do – whether it be watching a short video, doing college research, or filling out a questionnaire – will live in the system.</p>
+<p>Parents, you will be able to follow along with your student’s progress. You will be able to see not only the next meeting scheduled but your student’s entire counseling roadmap – when they are working on various parts of the college search journey and what those meetings encompass. Additionally, you will be able to see more detailed work: to-do items for your student to complete, work done on college list building, or your student’s activity list.</p>
+<p>You will also find a range of communication methods within the system. You can message your counselor directly or set up texting in order to do so on your phone. You will also receive bulletin announcements and notes post-meeting.</p>
+{% if not accepted_invite %}
+<p>
+  Here are a couple videos to help you get set up before your meeting with your counselor. And to activate your account, <a href="{{SITE_URL}}{{ url }}">just click here.</a>
+</p>
+{% endif %}
+<ul>
+  <li><a href="https://vimeo.com/522550285/972c399609">Register your account</a></li>
+  <li><a href="https://vimeo.com/522550529/6776c4d9e2">Welcome to your dashboard</a></li>
+  <li><a href="https://vimeo.com/522550765/994e9309cc">Updating profile information</a></li>
+  <li><a href="https://vimeo.com/522551016/e7595467e2">Set up texting</a></li>
+</ul>
+<p>Thanks for joining us – we are excited to go on this journey together.</p>
+<br/>
+<br/>
+<p>The Collegewise Team</p>
+
+{% endblock %} {% block login-reminder %}
+<strong
+  >Once your account is set up you can access your UMS account through:
+  schoolnet.collegewise.com. We recommend you bookmark the page for convenience.</strong
+>
+{% endblock %}

@@ -20,22 +20,22 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 from snusers.views.register_login import LoginView
-from cwtutoring.views.courses import CourseLandingPageView
-from cwtutoring.views.diagnostic import DiagnosticLandingPageView
+from sntutoring.views.courses import CourseLandingPageView
+from sntutoring.views.diagnostic import DiagnosticLandingPageView
 
 from rest_framework_simplejwt import views as jwt_views
 
 # pylint: disable=invalid-name
 app_patterns = [
     path("user/", include("snusers.urls")),
-    path("tutoring/", include("cwtutoring.urls")),
-    path("task/", include("cwtasks.urls")),
-    path("cw/", include("cwcommon.urls")),
-    path("resource/", include("cwresources.urls")),
-    path("notification/", include("cwnotifications.urls")),
-    path("message/", include("cwmessages.urls")),
-    path("university/", include("cwuniversities.urls")),
-    path("counseling/", include("cwcounseling.urls")),
+    path("tutoring/", include("sntutoring.urls")),
+    path("task/", include("sntasks.urls")),
+    path("cw/", include("sncommon.urls")),
+    path("resource/", include("snresources.urls")),
+    path("notification/", include("snnotifications.urls")),
+    path("message/", include("snmessages.urls")),
+    path("university/", include("snuniversities.urls")),
+    path("counseling/", include("sncounseling.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
 ]
 urlpatterns = [

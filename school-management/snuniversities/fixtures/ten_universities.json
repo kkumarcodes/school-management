@@ -1,0 +1,192 @@
+[
+  {
+    "model": "snuniversities.university",
+    "pk": 1,
+    "fields": {
+      "slug": "616064ef-1021-4f57-ba14-4474c75a7c86",
+      "created": "2020-05-20T01:48:33.889Z",
+      "updated": "2020-05-20T01:48:33.889Z",
+      "name": "test",
+      "long_name": "",
+      "city": "",
+      "state": "",
+      "abbreviations": "",
+      "rank": null,
+      "url": "",
+      "logo": "",
+      "scid": "",
+      "iped": ""
+    }
+  },
+  {
+    "model": "snuniversities.university",
+    "pk": 2,
+    "fields": {
+      "slug": "65d3e334-ad81-4946-a9be-5a0a804d6a89",
+      "created": "2020-08-04T15:29:19.171Z",
+      "updated": "2020-08-04T15:29:19.171Z",
+      "name": "Washington University Tacoma",
+      "long_name": "Washington University Tacoma",
+      "city": "Tacoma",
+      "state": "WA",
+      "abbreviations": "",
+      "rank": 10000,
+      "url": "http://www.tacoma.washington.edu",
+      "logo": "",
+      "scid": "3000675",
+      "iped": "377564"
+    }
+  },
+  {
+    "model": "snuniversities.university",
+    "pk": 3,
+    "fields": {
+      "slug": "72b79159-c9ef-44f4-b0ea-175f0720d794",
+      "created": "2020-08-04T15:29:19.176Z",
+      "updated": "2020-08-04T15:29:19.176Z",
+      "name": "St. Edwards University",
+      "long_name": "Saint Edwards University",
+      "city": "Austin",
+      "state": "TX",
+      "abbreviations": "Saint Edwards",
+      "rank": 10000,
+      "url": "http://www.stedwards.edu",
+      "logo": "",
+      "scid": "1100445",
+      "iped": "227845"
+    }
+  },
+  {
+    "model": "snuniversities.university",
+    "pk": 4,
+    "fields": {
+      "slug": "acddcb07-8eb5-4144-8d35-9cb6fab4bb9a",
+      "created": "2020-08-04T15:29:19.177Z",
+      "updated": "2020-08-04T15:29:19.177Z",
+      "name": "Washington University in St. Louis",
+      "long_name": "Washington University Saint Louis",
+      "city": "St. Louis",
+      "state": "MO",
+      "abbreviations": "WUSTL, WASH U, WashU",
+      "rank": 60,
+      "url": "https://admissions.wustl.edu/",
+      "logo": "",
+      "scid": "2800032",
+      "iped": "179867"
+    }
+  },
+  {
+    "model": "snuniversities.university",
+    "pk": 5,
+    "fields": {
+      "slug": "c28ed57c-52cd-46ea-96f5-e90e0935640d",
+      "created": "2020-08-04T15:29:19.178Z",
+      "updated": "2020-08-04T15:29:19.178Z",
+      "name": "Princeton University",
+      "long_name": "Princeton University",
+      "city": "Princeton",
+      "state": "NJ",
+      "abbreviations": "",
+      "rank": 3,
+      "url": "https://admission.princeton.edu/",
+      "logo": "",
+      "scid": "1100160",
+      "iped": "186131"
+    }
+  },
+  {
+    "model": "snuniversities.university",
+    "pk": 6,
+    "fields": {
+      "slug": "ebd2d681-18b7-4b09-b260-e64aa3c0af04",
+      "created": "2020-08-04T15:29:19.179Z",
+      "updated": "2020-08-04T15:29:19.179Z",
+      "name": "Carnegie Mellon University",
+      "long_name": "Carnegie Mellon University",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "abbreviations": "CMU",
+      "rank": 63,
+      "url": "https://admission.enrollment.cmu.edu/pages/undergraduate-admission-requirements",
+      "logo": "",
+      "scid": "1100264",
+      "iped": "211440"
+    }
+  },
+  {
+    "model": "snuniversities.university",
+    "pk": 7,
+    "fields": {
+      "slug": "7f39facd-86bd-46d5-b9cd-508e9a956dcf",
+      "created": "2020-08-04T15:29:19.179Z",
+      "updated": "2020-08-04T15:29:19.179Z",
+      "name": "Harvard University",
+      "long_name": "Harvard University",
+      "city": "Cambridge",
+      "state": "MA",
+      "abbreviations": "",
+      "rank": 4,
+      "url": "https://college.harvard.edu/admissions",
+      "logo": "",
+      "scid": "2100353",
+      "iped": "166027"
+    }
+  },
+  {
+    "model": "snuniversities.university",
+    "pk": 8,
+    "fields": {
+      "slug": "80c9e229-c2bf-439c-b807-4f1e7b950aa6",
+      "created": "2020-08-04T15:29:19.180Z",
+      "updated": "2020-08-04T15:29:19.180Z",
+      "name": "Brigham Young University",
+      "long_name": "Brigham Young University Provo",
+      "city": "Provo",
+      "state": "UT",
+      "abbreviations": "BYU",
+      "rank": 10000,
+      "url": "http://www.byu.edu",
+      "logo": "",
+      "scid": "1100842",
+      "iped": "230038"
+    }
+  },
+  {
+    "model": "snuniversities.university",
+    "pk": 9,
+    "fields": {
+      "slug": "7b13afc2-e1b0-4826-9863-da40b4e67f1c",
+      "created": "2020-08-04T15:29:19.181Z",
+      "updated": "2020-08-04T15:29:19.181Z",
+      "name": "Georgetown",
+      "long_name": "Georgetown University",
+      "city": "Washington",
+      "state": "DC",
+      "abbreviations": "",
+      "rank": 21,
+      "url": "https://uadmissions.georgetown.edu/",
+      "logo": "",
+      "scid": "1100973",
+      "iped": "131496"
+    }
+  },
+  {
+    "model": "snuniversities.university",
+    "pk": 10,
+    "fields": {
+      "slug": "4fddeb50-f6f5-440f-a756-729d247247e2",
+      "created": "2020-08-04T15:29:19.182Z",
+      "updated": "2020-08-04T15:29:19.182Z",
+      "name": "University of Auckland",
+      "long_name": "",
+      "city": "",
+      "state": "",
+      "abbreviations": "",
+      "rank": null,
+      "url": "",
+      "logo": "",
+      "scid": "596b7d33-a518-405e-952d-2823cea6b804",
+      "iped": "784e80e0-2a2b-4927-bbe9-4f82598f8cd7"
+    }
+  }
+]

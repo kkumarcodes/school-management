@@ -1,0 +1,21 @@
+{% extends 'snnotifications/email_templates/base.html' %}
+{% load tz %}
+
+{% block content %}
+{% with notification.related_object as session %}
+{% timezone notification.recipient.user.tutor.timezone %}
+{% localtime on %}
+
+<p>
+  This is a reminder that are leading a tutoring session ({{session.title}}) on {{ session.start|date:"F jS" }} at {{ session.start|date:"g:ia" }}.
+  You can find a roster of the students registered for this session on <a href="{{SITE_URL}}">{{ SITE_NAME }}</a>.
+</p>
+
+{% if session.zoom_url %}
+<p>You can join this session remotely via this link: <a href="{{ session.zoom_url }}">{{ session.zoom_url }}</a></p>
+{% endif %}
+
+{% endlocaltime %}
+{% endtimezone %}
+{% endwith %}
+{% endblock %}

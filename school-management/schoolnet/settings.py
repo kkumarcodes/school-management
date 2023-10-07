@@ -44,7 +44,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    "cwcelery",
+    "sncelery",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,15 +55,15 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     "rest_framework.authtoken",
     'corsheaders',
-    'cwuniversities',
+    'snuniversities',
     'snusers',
-    'cwcommon',
-    'cwcounseling',
-    'cwmessages',
-    'cwnotifications',
-    'cwresources',
-    'cwtasks',
-    'cwtutoring',
+    'sncommon',
+    'sncounseling',
+    'snmessages',
+    'snnotifications',
+    'snresources',
+    'sntasks',
+    'sntutoring',
     "django_celery_beat",  # Period docs with UI
     "django_celery_results",
 ]

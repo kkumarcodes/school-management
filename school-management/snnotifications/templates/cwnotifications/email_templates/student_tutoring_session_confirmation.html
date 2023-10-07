@@ -1,0 +1,43 @@
+{% extends 'snnotifications/email_templates/base.html' %}
+{% load tz %}
+
+{% block content %}
+{% with notification.related_object as session %}
+{% timezone session.student.timezone %}
+{% localtime on %}
+<p>Your tutoring session on {{ session.start|date:"F jS" }} at {{ session.start|date:"g:ia" }} is confirmed.<br>(Timezone: {{session.student.timezone}})</p>
+{% if session.group_tutoring_session %}
+<p>This is a {{ session.group_tutoring_session.title }} class.</p>
+{% elif session.individual_session_tutor %}
+<p>This is an individual tutoring session with {{ session.individual_session_tutor.name }}.</p>
+{% if session.zoom_url %}
+<p>You can join this session remotely via this link: <a href="{{ session.zoom_url }}">{{ session.zoom_url }}</a></p>
+{% elif session.location and not session.location.is_remote %}
+<p>
+  This session will take place at {{ session.location.name }}:<br/>
+  {{ session.location.address}} {{ session.location.address_line_two }}<br/>
+  {{ session.location.city }} {{ session.location.zip_code }}
+</p>
+{% endif %}
+{% endif %}
+
+{% if notification.recipient.user.has_usable_password %}
+<p>Need to send us a message about this session? You can do so on <a href="{{ SITE_URL }}">{{ SITE_NAME }}</a></p>
+{% else %}
+<p>We noticed that you have not yet confirmed your UMS account. You can do so by clicking the link in your invitation email (check your spam folder just in case) and watching this demo <a href="https://www.dropbox.com/s/87sxn90miej5vry/student_and_parent_overview.mp4?dl=0">here.</a>
+<p>Don't worry your session noted above is confirmed but in order to book any new appointments, you’ll need to activate your UMS account.</p>
+<p>As always, if you have questions, please do not hesitate to reach out.</p>
+{% endif %}
+
+<p>
+  <em>Cancellation &amp; Missed Appointment Policy: If you need to cancel or change your meeting, please let us know.
+  If an appointment is cancelled under 24-hours, there will be a late cancellation charge of $70. If an appointment is missed with no notice, we’ll deduct the hour from your bank or in the instance where there is no bank, we’ll charge for the appointment in full. Thank you.</em>
+</p>
+
+{% endlocaltime %}
+{% endtimezone %}
+{% endwith %}
+{% endblock %}
+
+{% block CTA %}
+{% endblock %}

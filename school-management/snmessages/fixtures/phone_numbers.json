@@ -1,0 +1,44 @@
+[
+  {
+    "model": "snmessages.cwphonenumber",
+    "pk": 1,
+    "fields": {
+      "slug": "5818ce51-5aa5-4559-a565-15aa8570d1ea",
+      "created": "2020-01-23T19:24:39.771Z",
+      "updated": "2020-01-23T19:24:39.771Z",
+      "active": true,
+      "phone_number": "+13343731533",
+      "default_tutor_number": true,
+      "default_counselor_number": false,
+      "default_operations_number": false
+    }
+  },
+  {
+    "model": "snmessages.cwphonenumber",
+    "pk": 2,
+    "fields": {
+      "slug": "fd449cce-81a9-4d64-a23e-af1d73e35e4e",
+      "created": "2020-01-23T19:24:56.423Z",
+      "updated": "2020-01-23T19:24:56.423Z",
+      "active": true,
+      "phone_number": "+12029724223",
+      "default_tutor_number": false,
+      "default_counselor_number": true,
+      "default_operations_number": false
+    }
+  },
+  {
+    "model": "snmessages.cwphonenumber",
+    "pk": 3,
+    "fields": {
+      "slug": "4471091b-d498-4d7e-8293-4ee91bb02d67",
+      "created": "2020-01-23T19:25:11.331Z",
+      "updated": "2020-01-23T19:25:11.331Z",
+      "active": true,
+      "phone_number": "+12029724223",
+      "default_tutor_number": false,
+      "default_counselor_number": false,
+      "default_operations_number": true
+    }
+  }
+]

@@ -1,0 +1,21 @@
+{% extends 'snnotifications/email_templates/base.html' %}
+
+{% block content %}
+{% with notification.related_object as task %}
+<p>A new task - {{ task.title }} has been assigned to you.</p>
+{% if task.description %}
+<p>{{ task.description|safe }}</p>
+{% endif %}
+
+{% if task.due %}
+<p>Please complete this task by {{ task.due|date:"F jS" }}</p>
+{% endif %}
+<p>
+    When you have completed the task, mark it complete in the
+    <a href="{{ SITE_URL }}?action=submit_task&action_payload={{task.slug}}">{{SITE_NAME}}</a>
+</p>
+{% endwith %}
+{% endblock %}
+
+{% block CTA %}
+{% endblock %}

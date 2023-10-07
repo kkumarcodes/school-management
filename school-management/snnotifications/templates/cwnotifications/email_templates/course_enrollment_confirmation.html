@@ -1,0 +1,42 @@
+{% extends 'snnotifications/email_templates/base.html' %}
+{% load tz %}
+
+
+
+{% block content %}
+{% timezone notification.secondary_related_object.timezone %}
+{% localtime on %}
+{% with notification.related_object as course %}
+<p>You have been enrolled in the Collegewise {{ course.name }} course.</p>
+{% if sessions %}
+<p>This course starts on {{ sessions.0.start|date:"F jS"}}. Sessions include:</p>
+{% endif %}
+<ul>
+{% for gts in sessions %}
+<li>{{ gts.start|date:"F jS"}} at {{ gts.start|date:"g:i a" }} with {{gts.primary_tutor.name}}</li>
+{% endfor %}
+</ul>
+<p style="font-size: 11px; color: #888">All times above are in the timezone: {{ notification.secondary_related_object.timezone }}</p>
+
+{% if course.location.is_remote %}
+<p>
+  These sessions will take place on zoom
+  {% if course.group_tutoring_sessions.first.zoom_url %}
+  at <a href="course.group_tutoring_sessions.first.zoom_url">{{course.group_tutoring_sessions.first.zoom_url}}</a>
+  {% else %}
+  and you can find the zoom link in your CW Portal account
+  {% endif %}
+</p>
+{% else %}
+<p>These sessions will take place at {{ course.location.name }}</p>
+{% endif %}
+
+<p>You can find more details about this course in the <a href="{{ SITE_URL }}">{{SITE_NAME}}</a></p>
+{% endwith %}
+
+{% endlocaltime %}
+{% endtimezone %}
+{% endblock %}
+
+{% block CTA %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'snnotifications/email_templates/base.html' %}
+
+{% load tz %}
+{% block content %}
+{% with notification.related_object as counselor %}
+{% timezone counselor.timezone %}
+{% localtime on %}
+
+<p>
+  Your students recently completed the following tasks:
+</p>
+<hr/>
+<ul>
+{% for task in tasks %}
+<li>{{ task.for_user.get_full_name }} completed {{ task.title }}</li>
+{% endfor %}
+</ul>
+
+{% endlocaltime %}
+{% endtimezone %}
+{% endwith %}
+{% endblock %}

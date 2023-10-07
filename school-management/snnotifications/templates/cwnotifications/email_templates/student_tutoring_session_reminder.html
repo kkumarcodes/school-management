@@ -1,0 +1,74 @@
+{% extends 'snnotifications/email_templates/base.html' %}
+{% load tz %}
+
+{% block content %}
+{% with notification.related_object as session %}
+{% timezone session.student.timezone %}
+{% localtime on %}
+
+{% if notification.recipient.user.has_usable_password %}
+<p>
+  This is a reminder that you have a tutoring session on {{ session.start|date:"F jS" }} at {{ session.start|date:"g:ia" }}. (Timezone: {{ session.student.timezone }})
+</p>
+
+{% if session.group_tutoring_session %}
+<p>This is a {{ session.group_tutoring_session.title }} class.</p>
+{% elif session.individual_session_tutor %}
+<p>This is an individual tutoring session with {{ session.individual_session_tutor.name }}.</p>
+{% endif %}
+{% if session.zoom_url %}
+<p>You can join this session remotely via this link: <a href="{{ session.zoom_url }}">{{ session.zoom_url }}</a></p>
+{% elif session.location and not session.location.is_remote %}
+<p>
+  This session will take place at {{ session.location.name }}:<br/>
+  {{ session.location.address}} {{ session.location.address_line_two }}<br/>
+  {{ session.location.city }} {{ session.location.zip_code }}
+</p>
+{% endif %}
+
+<p>Need to send us a message about this session? You can do so on <a href="{{ SITE_URL }}">{{ SITE_NAME }}</a></p>
+
+{% if paygo_magento_url %}
+<p>You can pay for this package <a href="{{paygo_magento_url}}">here</a>.
+If you don't pay beforehand, you will be charged for this session after it is complete.
+{% endif %}
+
+{% else %}
+
+<p>We noticed that you have not yet confirmed your UMS account. You can do so by clicking the link in your invitation email (check your spam folder just in case) and watching this demo <a href="https://www.dropbox.com/s/87sxn90miej5vry/student_and_parent_overview.mp4?dl=0">here.</a>
+{% if session.group_tutoring_session %}
+<p>Don't worry your {{ session.group_tutoring_session.title }} on {{ session.start|date:"F jS" }} at {{ session.start|date:"g:ia" }} is confirmed but in order to book any new appointments, you’ll need to activate your UMS account.</p>
+{% elif session.individual_session_tutor %}
+<p>Don't worry your session on {{ session.start|date:"F jS" }} at {{ session.start|date:"g:ia" }} with {{ session.individual_session_tutor.name }} is confirmed but in order to book any new appointments, you’ll need to activate your UMS account.</p>
+{% endif %}
+<p>As always, if you have questions, please do not hesitate to reach out.</p>
+
+{% endif %}
+
+{% if session.resources.exists %}
+<strong>Resources:</strong>
+<ul>
+  {% for resource in session.resources.distinct %}
+  <li>
+    <a href="{{ SITE_URL }}{{ resource.url }}">{{ resource.title }}</a>
+    {% if resource.description %}
+    &nbsp;&bull;&nbsp;{{ resource.description }}
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+<p>
+  <em>Cancellation &amp; Missed Appointment Policy: If you need to cancel or change your meeting, please let us know.
+  If an appointment is cancelled under 24-hours, there will be a late cancellation charge of $70. If an appointment is missed with no notice, we’ll deduct the hour from your bank or in the instance where there is no bank, we’ll charge for the appointment in full. Thank you.</em>
+</p>
+
+{% endlocaltime %}
+{% endtimezone %}
+{% endwith %}
+{% endblock %}
+
+{% block CTA %}
+{% endblock %}
+

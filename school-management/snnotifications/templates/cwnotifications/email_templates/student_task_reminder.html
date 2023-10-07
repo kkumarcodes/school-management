@@ -1,0 +1,32 @@
+{% extends 'snnotifications/email_templates/base.html' %}
+
+{% block content %}
+
+{% if overdue_tasks %}
+<p>The tasks below are overdue:</p>
+<ul>
+  {% for task in overdue_tasks %}
+  <li><strong>{{ task.title }} was due {{ task.due|date:"F jS" }}.</strong></li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>You have no overdue tasks - keep up the great work!</p>
+{% endif %}
+
+{% if coming_due_tasks %}
+<p>The tasks below are coming due in the next couple of days:</p>
+<ul>
+  {% for task in coming_due_tasks %}
+  <li><strong>{{ task.title }} is due {{ task.due|date:"F jS" }}.</strong></li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>You have no coming due tasks.</p>
+{% endif %}
+
+{% endblock %}
+
+
+{% block CTA %}
+<a href="{{SITE_URL}}" target="_blank" style="display: inline-block; color: #ffffff; background-color: #3498db; border: solid 1px #3498db; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #3498db;">Open {{SITE_NAME}} ></a>
+{% endblock %}

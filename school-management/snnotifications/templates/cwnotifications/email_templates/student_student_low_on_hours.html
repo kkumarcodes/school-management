@@ -1,0 +1,31 @@
+{% extends 'snnotifications/email_templates/base.html' %}
+
+{% block content %}
+{% with notification.related_object as student %}
+
+{% if notification.recipient.user == student.user %}
+<p>You are running low on hours.</p>
+{% else %}
+<p>{{ student_name }} is running low on hours.</p>
+{% endif %}
+
+{% if not notification.recipient.user.has_usable_password %}
+<p>We noticed that you have not yet confirmed your UMS account. You can do so by clicking the link in your invitation email (check your spam folder just in case) and watching this demo <a href="https://www.dropbox.com/s/87sxn90miej5vry/student_and_parent_overview.mp4?dl=0">here.</a><p>We noticed that your family has not yet confirmed your UMS account. You can do so by clicking the link in your invitation email (check your spam folder just in case) and watching this demo here.
+{% if max_hours > 0 %}
+<p>You only have {{ max_hours }} hour{{max_hours|pluralize}} left in your package. In order to book any new appointments, you’ll need to activate your UMS account.
+{% else %}
+<p>In order to book any new appointments, you’ll need to activate your UMS account.</p>
+{% endif%}
+{% endif %}
+
+
+<p>Hours Remaining:</p>
+<ul>
+  <li><strong>Individual Curriculum:</strong> {{ individual_curriculum }}</li>
+  <li><strong>Individual Test Prep:</strong> {{ individual_test_prep }}</li>
+  <li><strong>Group Test Prep:</strong> {{ group_test_prep }}</li>
+</ul>
+
+<p>As always, if you have questions, please do not hesitate to reach out.</p>
+{% endwith %}
+{% endblock %}
