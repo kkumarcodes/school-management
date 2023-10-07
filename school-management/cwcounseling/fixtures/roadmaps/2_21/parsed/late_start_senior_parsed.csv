@@ -6,7 +6,7 @@ intake,1 - Intake Meeting,review_transcript,"Review transcript/senior year cours
 review_college_research,2 - Review College Research,review_research,Review research,research_suggested_college_list,,,pre,,,,,,
 review_college_research,2 - Review College Research,updated_list_of_colleges,Provide an updated list of colleges to research based off initial findings,research_suggested_college_list,,,pre,,,,,,
 review_college_research,2 - Review College Research,discuss_activity_purpose,Discuss the purpose of the activity resume and assign,,,,,,,,,,
-review_college_search,3 - Review College Search & Activity Summary,discuss_activity,"Review activity section - discuss, edit and tweak as needed",wisernet_activities,Fill out activity section of UMS,,pre,,,,,,
+review_college_search,3 - Review College Search & Activity Summary,discuss_activity,"Review activity section - discuss, edit and tweak as needed",schoolnet_activities,Fill out activity section of UMS,,pre,,,,,,
 review_college_search,3 - Review College Search & Activity Summary,review_college_research_narrow,"Review college research. Discuss narrowing the list, give any additional colleges to research",research_suggested_college_list,,,,,,,,,
 review_college_search,3 - Review College Search & Activity Summary,schedule_essay_brainstorming,Schedule Essay Brainstorming meeting,,,,,,,,,,
 essay_brainstorming,4 - Essay Brainstorming Meeting,essay_brainstorm,Essay Brainstorm,essay_kickoff,Watch the Essay Brainstorming video ,,pre,,,,,,

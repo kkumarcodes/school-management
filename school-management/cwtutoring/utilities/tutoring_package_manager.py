@@ -77,7 +77,7 @@ class StudentTutoringPackagePurchaseManager:
             try:
                 # We need to generate a unique ID for this purchase
                 student_packages = self.student.tutoring_package_purchases.count()
-                wisernet_id = f"{self.student.slug}-{student_packages}"
+                schoolnet_id = f"{self.student.slug}-{student_packages}"
                 magento_response = MagentoAPIManager.execute_charge(
                     self.student.last_paygo_purchase_id,
                     f"Package: {package.title} ({hours} hours)",
@@ -85,7 +85,7 @@ class StudentTutoringPackagePurchaseManager:
                     product_id=package.product_id,
                     tutor_id=package.restricted_tutor.invitation_email if package.restricted_tutor else "",
                     paygo_hours=hours if is_paygo_charge else None,
-                    wisernet_id=wisernet_id,
+                    schoolnet_id=schoolnet_id,
                 )
             except Exception as err:
                 if settings.TESTING:

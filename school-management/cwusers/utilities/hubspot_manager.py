@@ -192,7 +192,7 @@ class HubspotFormManager:
             "city": cwuser.city,
             "state": cwuser.state,
             "company": family_name,
-            "managed_by_wisernet": "true",
+            "managed_by_schoolnet": "true",
         }
         if isinstance(cwuser, Student):
             data["high_school"] = cwuser.high_school

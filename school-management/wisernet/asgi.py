@@ -1,5 +1,5 @@
 """
-ASGI config for wisernet project.
+ASGI config for schoolnet project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'wisernet.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'schoolnet.settings')
 
 application = get_asgi_application()

@@ -201,7 +201,7 @@ class StudentTutoringSessionViewset(CSVMixin, ModelViewSet, AccessStudentPermiss
                 session.save()
             session.save()
 
-        # Only create Outlook calendar event if this is a new wisernet event.
+        # Only create Outlook calendar event if this is a new schoolnet event.
         # Do not create Outlook event if this is a student being added to a GTS
         # Check that tutor has microsoft_token
         if (

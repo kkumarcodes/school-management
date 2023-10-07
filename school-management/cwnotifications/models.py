@@ -168,7 +168,7 @@ class Bulletin(CWModel):
     visible_to_notification_recipients = models.ManyToManyField(
         "cwnotifications.NotificationRecipient", related_name="bulletins", blank=True
     )
-    # Notification Recipients that have read announcement by opening it within wisernet
+    # Notification Recipients that have read announcement by opening it within schoolnet
     read_notification_recipients = models.ManyToManyField(
         "cwnotifications.NotificationRecipient", related_name="read_bulletins", blank=True
     )

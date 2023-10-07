@@ -1,7 +1,7 @@
 Meeting Key,Meeting Name,Repeatable,Agenda Item Key,Agenda Item Title,Task Key,Task Name,Form,Task Description,Task Type,Include School Tracker Field,Include School Tracker Value,Complete Tracker Field,Complete Tracker Value
 intake_call,1- Intake call with counselor & parent,,review_intake_questionnaire,Review intake questionnaire,intake_parent,Complete Intake Questionnaire (parents),Parent Intake Questionnaire,,,,,,
 intake_call,1- Intake call with counselor & parent,,discuss_cadence,Discuss cadence of the program,intake_student,Complete Getting to Know You (students),Getting To Know You!,,,,,,
-intake_call,1- Intake call with counselor & parent,,communicate_wisernet,Best way to communicate via UMS,,,,,,,,,
+intake_call,1- Intake call with counselor & parent,,communicate_schoolnet,Best way to communicate via UMS,,,,,,,,,
 intake_meeting,2- Intake meeting with counselor & student,,review_questionnaire,Review Getting to Know You Questionnaire,getting_to_know_you,Complete Getting to Know You,,,,,,,
 intake_meeting,2- Intake meeting with counselor & student,,review_questionnaire,Review Getting to Know You Questionnaire,welcome_collegewise,Watch welcome to Collegewise Videos,,,,,,,
 intake_meeting,2- Intake meeting with counselor & student,,review_questionnaire,Review Getting to Know You Questionnaire,character_counts,Watch Character Counts,,,,,,,

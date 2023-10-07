@@ -35,7 +35,7 @@ class MagentoAPIManager:
         amount: float,
         product_id="",
         tutor_id="",
-        wisernet_id="",
+        schoolnet_id="",
         paygo_hours=None,
     ) -> str:
         """ Helper method to perform a request against the Magento API
@@ -52,7 +52,7 @@ class MagentoAPIManager:
                 "amount": amount,
                 "product_id": product_id,
                 "tutor_id": tutor_id,
-                "wisernet_id": wisernet_id,
+                "schoolnet_id": schoolnet_id,
             }
             if paygo_hours:
                 paygo_hours["paygo_hours"] = paygo_hours
@@ -137,7 +137,7 @@ class MagentoAPIManager:
             f"Payment for {student_tutoring_session}",
             amount,
             product_id=tutoring_package.product_id,
-            wisernet_id=str(student.slug),
+            schoolnet_id=str(student.slug),
         )
         student_tutoring_session.paygo_transaction_id = response.get("transaction_id")
         student_tutoring_session.save()
@@ -189,7 +189,7 @@ class MagentoAPIManager:
             student.last_paygo_purchase_id,
             f"Late charge for {student_tutoring_session}",
             amount,
-            wisernet_id=str(student.slug),
+            schoolnet_id=str(student.slug),
         )
         student_tutoring_session.late_cancel_charge_transaction_id = response.get("transaction_id")
         student_tutoring_session.save()

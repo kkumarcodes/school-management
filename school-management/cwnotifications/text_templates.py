@@ -36,7 +36,7 @@ def task_reminder(noti: Notification):
 TEXT_TEMPLATES = {
     "coming_due_task_reminder": lambda x: x.title,
     "student_diagnostic_result": lambda x: f'Your diagnostic "{x.related_object.diagnostic.title}" has been reviewed!',
-    "tutoring_session_notes": lambda x: f"{x.title}. Find the notes in WiserNet",
+    "tutoring_session_notes": lambda x: f"{x.title}. Find the notes in schoolnet",
     "task": lambda x: f"A new task has been assigned in UMS: {x.related_object.title}",
     "counselor_meeting_message": lambda x: x.title,
     "student_counselor_meeting_confirmed": lambda x: f"Meeting ({x.related_object.title}) scheduled with {x.related_object.student.counselor.name} on {format_datetime(x.related_object.start, x.related_object.student.timezone)}",

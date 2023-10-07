@@ -71,7 +71,7 @@ def charge_paygo_sessions(charge=True):
 
 
 @shared_task
-def sync_outlook_with_wisernet():
+def sync_outlook_with_schoolnet():
     """ For all active tutors and counselors with a microsoft_token,
     call sync_outlook utility method to ensure all meetings are on their
     outlook calendar

@@ -168,7 +168,7 @@ class MagentoPurchaseWebhookView(APIView):
             student_email = magento_student_email or data["extension_attributes"].get("mailing_student_email")
             if not student_email:
                 # We create a fake student email so that we can still create account
-                student_email = f"{uuid4()}@wisernet.collegewise.com"
+                student_email = f"{uuid4()}@schoolnet.collegewise.com"
             graduation_year = data["extension_attributes"]["graduation_year"]
             if graduation_year == "None":
                 graduation_year = datetime.now().year + 1
