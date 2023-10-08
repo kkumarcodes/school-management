@@ -1,7 +1,7 @@
 <p>&nbsp;</p>
 
 <p align="center">
-  <h1 align="center">ShopMost</h1>
+  <h1 align="center">SchoolNet</h1>
 </p>
 <h4 align="center">
     <a href="https://kkumarcodes.github.io/school-management/#/">Documentation</a> |
@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-<img alt="ShopMost" width="950" src="https://github.com/kkumarcodes/school-management/blob/master/banner.png"/>
+<img alt="SchoolNet" width="950" src="https://github.com/kkumarcodes/school-management/blob/master/banner.png"/>
 </p>
 
 ## Introduction
