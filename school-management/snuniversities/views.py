@@ -173,7 +173,7 @@ class UniversityViewset(ModelViewSet):
 class SNUniversityDataView(RetrieveAPIView):
     """ This view returns SN-specific data for a university, to be used on school profile pages with UMS.
         Returns 404 if we don't have data for school (which is the case for most schools, because most schools
-        don't have Collegewise students)
+        don't have Schoolnet students)
 
         For an example of return value, see any of the files in snuniversities/data/byschool (file name are iped)
     """

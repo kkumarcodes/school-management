@@ -70,7 +70,7 @@ class TwilioManager:
             self.client.messages.create(
                 from_=self.phone_number,
                 to=f"+{notification_recipient.phone_number}",
-                body=f"Hi! It's Collegewise :) Your verification code is: {notification_recipient.phone_number_verification_code}",
+                body=f"Hi! It's Schoolnet :) Your verification code is: {notification_recipient.phone_number_verification_code}",
             )
 
         notification_recipient.confirmation_last_sent = timezone.now()

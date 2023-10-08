@@ -1,4 +1,4 @@
-# Collegewise calls their semesters One (fall), Two (Spring) and Summer
+# Schoolnet calls their semesters One (fall), Two (Spring) and Summer
 # Events (notably, CounselorMeetings) can take place between semesters as well. Creating a kind of medium-rare situation
 ONE = 1
 ONE_TWO = 1.5

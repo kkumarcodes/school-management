@@ -2,7 +2,7 @@
 {% with notification.related_object as counselor_meeting %}
 {% timezone counselor_meeting.student.timezone %} {% localtime on %}
 <p>
-  Your meeting with Collegewise counselor
+  Your meeting with Schoolnet counselor
   {{counselor_meeting.student.counselor.name}} on {{ counselor_meeting.start|date:"F jS" }} at {{ counselor_meeting.start|date:"g:ia" }} as been cancelled.
 </p>
 <p>

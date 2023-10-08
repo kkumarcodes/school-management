@@ -6,7 +6,7 @@ from snusers.models import Student, Counselor
 from snuniversities.models import StudentUniversityDecision
 
 # All organizations have the same name
-ORGANIZATION_NAME = "Collegewise"
+ORGANIZATION_NAME = "Schoolnet"
 TEST_SCHOOLS = ["123961", "110662", "164988", "170976", "110705", "236948", "110635", "126614", "193900", "110680"]
 
 
@@ -52,7 +52,7 @@ class PromptOrganizationSerializer(ReadOnlySerializer):
         In UMS, we consider each counselor their own organization
     """
 
-    # Fake organization name. Always "Collegewise"
+    # Fake organization name. Always "Schoolnet"
     name = serializers.SerializerMethodField()
     # Org ID same as Counselor ID
     partner_id = serializers.CharField(source="slug")

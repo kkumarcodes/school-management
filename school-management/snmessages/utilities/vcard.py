@@ -12,7 +12,7 @@ class VcardException(Exception):
 def get_vcard(conversation_participant):
     """ Obtain a vcard object for the conversation that conversation participant is in.
         For example, if participant is student in a tutor conversation, vcard will be for
-        "Collegewise Tutors".
+        "Schoolnet Tutors".
         Modeled after: https://www.djangosnippets.org/snippets/58/
         Arguments:
           conversation_participant {ConversationParticipant} Must be an SMS participant
@@ -35,10 +35,10 @@ def get_vcard(conversation_participant):
         student = conversation_participant.notification_recipient.user.student
         if student.counselor:
             first_name = student.counselor.user.first_name
-            last_name = f"{student.counselor.user.last_name} (Collegewise)"
+            last_name = f"{student.counselor.user.last_name} (Schoolnet)"
             email = student.counselor.user.email
         else:
-            first_name = "Collegewise"
+            first_name = "Schoolnet"
             last_name = "Counselor"
     elif (
         conversation_participant.conversation.conversation_type
@@ -54,7 +54,7 @@ def get_vcard(conversation_participant):
         == Conversation.CONVERSATION_TYPE_TUTOR
         and hasattr(conversation_participant.notification_recipient.user, "student")
     ):
-        first_name = "Collegewise"
+        first_name = "Schoolnet"
         last_name = "Tutors"
 
     card.n.value = vobject.vcard.Name(family=last_name, given=first_name)

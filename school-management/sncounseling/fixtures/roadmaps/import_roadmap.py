@@ -266,7 +266,7 @@ if not settings.TESTING:
 
 PARENT_ROADMAP_TASKS = [
     "Complete Intake Questionnaire (parents)",
-    "Watch Welcome to Collegewise (parent)",
+    "Watch Welcome to Schoolnet (parent)",
     "Fill out College Questionnaire",
     "Review our Letter to Parents on the essay process",
     "Optional - Listen to Get Wise Podcast. Episode 1 & 2",

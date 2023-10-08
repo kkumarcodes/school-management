@@ -57,7 +57,7 @@ TITLE_GENERATORS = {
     "group_tutoring_session_cancelled": lambda x: f"Cancelled tutoring session: {x.related_object.title}",
     "task_digest": lambda x: f"New Task{'s' if len(x.additional_args) > 1 else ''}: {len(x.additional_args)} new task{'s' if len(x.additional_args) > 1 else ''} has been assigned to you in UMS",
     "student_tutoring_session_reminder": lambda x: f"Reminder: Tutoring session - {x.related_object.start.astimezone(pytz.timezone(x.related_object.student.timezone)).strftime('%b %d')}",
-    "package_purchase_confirmation": lambda x: f"Confirmed: Collegewise tutoring package {x.related_object.tutoring_package.title}",
+    "package_purchase_confirmation": lambda x: f"Confirmed: Schoolnet tutoring package {x.related_object.tutoring_package.title}",
     "student_diagnostic_result": lambda x: f"Your {x.related_object.diagnostic.title} diagnostic has been reviewed",
     "counselor_diagnostic_result": lambda x: f"{x.related_object.student.name}'s {x.related_object.diagnostic.title} diagnostic has been reviewed",
     "diagnostic_score_required": lambda x: f"{x.related_object.student.name}'s {x.related_object.diagnostic.title} diagnostic needs to be scored",
@@ -83,7 +83,7 @@ TITLE_GENERATORS = {
     "recommend_diagnostic": lambda x: f"You have been assigned a diagnostic to evaluate",
     "score_diagnostic": lambda x: f"You have been assigned a diagnostic to score",
     "ops_failed_charge": lambda x: "Failed credit card charge attempt",
-    "diagnostic_invite": lambda x: "You have been invited to take a diagnostic with Collegewise",
+    "diagnostic_invite": lambda x: "You have been invited to take a diagnostic with Schoolnet",
     "ops_magento_webhook": lambda x: f"Incoming webhook from Magento",
     "ops_magento_webhook_failure": lambda x: f"Incoming webhook from Magento FAILED",
     "registration_success": lambda x: "Confirmed: Successful registration",
@@ -96,7 +96,7 @@ TITLE_GENERATORS = {
     "counselor_meeting_message": lambda x: x.related_object.notes_message_subject
     if x.related_object.notes_message_subject
     else f"{x.related_object.student.counselor.user.first_name} has added notes from your meeting ({x.related_object.title})",
-    notification_types.BULLETIN: lambda x: f"[Collegewise] {x.related_object.title}",
+    notification_types.BULLETIN: lambda x: f"[Schoolnet] {x.related_object.title}",
     notification_types.COUNSELOR_TASK_DIGEST: lambda x: f"UMS Digest: Upcoming and Overdue Student Tasks ({len(x.additional_args)})",
     notification_types.STUDENT_TASK_REMINDER: lambda x: f"Overdue and Upcoming tasks in UMS",
     notification_types.COUNSELOR_FORWARD_STUDENT_MESSAGE: lambda x: f"New message from {x.additional_args['author']}",

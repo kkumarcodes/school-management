@@ -19,7 +19,7 @@ class EventFeed(ICalFeed):
         object via slug UUID
     """
 
-    product_id = "Collegewise Calendar"
+    product_id = "Schoolnet Calendar"
     timezone = "UTC"
     file_name = "event.ics"
     cwuser = None

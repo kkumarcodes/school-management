@@ -123,16 +123,16 @@ class ConversationParticipant(SNModel):
             display_name = (
                 conversation.student.counselor.name
                 if (conversation.student and conversation.student.counselor)
-                else "Collegewise Counselor"
+                else "Schoolnet Counselor"
             )
         elif conversation.conversation_type == Conversation.CONVERSATION_TYPE_TUTOR:
             display_name = (
                 conversation.student.tutors.first().name
                 if (conversation.student and conversation.student.tutors.count() == 1)
-                else "Collegewise Tutors"
+                else "Schoolnet Tutors"
             )
         elif conversation.conversation_type == Conversation.CONVERSATION_TYPE_COUNSELOR_TUTOR:
             if isinstance(cwuser, Tutor):
-                return conversation.counselor.name if conversation.counselor else "Collegewise Counselor"
-            return conversation.tutor.name if conversation.tutor else "Collegewise Tutor"
+                return conversation.counselor.name if conversation.counselor else "Schoolnet Counselor"
+            return conversation.tutor.name if conversation.tutor else "Schoolnet Tutor"
         return display_name

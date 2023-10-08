@@ -1,5 +1,5 @@
 # SNCounseling
-This app contains models and business logic specific to the Collegewise Counseling platform (CAP) within
+This app contains models and business logic specific to the Schoolnet Counseling platform (CAP) within
 UMS. Significant concepts include:
 - Counseling Tasks (mostly implemented in `sntasks`)
 - Counseling Meetings with agenda items
@@ -9,11 +9,11 @@ UMS. Significant concepts include:
 
 ## Roadmaps
 A Roadmap is a set of meetings (with agenda items) and tasks that are created for a student when they start working
-with Collegewise. A Roadmap is meant to represent all of the work and meetings a student will engage in throughout their entire time with Collegewise. Counselors can, of course, create custom meetings and tasks for students that are not apart of a Roadmap. But standardizing meetings and tasks through Roadmaps makes it faster for counselors to get students setup in UMS, and provides a more standardized approach to counseling prescribed by Collegewise.
+with Schoolnet. A Roadmap is meant to represent all of the work and meetings a student will engage in throughout their entire time with Schoolnet. Counselors can, of course, create custom meetings and tasks for students that are not apart of a Roadmap. But standardizing meetings and tasks through Roadmaps makes it faster for counselors to get students setup in UMS, and provides a more standardized approach to counseling prescribed by Schoolnet.
 
 Technically, a `CounselorMeeting` object represents a single meeting between a `Student` and `Counselor`. A `CounselorMeeting` as zero or more `AgendaItem`s, which are set by the `Counselor`. An `AgendaItem`, in turn, has zero or more pre meeting and post meeting tasks (`pre_meeting_task_templates` and `post_meeting_task_templates` ,respectively).
 
-Crucially, `CounselorMeeting`, `AgendaItem`, and `Task` represent instances of objects that are specific to a particular meeting and student. Collegewise has defined "templates" for each of these concepts, that allow counselors to copy pre-set details (like titles, related resources, related tasks) when creating a new `CounselorMeeting`, `AgendaItem`, or `Task`. The models representing these templates are - respecitvely - `CounselorMeetingTemplate`, `AgendaItemTemplate` and `TaskTemplate`.
+Crucially, `CounselorMeeting`, `AgendaItem`, and `Task` represent instances of objects that are specific to a particular meeting and student. Schoolnet has defined "templates" for each of these concepts, that allow counselors to copy pre-set details (like titles, related resources, related tasks) when creating a new `CounselorMeeting`, `AgendaItem`, or `Task`. The models representing these templates are - respecitvely - `CounselorMeetingTemplate`, `AgendaItemTemplate` and `TaskTemplate`.
 
 Thus, a `CounselorMeetingTemplate` has zero or more `AgendaItemTemplate`s that represent the typical set of agenda items for the meeting. When a counselor creates a new `CounselorMeeting` from the `CounselorMeetingTemplate`, UMS will default to creating `AgendaItem`s for all of that `CounselorMeetingTemplate`'s `AgendaItemTemplate`'s, but the counselor can customize or filter the actual set of resulting `AgendaItem`s such that their details differ from the related `AgendaItemTemplate`.
 

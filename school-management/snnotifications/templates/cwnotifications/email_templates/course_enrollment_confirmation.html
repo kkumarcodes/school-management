@@ -7,7 +7,7 @@
 {% timezone notification.secondary_related_object.timezone %}
 {% localtime on %}
 {% with notification.related_object as course %}
-<p>You have been enrolled in the Collegewise {{ course.name }} course.</p>
+<p>You have been enrolled in the Schoolnet {{ course.name }} course.</p>
 {% if sessions %}
 <p>This course starts on {{ sessions.0.start|date:"F jS"}}. Sessions include:</p>
 {% endif %}
