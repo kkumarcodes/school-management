@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-<img alt="SchoolNet" width="950" src="https://github.com/kkumarcodes/school-management/blob/master/school-management/banner.png"/>
+<img alt="SchoolNet" width="950" src="https://github.com/kkumarcodes/school-management/blob/main/school-management/banner.png"/>
 </p>
 
 ## Introduction
