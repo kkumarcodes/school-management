@@ -1,6 +1,6 @@
 [
   {
-    "model": "snmessages.cwphonenumber",
+    "model": "snmessages.snphonenumber",
     "pk": 1,
     "fields": {
       "slug": "5818ce51-5aa5-4559-a565-15aa8570d1ea",
@@ -14,7 +14,7 @@
     }
   },
   {
-    "model": "snmessages.cwphonenumber",
+    "model": "snmessages.snphonenumber",
     "pk": 2,
     "fields": {
       "slug": "fd449cce-81a9-4d64-a23e-af1d73e35e4e",
@@ -28,7 +28,7 @@
     }
   },
   {
-    "model": "snmessages.cwphonenumber",
+    "model": "snmessages.snphonenumber",
     "pk": 3,
     "fields": {
       "slug": "4471091b-d498-4d7e-8293-4ee91bb02d67",
