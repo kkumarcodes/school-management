@@ -1,1 +1,1 @@
-default_app_config = "sncommon.apps.CWCommonConfig"
+default_app_config = "sncommon.apps.SNCommonConfig"

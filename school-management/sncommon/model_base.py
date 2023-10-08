@@ -2,7 +2,7 @@ import uuid
 from django.db import models
 
 
-class CWModel(models.Model):
+class SNModel(models.Model):
     """ We add some default fields to every model (all models derive from this class) """
 
     slug = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
@@ -13,7 +13,7 @@ class CWModel(models.Model):
         abstract = True
 
 
-class CWAbbreviation(CWModel):
+class SNAbbreviation(SNModel):
     """
     Abstract base class for abbreviation models.
 

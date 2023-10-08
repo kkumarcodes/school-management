@@ -28,8 +28,8 @@ from .serializers import (
     UniversityListSerializer,
 )
 
-# Where JSON files that contain CW-specific uni data live
-CW_UNI_DATA_PATH = os.path.join(settings.BASE_DIR, "snuniversities", "data", "by_school")
+# Where JSON files that contain SN-specific uni data live
+SN_UNI_DATA_PATH = os.path.join(settings.BASE_DIR, "snuniversities", "data", "by_school")
 
 
 class DeadlineViewset(ModelViewSet):
@@ -170,8 +170,8 @@ class UniversityViewset(ModelViewSet):
         return queryset
 
 
-class CWUniversityDataView(RetrieveAPIView):
-    """ This view returns CW-specific data for a university, to be used on school profile pages with UMS.
+class SNUniversityDataView(RetrieveAPIView):
+    """ This view returns SN-specific data for a university, to be used on school profile pages with UMS.
         Returns 404 if we don't have data for school (which is the case for most schools, because most schools
         don't have Collegewise students)
 
@@ -184,7 +184,7 @@ class CWUniversityDataView(RetrieveAPIView):
     def retrieve(self, request, *args, **kwargs):
         """ Look ma! No serializer! """
         university: University = self.get_object()
-        file_path = os.path.join(CW_UNI_DATA_PATH, f"{university.iped}.json")
+        file_path = os.path.join(SN_UNI_DATA_PATH, f"{university.iped}.json")
         if not os.path.exists(file_path):
             return Response(status=status.HTTP_404_NOT_FOUND)
         with open(file_path) as f:

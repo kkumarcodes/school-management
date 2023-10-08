@@ -4,7 +4,7 @@ from django.db import models
 from django.urls import reverse
 from django.utils import timezone
 
-from sncommon.model_base import CWModel
+from sncommon.model_base import SNModel
 
 """ Utility to get cwuser for Django user. If user has multiple cwuser accounts, we obviously only return one """
 
@@ -31,7 +31,7 @@ def get_default_location():
     return Location.objects.first()
 
 
-class AddressFields(CWModel):
+class AddressFields(SNModel):
     """ Abstract class with fields necessary to represent an address"""
 
     address = models.CharField(max_length=255, blank=True)
@@ -249,7 +249,7 @@ class Student(CommonUser):
         return self.counselor or self.counseling_student_types_list
 
 
-class StudentHighSchoolCourse(CWModel):
+class StudentHighSchoolCourse(SNModel):
     """ A high school course that a student is taking (or took)
         A set of these comprises a student's high school coursework
         These are setup to match the Common App
@@ -272,7 +272,7 @@ class StudentHighSchoolCourse(CWModel):
     name = models.CharField(max_length=255)
     course_notes = models.TextField(blank=True)
 
-    # Array for CW Equivalents. Last one is "Final" (and the only one used to calculate student's CW GPA)
+    # Array for SN Equivalents. Last one is "Final" (and the only one used to calculate student's SN GPA)
     cw_equivalent_grades = ArrayField(models.FloatField(null=True, blank=True), default=list)
     include_in_cw_gpa = models.BooleanField(default=True)
 
@@ -398,7 +398,7 @@ class Parent(CommonUser):
 
 class Administrator(CommonUser):
     """
-        A CW staff member who has admin access to both academic and admissions platforms.
+        A SN staff member who has admin access to both academic and admissions platforms.
         Can also be a counselor or tutor
     """
 

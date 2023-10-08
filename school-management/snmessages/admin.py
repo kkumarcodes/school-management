@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import CWPhoneNumber, Conversation, ConversationParticipant
+from .models import SNPhoneNumber, Conversation, ConversationParticipant
 
-admin.site.register(CWPhoneNumber)
+admin.site.register(SNPhoneNumber)
 admin.site.register(Conversation)
 admin.site.register(ConversationParticipant)

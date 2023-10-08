@@ -183,7 +183,7 @@ CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 
 
-MAGENTO_API_BASE = "https://hello-staging.collegewise.com"
+MAGENTO_API_BASE = "https://hello-staging.shoolnet.com"
 MAGENTO_API_USERNAME = os.environ.get("MAGENTO_API_USERNAME", "stagingapi")
 MAGENTO_API_PASSWORD = os.environ.get("MAGENTO_API_PASSWORD")
 

@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class CWNotificationsConfig(AppConfig):
+class SNNotificationsConfig(AppConfig):
     name = "snnotifications"

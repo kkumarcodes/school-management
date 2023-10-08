@@ -15,7 +15,7 @@ from django.test import TestCase, override_settings, tag
 from django.utils import timezone
 from django.shortcuts import reverse
 from snusers.models import Student, Counselor, Tutor, Administrator, Parent
-from snmessages.models import Conversation, ConversationParticipant, CWPhoneNumber
+from snmessages.models import Conversation, ConversationParticipant, SNPhoneNumber
 from snnotifications.models import NotificationRecipient
 from snmessages.utilities.conversation_manager import (
     ConversationManager,
@@ -56,7 +56,7 @@ class TestConversationManagerWithTwilio(TestCase):
         self.mgr = ConversationManager()
         NotificationRecipient.objects.all().delete()
         # Exclude the + at the beginning, because users' phone numbers don't have that!
-        phone = CWPhoneNumber.objects.get(default_tutor_number=True).phone_number[1:]
+        phone = SNPhoneNumber.objects.get(default_tutor_number=True).phone_number[1:]
         self.student_nr = NotificationRecipient.objects.create(
             user=self.student.user, phone_number_confirmed=timezone.now(), phone_number=phone,
         )
@@ -73,7 +73,7 @@ class TestConversationManagerWithTwilio(TestCase):
         self.assertEqual(conversation.conversation_type, Conversation.CONVERSATION_TYPE_TUTOR)
         # This will ensure conversation exists in Twilio. Throws exception if converation does not exist
         twilio_conversation = self.mgr.client.conversations.conversations(conversation.conversation_id).fetch()
-        self.assertEqual(twilio_conversation.friendly_name, "CW Conversation")
+        self.assertEqual(twilio_conversation.friendly_name, "SN Conversation")
         self.assertEqual(twilio_conversation.chat_service_sid, conversation.conversation_chat_id)
         # There should be a participant for each the student and the tutor
         self.assertEqual(len(twilio_conversation.participants.list()), conversation.participants.count())

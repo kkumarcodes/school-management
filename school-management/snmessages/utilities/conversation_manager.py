@@ -5,7 +5,7 @@ from django.conf import settings
 from sncommon.utilities.twilio import TwilioException
 from snnotifications.models import NotificationRecipient
 from snmessages.models import (
-    CWPhoneNumber,
+    SNPhoneNumber,
     ConversationParticipant,
     Conversation,
 )
@@ -42,7 +42,7 @@ class ConversationManager:
 
     def provision_phone_number(self):
         """ Provision a new phone number from Twilio.
-            Returns: CWPhoneNumber
+            Returns: SNPhoneNumber
             TODO
         """
         raise NotImplementedError("Cannot provision phone number")
@@ -259,11 +259,11 @@ class ConversationManager:
                 student {Student} either student or parent must be specified. They will be added via SMS
                     to the conversation if they have SMS verified and enabled.
                 parent {Parent} ^^
-                cw_phone_number {optional; CWPhoneNumber} CWPhoneNumber to use for the conversation (as proxy number)
+                cw_phone_number {optional; SNPhoneNumber} SNPhoneNumber to use for the conversation (as proxy number)
                     If not provided, then we'll attempt to find the default phone number for the conversation type,
                         provided no participants are already in a conversation with number. If conversation type is counselor
                         and default phone number is already in use in another of the prospective counselor's conversations, then
-                        we will find a CWPhoneNumber that isn't already in use by counselor. If
+                        we will find a SNPhoneNumber that isn't already in use by counselor. If
                         no such number exists then one is provisioned
             Returns:
                 Conversation
@@ -299,19 +299,19 @@ class ConversationManager:
             if user_type:
                 NotificationRecipient.objects.get_or_create(user=user_type.user)
 
-        # Ensure we have a CWPhoneNumber to use as proxy for conversation
+        # Ensure we have a SNPhoneNumber to use as proxy for conversation
         if not cw_phone_number:
             if conversation_type == Conversation.CONVERSATION_TYPE_TUTOR:
-                cw_phone_number = CWPhoneNumber.objects.get(default_tutor_number=True)
+                cw_phone_number = SNPhoneNumber.objects.get(default_tutor_number=True)
             elif conversation_type == Conversation.CONVERSATION_TYPE_OPERATIONS:
-                cw_phone_number = CWPhoneNumber.objects.get(default_operations_number=True)
+                cw_phone_number = SNPhoneNumber.objects.get(default_operations_number=True)
             elif conversation_type == Conversation.CONVERSATION_TYPE_COUNSELOR:
-                cw_phone_number = CWPhoneNumber.objects.get(default_counselor_number=True)
+                cw_phone_number = SNPhoneNumber.objects.get(default_counselor_number=True)
 
         # Create twilio conversation
         twilio_conversation = None
         if settings.TEST_TWILIO or not settings.TESTING:
-            twilio_conversation = self._create_twilio_conversation("CW Conversation")
+            twilio_conversation = self._create_twilio_conversation("SN Conversation")
 
         # Create our Conversation
         conversation = Conversation.objects.create(

@@ -6,7 +6,7 @@ from .views import (
     StudentUniversityDecisionViewset,
     UniversityViewset,
     UniversityListViewset,
-    CWUniversityDataView,
+    SNUniversityDataView,
 )
 
 # pylint: disable=invalid-name
@@ -20,4 +20,4 @@ router.register("university-lists", UniversityListViewset, basename="university_
 
 # all paths prefaced by /university/
 # pylint: disable=invalid-name
-urlpatterns = router.urls + [path("cw-data/<int:pk>/", CWUniversityDataView.as_view(), name="cw_university_data")]
+urlpatterns = router.urls + [path("cw-data/<int:pk>/", SNUniversityDataView.as_view(), name="cw_university_data")]

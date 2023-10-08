@@ -1,2 +1,2 @@
 # pylint: disable=invalid-name
-default_app_config = "sntasks.apps.CWTasksConfig"
+default_app_config = "sntasks.apps.SNTasksConfig"

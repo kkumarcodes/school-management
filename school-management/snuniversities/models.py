@@ -3,7 +3,7 @@ from django.core.validators import MaxValueValidator
 from django.db import models
 from django.db.models import JSONField
 from django.core.serializers.json import DjangoJSONEncoder
-from sncommon.model_base import CWModel, CWAbbreviation
+from sncommon.model_base import SNModel, SNAbbreviation
 from snusers.models import AddressFields
 from .constants import application_tracker_status, applications, acceptance_status, application_requirements
 
@@ -80,7 +80,7 @@ class University(AddressFields):
         return self.name
 
 
-class UniversityList(CWModel):
+class UniversityList(SNModel):
     """
     A curated collection of `University` objects.
 
@@ -109,7 +109,7 @@ class UniversityList(CWModel):
         return self.name
 
 
-class DeadlineCategory(CWAbbreviation):
+class DeadlineCategory(SNAbbreviation):
     """
     A deadline category.
 
@@ -117,7 +117,7 @@ class DeadlineCategory(CWAbbreviation):
     """
 
 
-class DeadlineType(CWAbbreviation):
+class DeadlineType(SNAbbreviation):
     """
     A deadline type.
 
@@ -126,7 +126,7 @@ class DeadlineType(CWAbbreviation):
     """
 
 
-class Deadline(CWModel):
+class Deadline(SNModel):
     """
     A deadline for an entity.
     """
@@ -152,7 +152,7 @@ class Deadline(CWModel):
         constraints = [models.UniqueConstraint(fields=["university", "category", "type_of"], name="unique_deadline")]
 
 
-class StudentUniversityDecision(CWModel):
+class StudentUniversityDecision(SNModel):
     """
         A Student's decision about applying to a University.
         Note that these objects comprise students' official removed/pending/final school lists, as displayed
@@ -288,7 +288,7 @@ class StudentUniversityDecision(CWModel):
         null=True, blank=True, validators=[MaxValueValidator(100)]
     )
 
-    # Checkbox requested by CW for the tracker
+    # Checkbox requested by SN for the tracker
     send_test_scores = models.BooleanField(default=False)
 
     def __str__(self):

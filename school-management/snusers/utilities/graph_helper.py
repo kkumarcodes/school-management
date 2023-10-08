@@ -1,4 +1,4 @@
-from snusers.constants.outlook_integration import NUM_OF_DAYS_TO_RETRIEVE_CW_EVENTS
+from snusers.constants.outlook_integration import NUM_OF_DAYS_TO_RETRIEVE_SN_EVENTS
 import os
 from datetime import timedelta
 
@@ -55,7 +55,7 @@ class TokenBackend(BaseTokenBackend):
 
 
 def get_schedule_instance(session):
-    """ Helper method to gain access to CWUser outlook calendar (or raise exception
+    """ Helper method to gain access to SNUser outlook calendar (or raise exception
         if refresh token is no longer valid).
         Input: session can be either StudentTutoringSession, GroupTutoringSession, or CounselorMeeting
         Returns: Tuple: Instance of schedule for the tutor connected to session and tutor
@@ -96,7 +96,7 @@ def get_schedule_instance(session):
 
 def outlook_create(session, schedule=None):
     """ Add tutoring session event to cwuser outlook calendar. Raise execption
-        if CWuser token is expired and cannot be refreshed
+        if SNuser token is expired and cannot be refreshed
         Input: session can be either StudentTutoringSession, GroupTutoringSession, or CounselorMeeting
         RETURN: graph_api id for the event instance stored on the event object
         in Microsoft Calendar.
@@ -175,7 +175,7 @@ def outlook_retrieve(user, start, end):
 
 
 def outlook_delete(event):
-    """ Remove specific event from CWUser outlook calendar.
+    """ Remove specific event from SNUser outlook calendar.
         INPUT: StudentTutoringSession
     """
     try:
@@ -263,7 +263,7 @@ def sync_outlook(cw_user):
     schedule = account.schedule()
 
     # create list of cw events
-    end = timezone.now() + timedelta(days=NUM_OF_DAYS_TO_RETRIEVE_CW_EVENTS)
+    end = timezone.now() + timedelta(days=NUM_OF_DAYS_TO_RETRIEVE_SN_EVENTS)
     start = timezone.now()
 
     if isinstance(cw_user, Tutor):

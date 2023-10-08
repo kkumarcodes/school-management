@@ -46,7 +46,7 @@ BASE_ADMIN_FIELDS = (
 ZOOM_FIELDS = ("zoom_pmi", "zoom_url", "zoom_phone", "zoom_user_id", "zoom_type")
 
 
-class CWUserSerializer(AdminModelSerializer):
+class SNUserSerializer(AdminModelSerializer):
     """ We add methods to validate and update instance.user details
         Note that timezone field is read-only (and will be pulled from location associated with user,
         applicable)
@@ -139,7 +139,7 @@ class CWUserSerializer(AdminModelSerializer):
                 username=user_data.get("email", instance.user.username),
             )
             instance.refresh_from_db()
-        return super(CWUserSerializer, self).update(instance, validated_data)
+        return super(SNUserSerializer, self).update(instance, validated_data)
 
     def create(self, validated_data):
         """ Create a new cw user, send an invite """
@@ -195,7 +195,7 @@ class StudentHighSchoolCourseSerializer(serializers.ModelSerializer):
         return attrs
 
 
-class StudentSerializerCounseling(CWUserSerializer):
+class StudentSerializerCounseling(SNUserSerializer):
     """ Serializer for students for the counseling platform. Leaves behind all of the useless tutoring data
     """
 
@@ -299,7 +299,7 @@ class StudentSerializerCounseling(CWUserSerializer):
         ).data
 
     def get_cw_gpa(self, obj: Student):
-        """ Average of non-final CW equivalent grades """
+        """ Average of non-final SN equivalent grades """
         courses = obj.high_school_courses.filter(include_in_cw_gpa=True, planned_course=False)
         grades = []
         for course in courses:
@@ -342,7 +342,7 @@ class StudentSerializerCounseling(CWUserSerializer):
         return cm.start.isoformat() if cm else None
 
 
-class AdminListStudentSerializer(CWUserSerializer):
+class AdminListStudentSerializer(SNUserSerializer):
     """ Special serializer for students used on the admin platform to list students. Whenever details for a student
         are needed, the student is retrieved using either StudentSerializer or StudentSerializerCounseling.
         This serializer is used only to get data needed to display students in a table
@@ -400,7 +400,7 @@ class StudentLastPaidMeetingSerializer(serializers.ModelSerializer):
         return next_session.start if next_session else None
 
 
-class StudentSerializer(CWUserSerializer):
+class StudentSerializer(SNUserSerializer):
     """ Serializer for Student
         Note there are some special fields that get included if there is 'tutor' in context:
             - next_meeting
@@ -555,7 +555,7 @@ class StudentSerializer(CWUserSerializer):
         return previous_session.start if previous_session else None
 
 
-class CounselorSerializer(CWUserSerializer):
+class CounselorSerializer(SNUserSerializer):
     """Serializer for counselor
     """
 
@@ -598,7 +598,7 @@ class CounselorSerializer(CWUserSerializer):
         return hasattr(obj.user, "linked_administrator") and obj.user.linked_administrator.user.is_active
 
 
-class ParentSerializer(CWUserSerializer):
+class ParentSerializer(SNUserSerializer):
     """Serializer for parent
     """
 
@@ -633,7 +633,7 @@ class ParentSerializer(CWUserSerializer):
         )
 
 
-class AdministratorSerializer(CWUserSerializer):
+class AdministratorSerializer(SNUserSerializer):
     """Serializer for administrator
     """
 
@@ -659,7 +659,7 @@ class AdministratorSerializer(CWUserSerializer):
         return obj.linked_user and obj.linked_user.is_active and hasattr(obj.linked_user, "counselor")
 
 
-class TutorSerializer(CWUserSerializer):
+class TutorSerializer(SNUserSerializer):
     students = serializers.PrimaryKeyRelatedField(required=False, many=True, queryset=Student.objects.all())
     university = serializers.PrimaryKeyRelatedField(required=False, queryset=University.objects.all())
     location = LocationSerializer(read_only=True)

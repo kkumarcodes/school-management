@@ -912,10 +912,10 @@
       "state": "",
       "country": "United States",
       "set_timezone": "",
-      "name": "CW Remote",
+      "name": "SN Remote",
       "description": "",
       "is_remote": true,
-      "default_zoom_url": "https://CW REMOTE ZOOM",
+      "default_zoom_url": "https://SN REMOTE ZOOM",
       "offers_tutoring": true,
       "offers_admissions": false,
       "magento_id": ""

@@ -9,7 +9,7 @@ from django.conf import settings
 from django.utils import timezone
 
 from snnotifications.text_templates import TEXT_TEMPLATES
-from snmessages.models import CWPhoneNumber, ConversationParticipant
+from snmessages.models import SNPhoneNumber, ConversationParticipant
 
 
 class TwilioException(Exception):
@@ -31,10 +31,10 @@ class TwilioManager:
         if (
             settings.TWILIO_SID
             and settings.TWILIO_SECRET
-            and CWPhoneNumber.objects.filter(default_operations_number=True).exists()
+            and SNPhoneNumber.objects.filter(default_operations_number=True).exists()
         ):
             self.client = Client(settings.TWILIO_SID, settings.TWILIO_SECRET)
-            self.phone_number = CWPhoneNumber.objects.get(default_operations_number=True).phone_number
+            self.phone_number = SNPhoneNumber.objects.get(default_operations_number=True).phone_number
         elif not settings.TESTING:
             raise TwilioException("Missing Twilio config settings")
 

@@ -4,13 +4,13 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.postgres.fields import ArrayField
 from django.core.serializers.json import DjangoJSONEncoder
 
-from sncommon.model_base import CWModel
+from sncommon.model_base import SNModel
 from sncounseling.models import Roadmap
 from snnotifications.models import Notification
 from snuniversities.constants import applications
 
 
-class Task(CWModel):
+class Task(SNModel):
     """ A task is an item that a user can complete or submit. Tasks are primary used to give
         students "To-Dos". Tasks can be completed or - if they allow file or content submission -
         then they can be submitted. If a task is submitted, then the task can be scored and feedback
@@ -119,7 +119,7 @@ class Task(CWModel):
         return bool(self.task_template or (self.created_by and hasattr(self.created, "counselor")))
 
 
-class TaskTemplate(CWModel):
+class TaskTemplate(SNModel):
     """
     `Counselors` use `TaskTemplate` to quickly instantiate predefined `Tasks` for their `Students`
     """
@@ -228,7 +228,7 @@ class TaskTemplate(CWModel):
         ).distinct()
 
 
-class Form(CWModel):
+class Form(SNModel):
     """ A `Form` that a `Counselor` assigns to their `Students` to complete as part of `Task`.
         Only `Admins` may create/update/delete forms
     """
@@ -257,7 +257,7 @@ class Form(CWModel):
         return f"Form: {self.title}"
 
 
-class FormSubmission(CWModel):
+class FormSubmission(SNModel):
     """ Represents a completed `Form` submitted by a `Student` as part of a `Counselor` assigned `Task`. """
 
     form = models.ForeignKey(
@@ -280,7 +280,7 @@ class FormSubmission(CWModel):
         return f"FormSubmission: Submitted by {self.submitted_by.__str__()} Form({self.form.title})"
 
 
-class FormField(CWModel):
+class FormField(SNModel):
     """ A field on a `Form` created by a `Admin` or `Counselor` and assigned to a `Student` as a `Task`.
         Two category of field are distinguished:
         Standard Fields: fields identified by `editable=False`
@@ -400,7 +400,7 @@ class FormField(CWModel):
         return f"FormField: {self.key} for {self.form.title}"
 
 
-class FormFieldEntry(CWModel):
+class FormFieldEntry(SNModel):
     """ A student's response to a `FormField` on a `FormSubmission` assigned by their `Counselor` as a `Task`. """
 
     form_submission = models.ForeignKey(

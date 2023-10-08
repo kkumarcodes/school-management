@@ -1,4 +1,4 @@
-""" Utility for managing zoom accounts, and their relationship to CWUser accounts
+""" Utility for managing zoom accounts, and their relationship to SNUser accounts
 """
 import json
 import requests

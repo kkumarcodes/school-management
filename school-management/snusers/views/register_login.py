@@ -110,7 +110,7 @@ class RegisterView(APIView):
     def post(self, request):
         """Post registration attempt
             Arguments:
-                uuid: UUID identifying CWUser model that is registering
+                uuid: UUID identifying SNUser model that is registering
                 password
                 timezone: String timezone to set as registration_timezone for user
             Returns:

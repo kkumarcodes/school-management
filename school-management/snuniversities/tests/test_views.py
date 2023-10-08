@@ -25,7 +25,7 @@ from snusers.constants.counseling_student_types import NOT_TOO_LATE
 
 WASHU_IPED = "179867"
 WASHU_DATA_POINTS = 191  # Count of datapoints for washu
-CW_DATA_KEYS = [
+SN_DATA_KEYS = [
     "Class of",
     "Admission Decision",
     "GPA",
@@ -451,8 +451,8 @@ class TestUniversityListViewset(TestCase):
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
 
-class TestCWUniversityDataView(TestCase):
-    """ python manage.py test snuniversities.tests.test_views:TestCWUniversityDataView """
+class TestSNUniversityDataView(TestCase):
+    """ python manage.py test snuniversities.tests.test_views:TestSNUniversityDataView """
 
     fixtures = ("fixture.json", "ten_universities.json")
 
@@ -477,7 +477,7 @@ class TestCWUniversityDataView(TestCase):
 
         # We only need to test the contents rigorously once
         result = json.loads(response.content)
-        self.assertTrue(all([(key in datapoint) for datapoint in result for key in CW_DATA_KEYS]))
+        self.assertTrue(all([(key in datapoint) for datapoint in result for key in SN_DATA_KEYS]))
 
     def test_failure(self):
         # Login required

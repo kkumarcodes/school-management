@@ -37,7 +37,7 @@ class EventFeed(ICalFeed):
     def items(self, cwuser):
         """ For now items ONLY include StudentTutoringSessions
             Arguments:
-              cwuser {CW User}
+              cwuser {SN User}
             TODO: Add other calendar items
         """
 

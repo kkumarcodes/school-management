@@ -1,4 +1,4 @@
-""" Use this script to parse a roadmap as CW gives it to us. Namely we break tasks into separate rows
+""" Use this script to parse a roadmap as SN gives it to us. Namely we break tasks into separate rows
     (specifically: agenda item templates and task templates), and associate them with meeting tempalates
     (which will also be created if they don't yet exist)
 """

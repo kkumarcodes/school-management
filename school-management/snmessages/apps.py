@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class CWMessagesConfig(AppConfig):
+class SNMessagesConfig(AppConfig):
     name = "snmessages"

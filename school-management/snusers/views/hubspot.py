@@ -1,4 +1,4 @@
-""" This module contains views (mostly API views) used by the CW Hubspot App
+""" This module contains views (mostly API views) used by the SN Hubspot App
 """
 
 from django.http import HttpResponseBadRequest, HttpResponse, HttpResponseNotFound

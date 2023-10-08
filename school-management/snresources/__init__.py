@@ -1,2 +1,2 @@
-default_app_config = "snresources.apps.CWResourcesConfig"
+default_app_config = "snresources.apps.SNResourcesConfig"
 

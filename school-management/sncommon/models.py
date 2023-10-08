@@ -5,11 +5,11 @@ from django.utils import timezone
 from django.db.models import JSONField
 from django.contrib.postgres.fields import ArrayField
 from django.core.serializers.json import DjangoJSONEncoder
-from sncommon.model_base import CWModel
+from sncommon.model_base import SNModel
 from sntutoring.constants import RECURRING_AVAILABILITY_FALL_START_MONTH, RECURRING_AVAILABILITY_SUMMER_START_MONTH
 
 
-class FileUpload(CWModel):
+class FileUpload(SNModel):
     """ A file uploaded by user that is stored permanently and will be used elsewhere later.
         Note that we retain OG file name
     """
@@ -18,7 +18,7 @@ class FileUpload(CWModel):
 
     # Some "files" are actually google drive links to a file
     link = models.URLField(max_length=255, blank=True, null=True)
-    # slug and created fields (via CWModel)
+    # slug and created fields (via SNModel)
     file_resource = models.FileField(upload_to="temp_file_upload", null=True, blank=True)
     created_by = models.ForeignKey(
         "auth.user", related_name="file_uploads", null=True, blank=True, on_delete=models.SET_NULL
@@ -77,7 +77,7 @@ class FileUpload(CWModel):
         return self.name
 
 
-class TimeCardBase(CWModel):
+class TimeCardBase(SNModel):
     """ Common fields for our CAP and CAS time card models
     """
 
@@ -127,7 +127,7 @@ def get_default_locations():
     }
 
 
-class BaseRecurringAvailability(CWModel):
+class BaseRecurringAvailability(SNModel):
     """ Base for our tutor and counselor recurring availability models.
         Why not use the same model for both? Well initially only tutors maintained avialability. To avoid the headache
         of transitioning tutors' availability into a new model, we kept it and pulled the common fields into
@@ -186,7 +186,7 @@ class BaseRecurringAvailability(CWModel):
         abstract = True
 
 
-class BaseAvailability(CWModel):
+class BaseAvailability(SNModel):
     """ A block of time that a tutor or counselor is available
         Why not use the same model for both? Well initially only tutors maintained availability. To avoid the headache
         of transitioning tutors' availability into a new model, we kept it and pulled the common fields into

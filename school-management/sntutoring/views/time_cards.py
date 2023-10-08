@@ -178,7 +178,7 @@ class TutorTimeCardLineItemViewset(ModelViewSet):
 
 
 class TutorTimeCardLineItemAccountingView(View):
-    """ View that returns a CSV that matches CW specification from this story:
+    """ View that returns a CSV that matches SN specification from this story:
         https://app.clubhouse.io/promptfeedback/story/2328/add-categories-for-each-different-hour-type-in-accounting-export
     """
 

@@ -1,4 +1,4 @@
-""" This module contains the mapping of app requirements as they exist in the Airtable CW uses to collect
+""" This module contains the mapping of app requirements as they exist in the Airtable SN uses to collect
     app requirements, to the values that we need to set on StudentUniversityDecision objects when they are created
     Structure is like this:
     {

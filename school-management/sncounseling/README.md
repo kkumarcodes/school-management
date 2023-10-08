@@ -1,4 +1,4 @@
-# CWCounseling
+# SNCounseling
 This app contains models and business logic specific to the Collegewise Counseling platform (CAP) within
 UMS. Significant concepts include:
 - Counseling Tasks (mostly implemented in `sntasks`)

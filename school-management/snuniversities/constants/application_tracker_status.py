@@ -1,4 +1,4 @@
-""" Statuses for counselor application tracker. Pulled from Airtable that CW provided as a template
+""" Statuses for counselor application tracker. Pulled from Airtable that SN provided as a template
 """
 NOT_APPLICABLE = "n_a"
 

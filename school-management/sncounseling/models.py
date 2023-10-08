@@ -10,7 +10,7 @@ from django.db.models.deletion import SET, SET_NULL
 from django.db.models.fields.related import ForeignKey
 from django.db.models.query_utils import Q
 
-from sncommon.model_base import CWModel
+from sncommon.model_base import SNModel
 from sncommon.models import BaseAvailability, BaseRecurringAvailability, TimeCardBase
 
 from sncounseling.constants import (
@@ -22,9 +22,9 @@ from sncounseling.constants import (
 )
 
 
-class AgendaItemTemplate(CWModel):
+class AgendaItemTemplate(SNModel):
     """An agenda item that a counselor could include on a meeting should they want to
-    CW defines stock agenda items that have related pre and post meeting task templates
+    SN defines stock agenda items that have related pre and post meeting task templates
     Counselors can also define their own agenda items (with no related task templates)
     """
 
@@ -66,7 +66,7 @@ class AgendaItemTemplate(CWModel):
         ordering = ["order"]
 
 
-class AgendaItem(CWModel):
+class AgendaItem(SNModel):
     """Agenda items are created for CounselorMeetings from agenda item templates
     They can also be created by counselors
     """
@@ -91,7 +91,7 @@ class AgendaItem(CWModel):
         return f"Agenda item {self.counselor_title} for {self.counselor_meeting}"
 
 
-class CounselorMeetingTemplate(CWModel):
+class CounselorMeetingTemplate(SNModel):
     """A template for a meeting. That is a type of meeting. Can include resources or instructions for counselor
     and student
     Initial implementation based off of meeting cadence described here:
@@ -157,7 +157,7 @@ class CounselorMeetingTemplate(CWModel):
         ).distinct()
 
 
-class CounselorMeeting(CWModel):
+class CounselorMeeting(SNModel):
     """A meeting with a counselor. Counselor is meeting with a student or parent or both"""
 
     # If meeting was created from a template
@@ -228,7 +228,7 @@ class CounselorMeeting(CWModel):
         return f"Counselor {self.student.counselor} meeting with student {self.student} on {self.start}"
 
 
-class Roadmap(CWModel):
+class Roadmap(SNModel):
     """A Roadmap is a pre-defined collection of TaskTemplates, MeetingTemplates and Resources"""
 
     title = models.CharField(max_length=255, blank=True)
@@ -253,7 +253,7 @@ class Roadmap(CWModel):
         )
 
 
-class CounselorNote(CWModel):
+class CounselorNote(SNModel):
     """There are two types of counselor notes:
     1. A note - in a specific category - that a counselor leaves on one of their meetings. (meeting note)
                             The category is important because a counselor can add multiple notes for the same meeting if those notes
@@ -300,7 +300,7 @@ class CounselorNote(CWModel):
         return self.title
 
 
-class StudentActivity(CWModel):
+class StudentActivity(SNModel):
     """An activity for a specific student (note that awards ARE activities)"""
 
     CATEGORIES = [
@@ -336,7 +336,7 @@ class StudentActivity(CWModel):
     recognition = models.CharField(choices=RECOGNITION, blank=True, max_length=255)
 
 
-class CounselingPackage(CWModel):
+class CounselingPackage(SNModel):
     """ A package of counseling hours that a student can purchase.
     """
 
@@ -355,18 +355,18 @@ class CounselingPackage(CWModel):
     # If these fields are set, then the CounselingPackage should only be applied to students starting
     # in this grade and semester
     grade = models.IntegerField(
-        null=True, help_text="Grade in which student starts working with CW to get this package"
+        null=True, help_text="Grade in which student starts working with SN to get this package"
     )
     semester = models.IntegerField(
         null=True,
-        help_text="Semester in which student starts working with CW to get this package. 1 = Fall. 2 = Spring/Summer",
+        help_text="Semester in which student starts working with SN to get this package. 1 = Fall. 2 = Spring/Summer",
     )
 
     def __str__(self) -> str:
         return self.package_name
 
 
-class CounselingHoursGrant(CWModel):
+class CounselingHoursGrant(SNModel):
     """ Counseling hours granted to a CAP student
     """
 
@@ -432,7 +432,7 @@ class CounselingHoursGrant(CWModel):
         return f"{self.number_of_hours} hours for {self.student}"
 
 
-class CounselorTimeEntry(CWModel):
+class CounselorTimeEntry(SNModel):
     """A single line item of counselor meeting time tracking. Counselors and
     Admins can create new time entries.  Entry can optionally be associated with
     a student.
@@ -542,7 +542,7 @@ class CounselorTimeCard(TimeCardBase):
         return f"Time card for {self.counselor} created {self.created.strftime('%m/%d/%Y')}"
 
 
-class CounselorEventType(CWModel):
+class CounselorEventType(SNModel):
     """An EventType is specified by a Counselor"""
 
     created_by = models.ForeignKey(

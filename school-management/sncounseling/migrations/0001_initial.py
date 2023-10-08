@@ -79,8 +79,8 @@ class Migration(migrations.Migration):
                 ('counseling_student_type', models.CharField(blank=True, help_text='All students of this type will automatically get this package applied', max_length=255)),
                 ('number_of_hours', models.DecimalField(decimal_places=2, help_text='Number of hours included in package', max_digits=6)),
                 ('package_name', models.CharField(blank=True, help_text='Customer readable name of package', max_length=255)),
-                ('grade', models.IntegerField(help_text='Grade in which student starts working with CW to get this package', null=True)),
-                ('semester', models.IntegerField(help_text='Semester in which student starts working with CW to get this package. 1 = Fall. 2 = Spring/Summer', null=True)),
+                ('grade', models.IntegerField(help_text='Grade in which student starts working with SN to get this package', null=True)),
+                ('semester', models.IntegerField(help_text='Semester in which student starts working with SN to get this package. 1 = Fall. 2 = Spring/Summer', null=True)),
             ],
             options={
                 'abstract': False,

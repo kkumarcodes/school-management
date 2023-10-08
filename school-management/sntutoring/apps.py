@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class CWTutoringConfig(AppConfig):
+class SNTutoringConfig(AppConfig):
     name = "sntutoring"

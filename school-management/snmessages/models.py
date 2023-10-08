@@ -1,9 +1,9 @@
 from django.db import models
-from sncommon.model_base import CWModel
+from sncommon.model_base import SNModel
 from snusers.models import Counselor, Tutor, get_cw_user
 
 
-class CWPhoneNumber(CWModel):
+class SNPhoneNumber(SNModel):
     """ A phone number we own in Twilio and can use as a proxy number for conversations """
 
     active = models.BooleanField(default=True)  # Whether or not we currently hold this number
@@ -16,7 +16,7 @@ class CWPhoneNumber(CWModel):
         return self.phone_number
 
 
-class Conversation(CWModel):
+class Conversation(SNModel):
     """ Our representation of a Twilio Conversation object
         Note that the combination of conversation type, student, parent, and counselor
         uniquely identify a conversation (or potential conversation)
@@ -37,10 +37,10 @@ class Conversation(CWModel):
         (CONVERSATION_TYPE_OTHER, "Other"),
     )
     active = models.BooleanField(default=True)
-    # The CW phone number associated with conversation. If null, then conversation solely exists
+    # The SN phone number associated with conversation. If null, then conversation solely exists
     # on web chat
     phone_number = models.ForeignKey(
-        "snmessages.CWPhoneNumber", related_name="conversations", null=True, blank=True, on_delete=models.SET_NULL,
+        "snmessages.SNPhoneNumber", related_name="conversations", null=True, blank=True, on_delete=models.SET_NULL,
     )
     student = models.ForeignKey(
         "snusers.Student", related_name="conversations", on_delete=models.SET_NULL, null=True, blank=True,
@@ -72,7 +72,7 @@ class Conversation(CWModel):
         return f"{self.conversation_type_description} conversation"
 
 
-class ConversationParticipant(CWModel):
+class ConversationParticipant(SNModel):
     """ Our representation of a Twilio Participant object """
 
     conversation = models.ForeignKey("snmessages.Conversation", related_name="participants", on_delete=models.CASCADE,)

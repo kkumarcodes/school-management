@@ -7,7 +7,7 @@ from django.db import models
 from django.shortcuts import reverse
 from nose.tools import nottest
 
-from sncommon.model_base import CWModel
+from sncommon.model_base import SNModel
 
 # Though it's not used, we need to keep get_default_availability because it is referenced in migrations
 # as being in this module (it used to be)
@@ -15,7 +15,7 @@ from sncommon.models import BaseAvailability, BaseRecurringAvailability, TimeCar
 from snusers.models import AddressFields
 
 
-class Diagnostic(CWModel):
+class Diagnostic(SNModel):
     """ A test given to students as they start tutoring program. Can be in-person or remote.
         Instances of remote Diagnostic are assigned to students as Task.
         Instances of in-person Diagnostic are assigned to students as Tutoring Session.
@@ -62,7 +62,7 @@ class Diagnostic(CWModel):
         return self.title
 
 
-class DiagnosticResult(CWModel):
+class DiagnosticResult(SNModel):
     """ Submission of a Diagnostic - remote or in person - for a student
         Created when Task w/related Diagnostic is submitted
     """
@@ -125,7 +125,7 @@ class DiagnosticResult(CWModel):
         return f"{self.diagnostic.title} diagnostic result for {self.student.name}"
 
 
-class DiagnosticGroupTutoringSessionRegistration(CWModel):
+class DiagnosticGroupTutoringSessionRegistration(SNModel):
     """ An instance of a family registering for a Diagnostic (GroupTutoringSession). Families
         register via a landing page. Student and parent UMS accounts are created if they
         do not already exist
@@ -159,7 +159,7 @@ class DiagnosticGroupTutoringSessionRegistration(CWModel):
 
 
 @nottest
-class TestResult(CWModel):
+class TestResult(SNModel):
     """ Instance of student taking (or failing to take) a standardized test """
 
     title = models.CharField(max_length=255, blank=True)
@@ -246,7 +246,7 @@ def get_default_location():
     # return Location.objects.filter(is_remote=True).first().pk
 
 
-class GroupTutoringSession(CWModel):
+class GroupTutoringSession(SNModel):
     primary_tutor = models.ForeignKey(
         "snusers.Tutor",
         related_name="primary_group_tutoring_sessions",
@@ -279,7 +279,7 @@ class GroupTutoringSession(CWModel):
     # If cancelled, session will no longer happen
     cancelled = models.BooleanField(default=False)
 
-    # Note only visible to CW admin, counselors, tutors
+    # Note only visible to SN admin, counselors, tutors
     staff_note = models.TextField(blank=True)
 
     # Number of students who can join session
@@ -346,7 +346,7 @@ class GroupTutoringSession(CWModel):
         return self.set_pay_tutor_duration if self.set_pay_tutor_duration is not None else self.duration
 
 
-class Course(CWModel):
+class Course(SNModel):
     """ A course is a group of GroupTutoringSession objects. Courses can be associated with packages,
         so that families can choose to enroll in a course, which can involve purchasing a package
     """
@@ -397,7 +397,7 @@ class Course(CWModel):
         return f"{self.name} starting on {self.group_tutoring_sessions.order_by('start').first().start.strftime('%m/%d/%Y')} with {self.group_tutoring_sessions.first().primary_tutor.name}"
 
 
-class StudentTutoringSession(CWModel):
+class StudentTutoringSession(SNModel):
     """
         A student has signed up for an individual or group tutoring session.
         This object is associated with either a GroupTutoringSession or a TutorAvailability
@@ -581,7 +581,7 @@ class StudentTutoringSession(CWModel):
         return bool(self.zoom_url)
 
 
-class TutoringService(CWModel):
+class TutoringService(SNModel):
     """ A tutoring service is a subject that a tutor provides assistance in.
         Every StudentTutoringSession has at most 1 service.
         Initially, services will only be annotated on individual tutoring sessions
@@ -629,7 +629,7 @@ class TutoringService(CWModel):
         return self.display
 
 
-class TutoringSessionNotes(CWModel):
+class TutoringSessionNotes(SNModel):
     # Notes provided to one or more students as a result of a tutoring session
     author = models.ForeignKey(
         "snusers.Tutor", related_name="tutoring_session_notes", null=True, blank=True, on_delete=models.SET_NULL,
@@ -655,7 +655,7 @@ class TutoringSessionNotes(CWModel):
         return f"Notes provided by {self.author.name}"
 
 
-class TutoringPackage(CWModel):
+class TutoringPackage(SNModel):
     """ A package of individual and/or group hours that a student could purchase (or could be given to a student)
     """
 
@@ -715,7 +715,7 @@ class TutoringPackage(CWModel):
         return f"{self.title} at {location_name}"
 
 
-class TutoringPackagePurchase(CWModel):
+class TutoringPackagePurchase(SNModel):
     """ This model represents an instance of a TutoringPackage being purchased (or given)
         to a student. Note that the same package can be purchased multiple times.
         Also note that the price PAID according to this model may differ from price
@@ -788,7 +788,7 @@ class TutorTimeCard(TimeCardBase):
         return Decimal(self.line_items.aggregate(s=models.Sum("hours"))["s"] or 0)
 
 
-class TutorTimeCardLineItem(CWModel):
+class TutorTimeCardLineItem(SNModel):
     """ The entries that comprise a timecard. Each entry has a decimal number of hours associated with it
         These line items can be associated with tutoring sessions (or not).
         Note that technically hours can be negative (if adjustments need to be made after a Tutor

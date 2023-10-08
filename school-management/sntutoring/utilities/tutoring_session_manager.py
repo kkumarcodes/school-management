@@ -106,7 +106,7 @@ class TutoringSessionManager:
         self.student_tutoring_session.set_cancelled = True
         self.student_tutoring_session.save()
 
-        # if event is on CWuser outlook calendar, remove event from tutor outlook calendar
+        # if event is on SNuser outlook calendar, remove event from tutor outlook calendar
         try:
             if (
                 self.student_tutoring_session.outlook_event_id
@@ -177,7 +177,7 @@ class TutoringSessionManager:
         self.student_tutoring_session.duration_minutes = (end - start).total_seconds() / 60.0
         self.student_tutoring_session.save()
 
-        # update event in CWUser outlook calendar
+        # update event in SNUser outlook calendar
         try:
             if (
                 self.student_tutoring_session.outlook_event_id

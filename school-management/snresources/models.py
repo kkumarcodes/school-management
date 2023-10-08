@@ -1,10 +1,10 @@
 from django.db import models
 from django.urls import reverse_lazy
 
-from sncommon.model_base import CWModel
+from sncommon.model_base import SNModel
 
 
-class ResourceGroup(CWModel):
+class ResourceGroup(SNModel):
     """ A collection of Resource objects that can be exposed to a user all at once
         ResourceGroups are ONLY to be used for stock resources, and can only be managed
         by admins (i.e. a Tutor cannot create a ResourceGroup for Resources they create
@@ -28,7 +28,7 @@ class ResourceGroup(CWModel):
         return self.title
 
 
-class Resource(CWModel):
+class Resource(SNModel):
     """ A file or link that can be made available to a student to help with their academic tutoring
         or college application process
     """
@@ -49,7 +49,7 @@ class Resource(CWModel):
     view_count = models.IntegerField(default=0)
 
     archived = models.BooleanField(default=False)
-    # Whether or not Resource is provided by CW (i.e. not created by a counselor or tutor for individual use)
+    # Whether or not Resource is provided by SN (i.e. not created by a counselor or tutor for individual use)
     is_stock = models.BooleanField(default=False)
 
     """ Incoming FK """

@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class CWTasksConfig(AppConfig):
+class SNTasksConfig(AppConfig):
     name = "sntasks"

@@ -30,7 +30,7 @@ app_patterns = [
     path("user/", include("snusers.urls")),
     path("tutoring/", include("sntutoring.urls")),
     path("task/", include("sntasks.urls")),
-    path("cw/", include("sncommon.urls")),
+    path("sn/", include("sncommon.urls")),
     path("resource/", include("snresources.urls")),
     path("notification/", include("snnotifications.urls")),
     path("message/", include("snmessages.urls")),

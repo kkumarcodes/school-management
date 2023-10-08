@@ -1,2 +1,2 @@
 # pylint: disable=invalid-name
-default_app_config = "snnotifications.apps.CWNotificationsConfig"
+default_app_config = "snnotifications.apps.SNNotificationsConfig"

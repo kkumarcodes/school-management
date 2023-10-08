@@ -7,7 +7,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.core.serializers.json import DjangoJSONEncoder
 from django.core.exceptions import ObjectDoesNotExist
 
-from sncommon.model_base import CWModel
+from sncommon.model_base import SNModel
 
 
 class NotificationModelManager(models.Manager):
@@ -25,7 +25,7 @@ class NotificationModelManager(models.Manager):
         return super(NotificationModelManager, self).create(*args, **kwargs)
 
 
-class Notification(CWModel):
+class Notification(SNModel):
     """  A notification about some action or message in the platform """
 
     notification_type = models.CharField(max_length=255)
@@ -118,7 +118,7 @@ class Notification(CWModel):
         return None
 
 
-class NotificationRecipient(CWModel):
+class NotificationRecipient(SNModel):
     """ Collection of settings pertaining to notifications for a single user """
 
     user = models.OneToOneField("auth.user", related_name="notification_recipient", on_delete=models.CASCADE)
@@ -151,7 +151,7 @@ class NotificationRecipient(CWModel):
         return self
 
 
-class Bulletin(CWModel):
+class Bulletin(SNModel):
     """ A bulletin is an announcement created by an admin or counselors for some users on UMS.
         Bulletins can be made visible to students, parents, tutors, and/or counselors.
         Within the platform, these are also called "Announcements"

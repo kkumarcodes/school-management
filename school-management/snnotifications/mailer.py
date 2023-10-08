@@ -425,7 +425,7 @@ def send_email_for_notification(notification: Notification, resend=True, force_t
         # email would have gone to
         send_test_email = force_test or (settings.ENV != "production" and not settings.TESTING)
         if send_test_email:
-            subject = f"[CW Platform Sandbox - {settings.ENV}] {subject}"
+            subject = f"[SN Platform Sandbox - {settings.ENV}] {subject}"
             context["test_email_recipient"] = notification.recipient.user.email
 
         msg = mail.EmailMultiAlternatives(

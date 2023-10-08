@@ -1,6 +1,6 @@
 """
     This module contains views to facilitate authentication process with Microsoft
-    Graph API to obtain read/write permission to CW Counselor and Tutor Outlook
+    Graph API to obtain read/write permission to SN Counselor and Tutor Outlook
     calendars
 """
 import sentry_sdk
@@ -15,7 +15,7 @@ from snusers.utilities.auth_helper import get_sign_in_url, get_token_from_code
 
 
 class MSOutlookAPIView(ViewSet):
-    """ Handles Microsoft authentication for CWUsers (tutors and counselors)
+    """ Handles Microsoft authentication for SNUsers (tutors and counselors)
         Returns an access and refresh token, which is then stored on the user
         for future use
     """

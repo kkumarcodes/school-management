@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class CWCommonConfig(AppConfig):
+class SNCommonConfig(AppConfig):
     name = "sncommon"
